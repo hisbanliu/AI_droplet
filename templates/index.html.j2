@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Droplet — Daily AI Intelligence</title>
+  <meta name="description" content="Your daily snapshot of AI models, tools, news, MCP servers, and agent skills." />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { 50: '#f0f9ff', 100: '#e0f2fe', 500: '#0ea5e9', 600: '#0284c7', 700: '#0369a1' }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Alpine.js -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <style>
+    [x-cloak] { display: none !important; }
+    html { scroll-behavior: smooth; }
+    .tab-active { @apply border-b-2 border-sky-500 text-sky-600 font-semibold; }
+    .card { @apply bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-200; }
+    .badge { @apply inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium; }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-900 min-h-screen" x-data="app()" x-cloak>
+
+  <!-- ══ NAVBAR ══════════════════════════════════════════════════════════════ -->
+  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-14">
+
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-2 font-bold text-sky-600 text-lg">
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/>
+        </svg>
+        AI Droplet
+      </a>
+
+      <!-- Nav tabs (hidden on mobile, shown md+) -->
+      <div class="hidden md:flex items-center gap-1 text-sm">
+        <template x-for="tab in tabs" :key="tab.id">
+          <button
+            @click="activeTab = tab.id; $nextTick(() => document.getElementById(tab.id)?.scrollIntoView({behavior:'smooth'}))"
+            :class="activeTab === tab.id ? 'text-sky-600 font-semibold' : 'text-gray-600 hover:text-gray-900'"
+            class="px-3 py-1.5 rounded-md transition-colors"
+            x-text="t(tab.i18n_key)"
+          ></button>
+        </template>
+      </div>
+
+      <!-- Right: lang toggle + generated date -->
+      <div class="flex items-center gap-3">
+        <span class="hidden sm:block text-xs text-gray-400">{{ generated_at }}</span>
+        <div class="flex items-center rounded-full border border-gray-300 overflow-hidden text-sm">
+          <button
+            @click="setLang('en')"
+            :class="lang === 'en' ? 'bg-sky-500 text-white' : 'text-gray-600 hover:bg-gray-100'"
+            class="px-2.5 py-1 transition-colors"
+          >EN</button>
+          <button
+            @click="setLang('zh')"
+            :class="lang === 'zh' ? 'bg-sky-500 text-white' : 'text-gray-600 hover:bg-gray-100'"
+            class="px-2.5 py-1 transition-colors"
+          >中</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══ HERO ════════════════════════════════════════════════════════════════ -->
+  <header class="bg-gradient-to-br from-sky-600 to-indigo-700 text-white py-12 px-4">
+    <div class="max-w-7xl mx-auto text-center">
+      <h1 class="text-3xl sm:text-4xl font-bold mb-3" x-text="t('hero.title')"></h1>
+      <p class="text-sky-100 text-lg max-w-2xl mx-auto" x-text="t('hero.subtitle')"></p>
+      <div class="mt-6 flex flex-wrap justify-center gap-4 text-sm">
+        <span class="bg-white/20 rounded-full px-4 py-1.5">📰 <span x-text="t('hero.stat.news')"></span></span>
+        <span class="bg-white/20 rounded-full px-4 py-1.5">🤖 {{ models | length }} <span x-text="t('hero.stat.models')"></span></span>
+        <span class="bg-white/20 rounded-full px-4 py-1.5">🔧 {{ mcp | length }} MCP Servers</span>
+        <span class="bg-white/20 rounded-full px-4 py-1.5">⚡ {{ skills | length }} Agent Skills</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 py-10 space-y-16">
+
+    <!-- ══ SECTION: NEWS ═══════════════════════════════════════════════════ -->
+    <section id="news">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl font-bold text-gray-900" x-text="t('nav.news')"></h2>
+        <span class="badge bg-amber-100 text-amber-800">{{ generated_at[:10] }}</span>
+      </div>
+
+      {% if news %}
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {% for item in news %}
+        <article class="card p-5 flex flex-col gap-3">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex items-center gap-2 flex-wrap">
+              <span class="badge bg-sky-100 text-sky-700">{{ item.source }}</span>
+              {% for tag in item.get('tags', [])[:2] %}
+              <span class="badge bg-gray-100 text-gray-600">{{ tag }}</span>
+              {% endfor %}
+            </div>
+            <span class="text-xs text-gray-400 whitespace-nowrap">{{ item.published_at[:10] }}</span>
+          </div>
+
+          <h3 class="font-semibold text-gray-900 leading-snug">
+            <a href="{{ item.url }}" target="_blank" rel="noopener" class="hover:text-sky-600 transition-colors">
+              {{ item.title }}
+            </a>
+          </h3>
+
+          <p class="text-sm text-gray-600 leading-relaxed">
+            <span x-show="lang === 'en'">{{ item.get('summary_en', item.title) }}</span>
+            <span x-show="lang === 'zh'">{{ item.get('summary_zh', item.get('summary_en', item.title)) }}</span>
+          </p>
+
+          <div class="flex items-center justify-between mt-auto pt-2">
+            <div class="flex items-center gap-1">
+              <div class="flex">
+                {% set score = item.get('importance_score', 7) | float %}
+                {% for i in range(1, 11) %}
+                <div class="w-1.5 h-3 rounded-sm mr-0.5 {{ 'bg-sky-500' if i <= score else 'bg-gray-200' }}"></div>
+                {% endfor %}
+              </div>
+              <span class="text-xs text-gray-400 ml-1">{{ "%.1f"|format(item.get('importance_score', 7)) }}</span>
+            </div>
+            <a href="{{ item.url }}" target="_blank" rel="noopener"
+               class="text-xs text-sky-600 hover:text-sky-800 font-medium"
+               x-text="t('news.read_more')"></a>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+      {% else %}
+      <div class="card p-10 text-center text-gray-400">
+        <p class="text-4xl mb-3">📰</p>
+        <p x-text="t('news.empty')"></p>
+        <p class="text-sm mt-1 text-gray-300" x-text="t('news.empty_hint')"></p>
+      </div>
+      {% endif %}
+    </section>
+
+    <!-- ══ SECTION: MODELS ════════════════════════════════════════════════ -->
+    <section id="models" x-data="modelsApp({{ models | tojson }})">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl font-bold text-gray-900" x-text="t('nav.models')"></h2>
+        <span class="badge bg-purple-100 text-purple-700">{{ models | length }} <span x-text="t('models.total')"></span></span>
+      </div>
+
+      <!-- Search + Filter -->
+      <div class="flex flex-col sm:flex-row gap-3 mb-4">
+        <div class="relative flex-1">
+          <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+          <input
+            type="text"
+            x-model="search"
+            :placeholder="t('models.search_ph')"
+            class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-sky-500"
+          />
+        </div>
+        <div class="flex gap-2">
+          <template x-for="f in filters" :key="f.value">
+            <button
+              @click="filter = f.value; page = 1"
+              :class="filter === f.value ? 'bg-sky-500 text-white border-sky-500' : 'bg-white text-gray-600 border-gray-300 hover:border-sky-400'"
+              class="px-3 py-2 rounded-lg border text-sm transition-colors"
+              x-text="t(f.i18n_key)"
+            ></button>
+          </template>
+        </div>
+      </div>
+
+      <!-- Table -->
+      <div class="card overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="bg-gray-50 border-b border-gray-200">
+                <th class="text-left px-4 py-3 font-semibold text-gray-600" x-text="t('models.col.name')"></th>
+                <th class="text-left px-4 py-3 font-semibold text-gray-600 hidden sm:table-cell" x-text="t('models.col.provider')"></th>
+                <th class="text-left px-4 py-3 font-semibold text-gray-600 hidden md:table-cell" x-text="t('models.col.type')"></th>
+                <th class="text-left px-4 py-3 font-semibold text-gray-600 hidden lg:table-cell" x-text="t('models.col.released')"></th>
+                <th class="text-left px-4 py-3 font-semibold text-gray-600" x-text="t('models.col.summary')"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <template x-for="model in paginatedModels" :key="model.name + model.provider">
+                <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+                  <td class="px-4 py-3">
+                    <a :href="model.url || '#'" target="_blank" rel="noopener"
+                       class="font-medium text-gray-900 hover:text-sky-600 transition-colors"
+                       x-text="model.name"></a>
+                    <div class="flex gap-1 mt-1 flex-wrap">
+                      <template x-for="m in (model.modality || [])" :key="m">
+                        <span class="badge bg-indigo-50 text-indigo-600" x-text="m"></span>
+                      </template>
+                    </div>
+                  </td>
+                  <td class="px-4 py-3 text-gray-600 hidden sm:table-cell" x-text="model.provider"></td>
+                  <td class="px-4 py-3 hidden md:table-cell">
+                    <span :class="model.type === 'open' ? 'bg-green-100 text-green-700' : 'bg-orange-100 text-orange-700'"
+                          class="badge" x-text="model.type === 'open' ? t('models.filter.open') : t('models.filter.closed')"></span>
+                  </td>
+                  <td class="px-4 py-3 text-gray-400 text-xs hidden lg:table-cell" x-text="model.released_at || '—'"></td>
+                  <td class="px-4 py-3 text-gray-600 text-xs max-w-xs" x-text="model.summary"></td>
+                </tr>
+              </template>
+              <tr x-show="filteredModels.length === 0">
+                <td colspan="5" class="px-4 py-8 text-center text-gray-400" x-text="t('models.no_results')"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Pagination -->
+        <div class="flex items-center justify-between px-4 py-3 border-t border-gray-100" x-show="totalPages > 1">
+          <span class="text-sm text-gray-500">
+            <span x-text="t('models.showing')"></span>
+            <span x-text="(page-1)*perPage + 1"></span>–<span x-text="Math.min(page*perPage, filteredModels.length)"></span>
+            <span x-text="t('models.of')"></span>
+            <span x-text="filteredModels.length"></span>
+          </span>
+          <div class="flex gap-1">
+            <button @click="page--" :disabled="page === 1"
+                    class="px-3 py-1 rounded border text-sm disabled:opacity-40 hover:bg-gray-50" x-text="t('pagination.prev')"></button>
+            <template x-for="p in pageNumbers" :key="p">
+              <button @click="page = p"
+                      :class="p === page ? 'bg-sky-500 text-white border-sky-500' : 'hover:bg-gray-50'"
+                      class="px-3 py-1 rounded border text-sm min-w-[2rem]"
+                      x-text="p"></button>
+            </template>
+            <button @click="page++" :disabled="page === totalPages"
+                    class="px-3 py-1 rounded border text-sm disabled:opacity-40 hover:bg-gray-50" x-text="t('pagination.next')"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ SECTION: MCP ═══════════════════════════════════════════════════ -->
+    <section id="mcp" x-data="mcpApp({{ mcp | tojson }})">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl font-bold text-gray-900">MCP Servers</h2>
+        <span class="badge bg-emerald-100 text-emerald-700">{{ mcp | length }} servers</span>
+      </div>
+
+      <!-- Category filter + search -->
+      <div class="flex flex-col sm:flex-row gap-3 mb-4">
+        <div class="relative flex-1">
+          <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+          <input type="text" x-model="search" :placeholder="t('mcp.search_ph')"
+                 class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-sky-500" />
+        </div>
+        <select x-model="category"
+                class="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500">
+          <option value="" x-text="t('mcp.all_categories')"></option>
+          <template x-for="cat in categories" :key="cat">
+            <option :value="cat" x-text="cat"></option>
+          </template>
+        </select>
+      </div>
+
+      {% if mcp %}
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <template x-for="item in filteredMcp" :key="item.name + item.url">
+          <div class="card p-4 flex flex-col gap-2">
+            <div class="flex items-start justify-between gap-2">
+              <h3 class="font-semibold text-gray-900 text-sm leading-snug" x-text="item.name"></h3>
+              <span class="badge bg-emerald-50 text-emerald-700 shrink-0 text-xs" x-text="item.category"></span>
+            </div>
+            <p class="text-gray-500 text-xs leading-relaxed flex-1" x-text="item.description || '—'"></p>
+            <a :href="item.url || '#'" target="_blank" rel="noopener"
+               class="text-xs text-sky-600 hover:underline font-medium mt-auto truncate"
+               x-text="item.url"></a>
+          </div>
+        </template>
+      </div>
+      <p x-show="filteredMcp.length === 0" class="text-center text-gray-400 py-10" x-text="t('mcp.no_results')"></p>
+      {% else %}
+      <div class="card p-10 text-center text-gray-400">
+        <p class="text-4xl mb-3">🔧</p>
+        <p x-text="t('mcp.empty')"></p>
+        <p class="text-sm mt-1 text-gray-300" x-text="t('mcp.empty_hint')"></p>
+      </div>
+      {% endif %}
+    </section>
+
+    <!-- ══ SECTION: AGENT SKILLS ══════════════════════════════════════════ -->
+    <section id="skills">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl font-bold text-gray-900">Agent Skills</h2>
+        <span class="badge bg-violet-100 text-violet-700">{{ skills | length }} skills</span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {% for skill in skills %}
+        <div class="card p-4 flex flex-col gap-2">
+          <div class="flex items-center justify-between gap-2">
+            <h3 class="font-mono font-semibold text-violet-700 text-sm">{{ skill.name }}</h3>
+            <span class="badge bg-violet-50 text-violet-600 text-xs">{{ skill.author }}</span>
+          </div>
+          <p class="text-gray-600 text-sm leading-relaxed flex-1">{{ skill.description }}</p>
+          <div class="flex flex-wrap gap-1 mt-1">
+            {% for tag in skill.get('tags', [])[:4] %}
+            <span class="badge bg-gray-100 text-gray-500 text-xs">{{ tag }}</span>
+            {% endfor %}
+          </div>
+          {% if skill.url %}
+          <a href="{{ skill.url }}" target="_blank" rel="noopener"
+             class="text-xs text-sky-600 hover:underline mt-auto" x-text="t('skills.docs')"></a>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <!-- ══ SECTION: AI IDEs ═══════════════════════════════════════════════ -->
+    <section id="ides">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl font-bold text-gray-900" x-text="t('nav.ides')"></h2>
+        <span class="badge bg-blue-100 text-blue-700">{{ ides | length }} IDEs</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        {% for ide in ides %}
+        <div class="card p-5 flex flex-col gap-3">
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <h3 class="font-bold text-lg text-gray-900">{{ ide.name }}</h3>
+              <p class="text-sm text-gray-500">{{ ide.company }}</p>
+            </div>
+            <div class="flex items-center gap-1.5">
+              {% if ide.get('open_source') %}
+              <span class="badge bg-green-100 text-green-700">Open Source</span>
+              {% endif %}
+            </div>
+          </div>
+
+          <p class="text-gray-500 text-sm italic">"{{ ide.tagline }}"</p>
+
+          <div>
+            <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-1.5"
+               x-text="t('ides.ai_features')"></p>
+            <p class="text-sm text-gray-700 leading-relaxed">{{ ide.ai_features }}</p>
+          </div>
+
+          <div class="flex items-center justify-between mt-auto pt-2 border-t border-gray-100">
+            <span class="text-sm font-medium text-emerald-600">{{ ide.pricing }}</span>
+            <a href="{{ ide.url }}" target="_blank" rel="noopener"
+               class="text-xs text-sky-600 hover:underline font-medium"
+               x-text="t('ides.visit')"></a>
+          </div>
+
+          {% if ide.get('base') %}
+          <p class="text-xs text-gray-400"><span x-text="t('ides.base')"></span>: {{ ide.base }}</p>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <!-- ══ SECTION: AI TOOLS ══════════════════════════════════════════════ -->
+    <section id="tools" x-data="{ toolTab: 'image-generation' }">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl font-bold text-gray-900" x-text="t('nav.tools')"></h2>
+        <span class="badge bg-rose-100 text-rose-700">{{ tools | length }} tools</span>
+      </div>
+
+      <!-- Category tabs -->
+      <div class="flex flex-wrap gap-2 mb-5">
+        {% set categories = tools | map(attribute='category') | unique | list %}
+        {% for cat in categories %}
+        <button
+          @click="toolTab = '{{ cat }}'"
+          :class="toolTab === '{{ cat }}' ? 'bg-sky-500 text-white border-sky-500' : 'bg-white text-gray-600 border-gray-200 hover:border-sky-300'"
+          class="px-3 py-1.5 rounded-full border text-sm transition-colors"
+          x-text="t('tools.cat.{{ cat }}')"
+        ></button>
+        {% endfor %}
+      </div>
+
+      <!-- Tool cards per category -->
+      {% for cat in categories %}
+      <div x-show="toolTab === '{{ cat }}'" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {% for tool in tools if tool.category == cat %}
+        <div class="card p-4 flex flex-col gap-2">
+          <div class="flex items-start justify-between gap-2">
+            <h3 class="font-bold text-gray-900">{{ tool.name }}</h3>
+            <span class="badge bg-gray-100 text-gray-500 text-xs shrink-0">{{ tool.company }}</span>
+          </div>
+          <p class="text-sm text-gray-600 leading-relaxed flex-1">{{ tool.description }}</p>
+          <div class="flex items-center justify-between mt-auto pt-2 border-t border-gray-100">
+            <span class="text-xs font-medium text-emerald-600">{{ tool.pricing }}</span>
+            <a href="{{ tool.url }}" target="_blank" rel="noopener"
+               class="text-xs text-sky-600 hover:underline font-medium"
+               x-text="t('tools.visit')"></a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% endfor %}
+    </section>
+
+  </main>
+
+  <!-- ══ FOOTER ══════════════════════════════════════════════════════════════ -->
+  <footer class="border-t border-gray-200 mt-16 py-8 text-center text-sm text-gray-400">
+    <p>AI Droplet · <span x-text="t('footer.generated')"></span> {{ generated_at }}</p>
+    <p class="mt-1">
+      <a href="https://github.com/hisbanliu/AI_droplet" target="_blank" rel="noopener"
+         class="hover:text-sky-600 transition-colors">GitHub</a>
+      &nbsp;·&nbsp;
+      <span x-text="t('footer.data_sources')"></span>: OpenAI, Anthropic, Google, HuggingFace, GitHub, arXiv
+    </p>
+  </footer>
+
+  <!-- ══ SCRIPTS ══════════════════════════════════════════════════════════════ -->
+  <script>
+  // ── i18n ──────────────────────────────────────────────────────────────────
+  const TRANSLATIONS = {
+    en: {
+      'hero.title':           'Your Daily AI Intelligence',
+      'hero.subtitle':        'Models, tools, news, MCP servers, and agent skills — all in one place, updated daily.',
+      'hero.stat.news':       'top stories today',
+      'hero.stat.models':     'models tracked',
+      'nav.news':             'Daily News',
+      'nav.models':           'Models',
+      'nav.mcp':              'MCP',
+      'nav.skills':           'Agent Skills',
+      'nav.ides':             'AI IDEs',
+      'nav.tools':            'AI Tools',
+      'news.read_more':       'Read →',
+      'news.empty':           'No news loaded yet.',
+      'news.empty_hint':      'Run: python scripts/fetch_news.py',
+      'models.search_ph':     'Search models...',
+      'models.total':         'total',
+      'models.col.name':      'Model',
+      'models.col.provider':  'Provider',
+      'models.col.type':      'Type',
+      'models.col.released':  'Released',
+      'models.col.summary':   'Summary',
+      'models.filter.all':    'All',
+      'models.filter.open':   'Open Source',
+      'models.filter.closed': 'Closed Source',
+      'models.no_results':    'No models match your search.',
+      'models.showing':       'Showing',
+      'models.of':            'of',
+      'mcp.search_ph':        'Search MCP servers...',
+      'mcp.all_categories':   'All categories',
+      'mcp.empty':            'No MCP servers loaded yet.',
+      'mcp.empty_hint':       'Run: python scripts/fetch_mcp.py',
+      'mcp.no_results':       'No servers match your search.',
+      'skills.docs':          'Docs →',
+      'ides.ai_features':     'AI Features',
+      'ides.visit':           'Visit →',
+      'ides.base':            'Based on',
+      'tools.visit':          'Visit →',
+      'tools.cat.image-generation': 'Image Generation',
+      'tools.cat.video-generation': 'Video Generation',
+      'tools.cat.audio':      'Audio & Music',
+      'tools.cat.ai-search':  'AI Search',
+      'tools.cat.coding':     'Coding',
+      'tools.cat.productivity': 'Productivity',
+      'pagination.prev':      'Prev',
+      'pagination.next':      'Next',
+      'footer.generated':     'Generated',
+      'footer.data_sources':  'Data sources',
+    },
+    zh: {
+      'hero.title':           '你的每日 AI 情报站',
+      'hero.subtitle':        '模型、工具、新闻、MCP 服务器和 Agent Skills —— 一站掌握，每日更新。',
+      'hero.stat.news':       '条今日精选',
+      'hero.stat.models':     '个模型收录',
+      'nav.news':             '每日新闻',
+      'nav.models':           '大模型',
+      'nav.mcp':              'MCP',
+      'nav.skills':           'Agent Skills',
+      'nav.ides':             'AI IDE',
+      'nav.tools':            'AI 工具',
+      'news.read_more':       '阅读全文 →',
+      'news.empty':           '暂无新闻数据。',
+      'news.empty_hint':      '运行: python scripts/fetch_news.py',
+      'models.search_ph':     '搜索模型...',
+      'models.total':         '个模型',
+      'models.col.name':      '模型',
+      'models.col.provider':  '发布方',
+      'models.col.type':      '类型',
+      'models.col.released':  '发布时间',
+      'models.col.summary':   '简介',
+      'models.filter.all':    '全部',
+      'models.filter.open':   '开源',
+      'models.filter.closed': '闭源',
+      'models.no_results':    '没有匹配的模型。',
+      'models.showing':       '显示',
+      'models.of':            '/',
+      'mcp.search_ph':        '搜索 MCP 服务器...',
+      'mcp.all_categories':   '全部分类',
+      'mcp.empty':            '暂无 MCP 数据。',
+      'mcp.empty_hint':       '运行: python scripts/fetch_mcp.py',
+      'mcp.no_results':       '没有匹配的服务器。',
+      'skills.docs':          '文档 →',
+      'ides.ai_features':     'AI 功能',
+      'ides.visit':           '访问 →',
+      'ides.base':            '基于',
+      'tools.visit':          '访问 →',
+      'tools.cat.image-generation': '图像生成',
+      'tools.cat.video-generation': '视频生成',
+      'tools.cat.audio':      '音频 & 音乐',
+      'tools.cat.ai-search':  'AI 搜索',
+      'tools.cat.coding':     '代码助手',
+      'tools.cat.productivity': '生产力',
+      'pagination.prev':      '上一页',
+      'pagination.next':      '下一页',
+      'footer.generated':     '生成于',
+      'footer.data_sources':  '数据来源',
+    }
+  }
+
+  function t(key) {
+    const lang = Alpine.store ? Alpine.store('lang') : 'en'
+    return (TRANSLATIONS[lang] || TRANSLATIONS.en)[key] || key
+  }
+
+  // ── Main App ──────────────────────────────────────────────────────────────
+  function app() {
+    return {
+      lang: localStorage.getItem('ai-droplet-lang') || 'en',
+      activeTab: 'news',
+      tabs: [
+        { id: 'news',   i18n_key: 'nav.news' },
+        { id: 'models', i18n_key: 'nav.models' },
+        { id: 'mcp',    i18n_key: 'nav.mcp' },
+        { id: 'skills', i18n_key: 'nav.skills' },
+        { id: 'ides',   i18n_key: 'nav.ides' },
+        { id: 'tools',  i18n_key: 'nav.tools' },
+      ],
+      setLang(l) {
+        this.lang = l
+        localStorage.setItem('ai-droplet-lang', l)
+      },
+      t(key) {
+        return (TRANSLATIONS[this.lang] || TRANSLATIONS.en)[key] || key
+      }
+    }
+  }
+
+  // ── Models Section ────────────────────────────────────────────────────────
+  function modelsApp(allModels) {
+    return {
+      allModels,
+      search: '',
+      filter: 'all',
+      page: 1,
+      perPage: 20,
+      filters: [
+        { value: 'all',    i18n_key: 'models.filter.all' },
+        { value: 'closed', i18n_key: 'models.filter.closed' },
+        { value: 'open',   i18n_key: 'models.filter.open' },
+      ],
+      get filteredModels() {
+        const q = this.search.toLowerCase()
+        return this.allModels.filter(m => {
+          const matchSearch = !q ||
+            (m.name || '').toLowerCase().includes(q) ||
+            (m.provider || '').toLowerCase().includes(q) ||
+            (m.summary || '').toLowerCase().includes(q)
+          const matchFilter = this.filter === 'all' || m.type === this.filter
+          return matchSearch && matchFilter
+        })
+      },
+      get totalPages() {
+        return Math.max(1, Math.ceil(this.filteredModels.length / this.perPage))
+      },
+      get paginatedModels() {
+        const start = (this.page - 1) * this.perPage
+        return this.filteredModels.slice(start, start + this.perPage)
+      },
+      get pageNumbers() {
+        const total = this.totalPages
+        const current = this.page
+        if (total <= 7) return Array.from({length: total}, (_, i) => i + 1)
+        if (current <= 4) return [1, 2, 3, 4, 5, '...', total]
+        if (current >= total - 3) return [1, '...', total-4, total-3, total-2, total-1, total]
+        return [1, '...', current-1, current, current+1, '...', total]
+      },
+      t(key) { return (TRANSLATIONS[Alpine.$data?.lang] || TRANSLATIONS.en)[key] || key }
+    }
+  }
+
+  // ── MCP Section ───────────────────────────────────────────────────────────
+  function mcpApp(allMcp) {
+    return {
+      allMcp,
+      search: '',
+      category: '',
+      get categories() {
+        return [...new Set(this.allMcp.map(m => m.category).filter(Boolean))].sort()
+      },
+      get filteredMcp() {
+        const q = this.search.toLowerCase()
+        return this.allMcp.filter(m => {
+          const matchSearch = !q ||
+            (m.name || '').toLowerCase().includes(q) ||
+            (m.description || '').toLowerCase().includes(q)
+          const matchCat = !this.category || m.category === this.category
+          return matchSearch && matchCat
+        })
+      },
+      t(key) { return (TRANSLATIONS['en'] || {})[key] || key }
+    }
+  }
+  </script>
+</body>
+</html>

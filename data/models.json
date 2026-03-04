@@ -1,0 +1,863 @@
+[
+  {
+    "name": "GPT-4o",
+    "provider": "OpenAI",
+    "type": "closed",
+    "modality": [
+      "text",
+      "vision",
+      "audio"
+    ],
+    "released_at": "2024-05-13",
+    "summary": "OpenAI's flagship multimodal model with real-time audio, vision, and text capabilities.",
+    "url": "https://openai.com/index/hello-gpt-4o/",
+    "huggingface_id": null
+  },
+  {
+    "name": "o3",
+    "provider": "OpenAI",
+    "type": "closed",
+    "modality": [
+      "text",
+      "vision"
+    ],
+    "released_at": "2025-04-16",
+    "summary": "OpenAI's most powerful reasoning model, optimized for complex multi-step problems.",
+    "url": "https://openai.com/index/openai-o3-system-card/",
+    "huggingface_id": null
+  },
+  {
+    "name": "o4-mini",
+    "provider": "OpenAI",
+    "type": "closed",
+    "modality": [
+      "text",
+      "vision"
+    ],
+    "released_at": "2025-04-16",
+    "summary": "Compact, cost-efficient reasoning model from OpenAI with strong coding ability.",
+    "url": "https://openai.com/index/openai-o3-system-card/",
+    "huggingface_id": null
+  },
+  {
+    "name": "Claude 3.7 Sonnet",
+    "provider": "Anthropic",
+    "type": "closed",
+    "modality": [
+      "text",
+      "vision"
+    ],
+    "released_at": "2025-02-24",
+    "summary": "Anthropic's most intelligent model to date, featuring extended thinking for complex reasoning.",
+    "url": "https://www.anthropic.com/claude/sonnet",
+    "huggingface_id": null
+  },
+  {
+    "name": "Claude 3.5 Haiku",
+    "provider": "Anthropic",
+    "type": "closed",
+    "modality": [
+      "text",
+      "vision"
+    ],
+    "released_at": "2024-11-04",
+    "summary": "Anthropic's fastest and most compact model, optimized for speed and cost-efficiency.",
+    "url": "https://www.anthropic.com/claude/haiku",
+    "huggingface_id": null
+  },
+  {
+    "name": "Gemini 2.0 Flash",
+    "provider": "Google DeepMind",
+    "type": "closed",
+    "modality": [
+      "text",
+      "vision",
+      "audio"
+    ],
+    "released_at": "2025-02-05",
+    "summary": "Google's workhorse multimodal model balancing speed, capability, and cost.",
+    "url": "https://deepmind.google/technologies/gemini/flash/",
+    "huggingface_id": null
+  },
+  {
+    "name": "Gemini 2.0 Flash Thinking",
+    "provider": "Google DeepMind",
+    "type": "closed",
+    "modality": [
+      "text",
+      "vision"
+    ],
+    "released_at": "2025-01-21",
+    "summary": "Google's reasoning-focused variant of Flash, capable of extended chain-of-thought.",
+    "url": "https://deepmind.google/technologies/gemini/",
+    "huggingface_id": null
+  },
+  {
+    "name": "Grok 3",
+    "provider": "xAI",
+    "type": "closed",
+    "modality": [
+      "text",
+      "vision"
+    ],
+    "released_at": "2025-02-17",
+    "summary": "xAI's flagship model trained on Colossus supercluster, with strong reasoning capabilities.",
+    "url": "https://x.ai/grok",
+    "huggingface_id": null
+  },
+  {
+    "name": "Meta-Llama-3-8B",
+    "provider": "meta-llama",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2024-04-17",
+    "summary": "Popular open-source model on HuggingFace with 6,473 likes.",
+    "url": "https://huggingface.co/meta-llama/Meta-Llama-3-8B",
+    "huggingface_id": "meta-llama/Meta-Llama-3-8B",
+    "likes": 6473,
+    "downloads": 2463959
+  },
+  {
+    "name": "Llama-3.1-8B-Instruct",
+    "provider": "meta-llama",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2024-07-18",
+    "summary": "Popular open-source model on HuggingFace with 5,518 likes.",
+    "url": "https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct",
+    "huggingface_id": "meta-llama/Llama-3.1-8B-Instruct",
+    "likes": 5518,
+    "downloads": 7070766
+  },
+  {
+    "name": "bloom",
+    "provider": "bigscience",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2022-05-19",
+    "summary": "Popular open-source model on HuggingFace with 4,986 likes.",
+    "url": "https://huggingface.co/bigscience/bloom",
+    "huggingface_id": "bigscience/bloom",
+    "likes": 4986,
+    "downloads": 4896
+  },
+  {
+    "name": "Llama-2-7b-chat-hf",
+    "provider": "meta-llama",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2023-07-13",
+    "summary": "Popular open-source model on HuggingFace with 4,716 likes.",
+    "url": "https://huggingface.co/meta-llama/Llama-2-7b-chat-hf",
+    "huggingface_id": "meta-llama/Llama-2-7b-chat-hf",
+    "likes": 4716,
+    "downloads": 332620
+  },
+  {
+    "name": "gpt-oss-120b",
+    "provider": "openai",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2025-08-04",
+    "summary": "Popular open-source model on HuggingFace with 4,543 likes.",
+    "url": "https://huggingface.co/openai/gpt-oss-120b",
+    "huggingface_id": "openai/gpt-oss-120b",
+    "likes": 4543,
+    "downloads": 4194966
+  },
+  {
+    "name": "Llama-2-7b",
+    "provider": "meta-llama",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2023-07-09",
+    "summary": "Popular open-source model on HuggingFace with 4,452 likes.",
+    "url": "https://huggingface.co/meta-llama/Llama-2-7b",
+    "huggingface_id": "meta-llama/Llama-2-7b",
+    "likes": 4452,
+    "downloads": 220
+  },
+  {
+    "name": "gpt-oss-20b",
+    "provider": "openai",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2025-08-04",
+    "summary": "Popular open-source model on HuggingFace with 4,421 likes.",
+    "url": "https://huggingface.co/openai/gpt-oss-20b",
+    "huggingface_id": "openai/gpt-oss-20b",
+    "likes": 4421,
+    "downloads": 7049150
+  },
+  {
+    "name": "Meta-Llama-3-8B-Instruct",
+    "provider": "meta-llama",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2024-04-17",
+    "summary": "Popular open-source model on HuggingFace with 4,391 likes.",
+    "url": "https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct",
+    "huggingface_id": "meta-llama/Meta-Llama-3-8B-Instruct",
+    "likes": 4391,
+    "downloads": 1353966
+  },
+  {
+    "name": "Mistral-7B-v0.1",
+    "provider": "mistralai",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2023-09-20",
+    "summary": "Popular open-source model on HuggingFace with 4,047 likes.",
+    "url": "https://huggingface.co/mistralai/Mistral-7B-v0.1",
+    "huggingface_id": "mistralai/Mistral-7B-v0.1",
+    "likes": 4047,
+    "downloads": 476804
+  },
+  {
+    "name": "phi-2",
+    "provider": "microsoft",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2023-12-13",
+    "summary": "Popular open-source model on HuggingFace with 3,429 likes.",
+    "url": "https://huggingface.co/microsoft/phi-2",
+    "huggingface_id": "microsoft/phi-2",
+    "likes": 3429,
+    "downloads": 1651432
+  },
+  {
+    "name": "gemma-7b",
+    "provider": "google",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2024-02-08",
+    "summary": "Popular open-source model on HuggingFace with 3,282 likes.",
+    "url": "https://huggingface.co/google/gemma-7b",
+    "huggingface_id": "google/gemma-7b",
+    "likes": 3282,
+    "downloads": 112711
+  },
+  {
+    "name": "gpt2",
+    "provider": "openai-community",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2022-03-02",
+    "summary": "Popular open-source model on HuggingFace with 3,118 likes.",
+    "url": "https://huggingface.co/openai-community/gpt2",
+    "huggingface_id": "openai-community/gpt2",
+    "likes": 3118,
+    "downloads": 10135429
+  },
+  {
+    "name": "Mistral-7B-Instruct-v0.2",
+    "provider": "mistralai",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2023-12-11",
+    "summary": "Popular open-source model on HuggingFace with 3,088 likes.",
+    "url": "https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2",
+    "huggingface_id": "mistralai/Mistral-7B-Instruct-v0.2",
+    "likes": 3088,
+    "downloads": 2920309
+  },
+  {
+    "name": "DeepSeek-V3-0324",
+    "provider": "deepseek-ai",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2025-03-24",
+    "summary": "Popular open-source model on HuggingFace with 3,088 likes.",
+    "url": "https://huggingface.co/deepseek-ai/DeepSeek-V3-0324",
+    "huggingface_id": "deepseek-ai/DeepSeek-V3-0324",
+    "likes": 3088,
+    "downloads": 270362
+  },
+  {
+    "name": "starcoder",
+    "provider": "bigcode",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2023-04-24",
+    "summary": "Popular open-source model on HuggingFace with 2,923 likes.",
+    "url": "https://huggingface.co/bigcode/starcoder",
+    "huggingface_id": "bigcode/starcoder",
+    "likes": 2923,
+    "downloads": 6345
+  },
+  {
+    "name": "QwQ-32B",
+    "provider": "Qwen",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2025-03-05",
+    "summary": "Popular open-source model on HuggingFace with 2,889 likes.",
+    "url": "https://huggingface.co/Qwen/QwQ-32B",
+    "huggingface_id": "Qwen/QwQ-32B",
+    "likes": 2889,
+    "downloads": 61310
+  },
+  {
+    "name": "falcon-40b",
+    "provider": "tiiuae",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2023-05-24",
+    "summary": "Popular open-source model on HuggingFace with 2,433 likes.",
+    "url": "https://huggingface.co/tiiuae/falcon-40b",
+    "huggingface_id": "tiiuae/falcon-40b",
+    "likes": 2433,
+    "downloads": 17117
+  },
+  {
+    "name": "DeepSeek-R1-0528",
+    "provider": "deepseek-ai",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2025-05-28",
+    "summary": "Popular open-source model on HuggingFace with 2,401 likes.",
+    "url": "https://huggingface.co/deepseek-ai/DeepSeek-R1-0528",
+    "huggingface_id": "deepseek-ai/DeepSeek-R1-0528",
+    "likes": 2401,
+    "downloads": 1050237
+  },
+  {
+    "name": "grok-1",
+    "provider": "xai-org",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2024-03-17",
+    "summary": "Popular open-source model on HuggingFace with 2,395 likes.",
+    "url": "https://huggingface.co/xai-org/grok-1",
+    "huggingface_id": "xai-org/grok-1",
+    "likes": 2395,
+    "downloads": 154
+  },
+  {
+    "name": "r1-1776",
+    "provider": "perplexity-ai",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2025-02-18",
+    "summary": "Popular open-source model on HuggingFace with 2,333 likes.",
+    "url": "https://huggingface.co/perplexity-ai/r1-1776",
+    "huggingface_id": "perplexity-ai/r1-1776",
+    "likes": 2333,
+    "downloads": 1069
+  },
+  {
+    "name": "Kimi-K2-Instruct",
+    "provider": "moonshotai",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2025-07-11",
+    "summary": "Popular open-source model on HuggingFace with 2,324 likes.",
+    "url": "https://huggingface.co/moonshotai/Kimi-K2-Instruct",
+    "huggingface_id": "moonshotai/Kimi-K2-Instruct",
+    "likes": 2324,
+    "downloads": 151155
+  },
+  {
+    "name": "Llama-3.2-1B",
+    "provider": "meta-llama",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2024-09-18",
+    "summary": "Popular open-source model on HuggingFace with 2,306 likes.",
+    "url": "https://huggingface.co/meta-llama/Llama-3.2-1B",
+    "huggingface_id": "meta-llama/Llama-3.2-1B",
+    "likes": 2306,
+    "downloads": 1453836
+  },
+  {
+    "name": "Llama-2-7b-hf",
+    "provider": "meta-llama",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2023-07-13",
+    "summary": "Popular open-source model on HuggingFace with 2,272 likes.",
+    "url": "https://huggingface.co/meta-llama/Llama-2-7b-hf",
+    "huggingface_id": "meta-llama/Llama-2-7b-hf",
+    "likes": 2272,
+    "downloads": 617643
+  },
+  {
+    "name": "Llama-2-70b-chat-hf",
+    "provider": "meta-llama",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2023-07-14",
+    "summary": "Popular open-source model on HuggingFace with 2,204 likes.",
+    "url": "https://huggingface.co/meta-llama/Llama-2-70b-chat-hf",
+    "huggingface_id": "meta-llama/Llama-2-70b-chat-hf",
+    "likes": 2204,
+    "downloads": 18588
+  },
+  {
+    "name": "Llama-3.1-8B",
+    "provider": "meta-llama",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2024-07-14",
+    "summary": "Popular open-source model on HuggingFace with 2,084 likes.",
+    "url": "https://huggingface.co/meta-llama/Llama-3.1-8B",
+    "huggingface_id": "meta-llama/Llama-3.1-8B",
+    "likes": 2084,
+    "downloads": 1362442
+  },
+  {
+    "name": "Llama-3.1-Nemotron-70B-Instruct-HF",
+    "provider": "nvidia",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2024-10-12",
+    "summary": "Popular open-source model on HuggingFace with 2,061 likes.",
+    "url": "https://huggingface.co/nvidia/Llama-3.1-Nemotron-70B-Instruct-HF",
+    "huggingface_id": "nvidia/Llama-3.1-Nemotron-70B-Instruct-HF",
+    "likes": 2061,
+    "downloads": 11902
+  },
+  {
+    "name": "Llama-3.2-3B-Instruct",
+    "provider": "meta-llama",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2024-09-18",
+    "summary": "Popular open-source model on HuggingFace with 2,016 likes.",
+    "url": "https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct",
+    "huggingface_id": "meta-llama/Llama-3.2-3B-Instruct",
+    "likes": 2016,
+    "downloads": 3394040
+  },
+  {
+    "name": "Qwen2.5-Coder-32B-Instruct",
+    "provider": "Qwen",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2024-11-06",
+    "summary": "Popular open-source model on HuggingFace with 2,000 likes.",
+    "url": "https://huggingface.co/Qwen/Qwen2.5-Coder-32B-Instruct",
+    "huggingface_id": "Qwen/Qwen2.5-Coder-32B-Instruct",
+    "likes": 2000,
+    "downloads": 858975
+  },
+  {
+    "name": "GLM-4.7",
+    "provider": "zai-org",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2025-12-22",
+    "summary": "Popular open-source model on HuggingFace with 1,935 likes.",
+    "url": "https://huggingface.co/zai-org/GLM-4.7",
+    "huggingface_id": "zai-org/GLM-4.7",
+    "likes": 1935,
+    "downloads": 122971
+  },
+  {
+    "name": "zephyr-7b-beta",
+    "provider": "HuggingFaceH4",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2023-10-26",
+    "summary": "Popular open-source model on HuggingFace with 1,834 likes.",
+    "url": "https://huggingface.co/HuggingFaceH4/zephyr-7b-beta",
+    "huggingface_id": "HuggingFaceH4/zephyr-7b-beta",
+    "likes": 1834,
+    "downloads": 107437
+  },
+  {
+    "name": "Mistral-7B-Instruct-v0.1",
+    "provider": "mistralai",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2023-09-27",
+    "summary": "Popular open-source model on HuggingFace with 1,826 likes.",
+    "url": "https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.1",
+    "huggingface_id": "mistralai/Mistral-7B-Instruct-v0.1",
+    "likes": 1826,
+    "downloads": 642117
+  },
+  {
+    "name": "c4ai-command-r-plus",
+    "provider": "CohereLabs",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2024-04-03",
+    "summary": "Popular open-source model on HuggingFace with 1,774 likes.",
+    "url": "https://huggingface.co/CohereLabs/c4ai-command-r-plus",
+    "huggingface_id": "CohereLabs/c4ai-command-r-plus",
+    "likes": 1774,
+    "downloads": 2535
+  },
+  {
+    "name": "QwQ-32B-Preview",
+    "provider": "Qwen",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2024-11-27",
+    "summary": "Popular open-source model on HuggingFace with 1,742 likes.",
+    "url": "https://huggingface.co/Qwen/QwQ-32B-Preview",
+    "huggingface_id": "Qwen/QwQ-32B-Preview",
+    "likes": 1742,
+    "downloads": 8146
+  },
+  {
+    "name": "Reflection-Llama-3.1-70B",
+    "provider": "mattshumer",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2024-09-05",
+    "summary": "Popular open-source model on HuggingFace with 1,713 likes.",
+    "url": "https://huggingface.co/mattshumer/Reflection-Llama-3.1-70B",
+    "huggingface_id": "mattshumer/Reflection-Llama-3.1-70B",
+    "likes": 1713,
+    "downloads": 273
+  },
+  {
+    "name": "GLM-5",
+    "provider": "zai-org",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2026-02-11",
+    "summary": "Popular open-source model on HuggingFace with 1,699 likes.",
+    "url": "https://huggingface.co/zai-org/GLM-5",
+    "huggingface_id": "zai-org/GLM-5",
+    "likes": 1699,
+    "downloads": 205187
+  },
+  {
+    "name": "Phi-3-mini-128k-instruct",
+    "provider": "microsoft",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2024-04-22",
+    "summary": "Popular open-source model on HuggingFace with 1,696 likes.",
+    "url": "https://huggingface.co/microsoft/Phi-3-mini-128k-instruct",
+    "huggingface_id": "microsoft/Phi-3-mini-128k-instruct",
+    "likes": 1696,
+    "downloads": 208954
+  },
+  {
+    "name": "Kimi-K2-Thinking",
+    "provider": "moonshotai",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2025-11-04",
+    "summary": "Popular open-source model on HuggingFace with 1,675 likes.",
+    "url": "https://huggingface.co/moonshotai/Kimi-K2-Thinking",
+    "huggingface_id": "moonshotai/Kimi-K2-Thinking",
+    "likes": 1675,
+    "downloads": 101946
+  },
+  {
+    "name": "GLM-4.7-Flash",
+    "provider": "zai-org",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2026-01-19",
+    "summary": "Popular open-source model on HuggingFace with 1,583 likes.",
+    "url": "https://huggingface.co/zai-org/GLM-4.7-Flash",
+    "huggingface_id": "zai-org/GLM-4.7-Flash",
+    "likes": 1583,
+    "downloads": 1666233
+  },
+  {
+    "name": "TinyLlama-1.1B-Chat-v1.0",
+    "provider": "TinyLlama",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2023-12-30",
+    "summary": "Popular open-source model on HuggingFace with 1,538 likes.",
+    "url": "https://huggingface.co/TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+    "huggingface_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+    "likes": 1538,
+    "downloads": 1870099
+  },
+  {
+    "name": "DeepSeek-R1-Distill-Qwen-32B",
+    "provider": "deepseek-ai",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2025-01-20",
+    "summary": "Popular open-source model on HuggingFace with 1,525 likes.",
+    "url": "https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
+    "huggingface_id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
+    "likes": 1525,
+    "downloads": 873156
+  },
+  {
+    "name": "gpt-j-6b",
+    "provider": "EleutherAI",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2022-03-02",
+    "summary": "Popular open-source model on HuggingFace with 1,523 likes.",
+    "url": "https://huggingface.co/EleutherAI/gpt-j-6b",
+    "huggingface_id": "EleutherAI/gpt-j-6b",
+    "likes": 1523,
+    "downloads": 97165
+  },
+  {
+    "name": "Meta-Llama-3-70B-Instruct",
+    "provider": "meta-llama",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2024-04-17",
+    "summary": "Popular open-source model on HuggingFace with 1,506 likes.",
+    "url": "https://huggingface.co/meta-llama/Meta-Llama-3-70B-Instruct",
+    "huggingface_id": "meta-llama/Meta-Llama-3-70B-Instruct",
+    "likes": 1506,
+    "downloads": 61023
+  },
+  {
+    "name": "MiniMax-M2",
+    "provider": "MiniMaxAI",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2025-10-22",
+    "summary": "Popular open-source model on HuggingFace with 1,485 likes.",
+    "url": "https://huggingface.co/MiniMaxAI/MiniMax-M2",
+    "huggingface_id": "MiniMaxAI/MiniMax-M2",
+    "likes": 1485,
+    "downloads": 275243
+  },
+  {
+    "name": "DeepSeek-R1-Distill-Qwen-1.5B",
+    "provider": "deepseek-ai",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2025-01-20",
+    "summary": "Popular open-source model on HuggingFace with 1,453 likes.",
+    "url": "https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
+    "huggingface_id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
+    "likes": 1453,
+    "downloads": 1461485
+  },
+  {
+    "name": "GLM-4.5",
+    "provider": "zai-org",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2025-07-20",
+    "summary": "Popular open-source model on HuggingFace with 1,396 likes.",
+    "url": "https://huggingface.co/zai-org/GLM-4.5",
+    "huggingface_id": "zai-org/GLM-4.5",
+    "likes": 1396,
+    "downloads": 42566
+  },
+  {
+    "name": "Phi-3-mini-4k-instruct",
+    "provider": "microsoft",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2024-04-22",
+    "summary": "Popular open-source model on HuggingFace with 1,392 likes.",
+    "url": "https://huggingface.co/microsoft/Phi-3-mini-4k-instruct",
+    "huggingface_id": "microsoft/Phi-3-mini-4k-instruct",
+    "likes": 1392,
+    "downloads": 755940
+  },
+  {
+    "name": "Llama 3.3 70B",
+    "provider": "Meta",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2024-12-06",
+    "summary": "Meta's state-of-the-art open-source instruction-tuned model, competitive with much larger closed models.",
+    "url": "https://ai.meta.com/blog/llama-3-3/",
+    "huggingface_id": "meta-llama/Llama-3.3-70B-Instruct"
+  },
+  {
+    "name": "Llama 4 Scout",
+    "provider": "Meta",
+    "type": "open",
+    "modality": [
+      "text",
+      "vision"
+    ],
+    "released_at": "2025-04-05",
+    "summary": "Meta's multimodal MoE model with 17B active parameters and 10M token context window.",
+    "url": "https://ai.meta.com/blog/llama-4-multimodal-intelligence/",
+    "huggingface_id": "meta-llama/Llama-4-Scout-17B-16E-Instruct"
+  },
+  {
+    "name": "Llama 4 Maverick",
+    "provider": "Meta",
+    "type": "open",
+    "modality": [
+      "text",
+      "vision"
+    ],
+    "released_at": "2025-04-05",
+    "summary": "Meta's high-performance multimodal MoE model with 17B active parameters and 128 experts.",
+    "url": "https://ai.meta.com/blog/llama-4-multimodal-intelligence/",
+    "huggingface_id": "meta-llama/Llama-4-Maverick-17B-128E-Instruct"
+  },
+  {
+    "name": "Mistral Large 2",
+    "provider": "Mistral AI",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2024-07-24",
+    "summary": "Mistral's most powerful model with 128K context, strong code and reasoning performance.",
+    "url": "https://mistral.ai/news/mistral-large-2407/",
+    "huggingface_id": "mistralai/Mistral-Large-Instruct-2407"
+  },
+  {
+    "name": "Qwen2.5 72B",
+    "provider": "Alibaba",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2024-09-18",
+    "summary": "Alibaba's flagship open-source model excelling at coding, math, and instruction following.",
+    "url": "https://qwenlm.github.io/blog/qwen2.5/",
+    "huggingface_id": "Qwen/Qwen2.5-72B-Instruct"
+  },
+  {
+    "name": "DeepSeek-R1",
+    "provider": "DeepSeek",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2025-01-20",
+    "summary": "DeepSeek's open-source reasoning model matching OpenAI o1 performance at a fraction of training cost.",
+    "url": "https://github.com/deepseek-ai/DeepSeek-R1",
+    "huggingface_id": "deepseek-ai/DeepSeek-R1"
+  },
+  {
+    "name": "DeepSeek-V3",
+    "provider": "DeepSeek",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2024-12-26",
+    "summary": "DeepSeek's efficient 671B MoE model with exceptional coding and reasoning capabilities.",
+    "url": "https://github.com/deepseek-ai/DeepSeek-V3",
+    "huggingface_id": "deepseek-ai/DeepSeek-V3"
+  },
+  {
+    "name": "Phi-4",
+    "provider": "Microsoft",
+    "type": "open",
+    "modality": [
+      "text"
+    ],
+    "released_at": "2024-12-12",
+    "summary": "Microsoft's compact 14B model with strong math and reasoning, punching above its weight class.",
+    "url": "https://azure.microsoft.com/en-us/blog/phi-4-excelling-in-complex-reasoning-with-small-language-models/",
+    "huggingface_id": "microsoft/phi-4"
+  },
+  {
+    "name": "Gemma 3 27B",
+    "provider": "Google",
+    "type": "open",
+    "modality": [
+      "text",
+      "vision"
+    ],
+    "released_at": "2025-03-12",
+    "summary": "Google's best open-weight model, handling text and images with 128K context.",
+    "url": "https://ai.google.dev/gemma/docs/gemma3",
+    "huggingface_id": "google/gemma-3-27b-it"
+  }
+]

@@ -1,0 +1,172 @@
+[
+  {
+    "name": "GPT-4o",
+    "provider": "OpenAI",
+    "type": "closed",
+    "modality": ["text", "vision", "audio"],
+    "released_at": "2024-05-13",
+    "summary": "OpenAI's flagship multimodal model with real-time audio, vision, and text capabilities.",
+    "url": "https://openai.com/index/hello-gpt-4o/",
+    "huggingface_id": null
+  },
+  {
+    "name": "o3",
+    "provider": "OpenAI",
+    "type": "closed",
+    "modality": ["text", "vision"],
+    "released_at": "2025-04-16",
+    "summary": "OpenAI's most powerful reasoning model, optimized for complex multi-step problems.",
+    "url": "https://openai.com/index/openai-o3-system-card/",
+    "huggingface_id": null
+  },
+  {
+    "name": "o4-mini",
+    "provider": "OpenAI",
+    "type": "closed",
+    "modality": ["text", "vision"],
+    "released_at": "2025-04-16",
+    "summary": "Compact, cost-efficient reasoning model from OpenAI with strong coding ability.",
+    "url": "https://openai.com/index/openai-o3-system-card/",
+    "huggingface_id": null
+  },
+  {
+    "name": "Claude 3.7 Sonnet",
+    "provider": "Anthropic",
+    "type": "closed",
+    "modality": ["text", "vision"],
+    "released_at": "2025-02-24",
+    "summary": "Anthropic's most intelligent model to date, featuring extended thinking for complex reasoning.",
+    "url": "https://www.anthropic.com/claude/sonnet",
+    "huggingface_id": null
+  },
+  {
+    "name": "Claude 3.5 Haiku",
+    "provider": "Anthropic",
+    "type": "closed",
+    "modality": ["text", "vision"],
+    "released_at": "2024-11-04",
+    "summary": "Anthropic's fastest and most compact model, optimized for speed and cost-efficiency.",
+    "url": "https://www.anthropic.com/claude/haiku",
+    "huggingface_id": null
+  },
+  {
+    "name": "Gemini 2.0 Flash",
+    "provider": "Google DeepMind",
+    "type": "closed",
+    "modality": ["text", "vision", "audio"],
+    "released_at": "2025-02-05",
+    "summary": "Google's workhorse multimodal model balancing speed, capability, and cost.",
+    "url": "https://deepmind.google/technologies/gemini/flash/",
+    "huggingface_id": null
+  },
+  {
+    "name": "Gemini 2.0 Flash Thinking",
+    "provider": "Google DeepMind",
+    "type": "closed",
+    "modality": ["text", "vision"],
+    "released_at": "2025-01-21",
+    "summary": "Google's reasoning-focused variant of Flash, capable of extended chain-of-thought.",
+    "url": "https://deepmind.google/technologies/gemini/",
+    "huggingface_id": null
+  },
+  {
+    "name": "Grok 3",
+    "provider": "xAI",
+    "type": "closed",
+    "modality": ["text", "vision"],
+    "released_at": "2025-02-17",
+    "summary": "xAI's flagship model trained on Colossus supercluster, with strong reasoning capabilities.",
+    "url": "https://x.ai/grok",
+    "huggingface_id": null
+  },
+  {
+    "name": "Llama 3.3 70B",
+    "provider": "Meta",
+    "type": "open",
+    "modality": ["text"],
+    "released_at": "2024-12-06",
+    "summary": "Meta's state-of-the-art open-source instruction-tuned model, competitive with much larger closed models.",
+    "url": "https://ai.meta.com/blog/llama-3-3/",
+    "huggingface_id": "meta-llama/Llama-3.3-70B-Instruct"
+  },
+  {
+    "name": "Llama 4 Scout",
+    "provider": "Meta",
+    "type": "open",
+    "modality": ["text", "vision"],
+    "released_at": "2025-04-05",
+    "summary": "Meta's multimodal MoE model with 17B active parameters and 10M token context window.",
+    "url": "https://ai.meta.com/blog/llama-4-multimodal-intelligence/",
+    "huggingface_id": "meta-llama/Llama-4-Scout-17B-16E-Instruct"
+  },
+  {
+    "name": "Llama 4 Maverick",
+    "provider": "Meta",
+    "type": "open",
+    "modality": ["text", "vision"],
+    "released_at": "2025-04-05",
+    "summary": "Meta's high-performance multimodal MoE model with 17B active parameters and 128 experts.",
+    "url": "https://ai.meta.com/blog/llama-4-multimodal-intelligence/",
+    "huggingface_id": "meta-llama/Llama-4-Maverick-17B-128E-Instruct"
+  },
+  {
+    "name": "Mistral Large 2",
+    "provider": "Mistral AI",
+    "type": "open",
+    "modality": ["text"],
+    "released_at": "2024-07-24",
+    "summary": "Mistral's most powerful model with 128K context, strong code and reasoning performance.",
+    "url": "https://mistral.ai/news/mistral-large-2407/",
+    "huggingface_id": "mistralai/Mistral-Large-Instruct-2407"
+  },
+  {
+    "name": "Qwen2.5 72B",
+    "provider": "Alibaba",
+    "type": "open",
+    "modality": ["text"],
+    "released_at": "2024-09-18",
+    "summary": "Alibaba's flagship open-source model excelling at coding, math, and instruction following.",
+    "url": "https://qwenlm.github.io/blog/qwen2.5/",
+    "huggingface_id": "Qwen/Qwen2.5-72B-Instruct"
+  },
+  {
+    "name": "DeepSeek-R1",
+    "provider": "DeepSeek",
+    "type": "open",
+    "modality": ["text"],
+    "released_at": "2025-01-20",
+    "summary": "DeepSeek's open-source reasoning model matching OpenAI o1 performance at a fraction of training cost.",
+    "url": "https://github.com/deepseek-ai/DeepSeek-R1",
+    "huggingface_id": "deepseek-ai/DeepSeek-R1"
+  },
+  {
+    "name": "DeepSeek-V3",
+    "provider": "DeepSeek",
+    "type": "open",
+    "modality": ["text"],
+    "released_at": "2024-12-26",
+    "summary": "DeepSeek's efficient 671B MoE model with exceptional coding and reasoning capabilities.",
+    "url": "https://github.com/deepseek-ai/DeepSeek-V3",
+    "huggingface_id": "deepseek-ai/DeepSeek-V3"
+  },
+  {
+    "name": "Phi-4",
+    "provider": "Microsoft",
+    "type": "open",
+    "modality": ["text"],
+    "released_at": "2024-12-12",
+    "summary": "Microsoft's compact 14B model with strong math and reasoning, punching above its weight class.",
+    "url": "https://azure.microsoft.com/en-us/blog/phi-4-excelling-in-complex-reasoning-with-small-language-models/",
+    "huggingface_id": "microsoft/phi-4"
+  },
+  {
+    "name": "Gemma 3 27B",
+    "provider": "Google",
+    "type": "open",
+    "modality": ["text", "vision"],
+    "released_at": "2025-03-12",
+    "summary": "Google's best open-weight model, handling text and images with 128K context.",
+    "url": "https://ai.google.dev/gemma/docs/gemma3",
+    "huggingface_id": "google/gemma-3-27b-it"
+  }
+]
