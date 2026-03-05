@@ -37,7 +37,7 @@
               <h3 class="font-semibold text-gray-900 text-sm leading-snug" x-text="item.name"></h3>
               <span class="badge bg-[#FDF6F0] text-[#7A0029] shrink-0 text-xs" x-text="item.category"></span>
             </div>
-            <p class="text-gray-500 text-xs leading-relaxed flex-1" x-text="item.description || '—'"></p>
+            <p class="text-gray-500 text-xs leading-relaxed flex-1" x-text="$store.lang === 'zh' ? (item.description_zh || item.description || '—') : (item.description || '—')"></p>
             <a :href="item.url || '#'" target="_blank" rel="noopener"
                class="text-xs text-[#990033] hover:underline font-medium mt-auto truncate"
                x-text="item.url"></a>

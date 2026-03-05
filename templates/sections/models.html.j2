@@ -69,7 +69,7 @@
                           class="badge" x-text="model.type === 'open' ? t('models.filter.open') : t('models.filter.closed')"></span>
                   </td>
                   <td class="px-4 py-3 text-gray-400 text-xs hidden lg:table-cell" x-text="model.released_at || '—'"></td>
-                  <td class="px-4 py-3 text-gray-600 text-xs max-w-xs" x-text="model.summary"></td>
+                  <td class="px-4 py-3 text-gray-600 text-xs max-w-xs" x-text="$store.lang === 'zh' ? (model.summary_zh || model.summary) : model.summary"></td>
                 </tr>
               </template>
               <tr x-show="filteredModels.length === 0">

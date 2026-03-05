@@ -382,7 +382,7 @@
             (m.summary || '').toLowerCase().includes(q)
           const matchFilter = this.filter === 'all' || m.type === this.filter
           return matchSearch && matchFilter
-        })
+        }).sort((a, b) => (b.released_at || '').localeCompare(a.released_at || ''))
       },
       get totalPages() {
         return Math.max(1, Math.ceil(this.filteredModels.length / this.perPage))

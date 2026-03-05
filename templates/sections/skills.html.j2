@@ -17,7 +17,7 @@
               <h3 class="font-mono font-semibold text-[#990033] text-sm" x-text="skill.name"></h3>
               <span class="badge bg-[#FDF6F0] text-[#7A0029] text-xs" x-text="skill.author"></span>
             </div>
-            <p class="text-gray-600 text-sm leading-relaxed flex-1" x-text="skill.description"></p>
+            <p class="text-gray-600 text-sm leading-relaxed flex-1" x-text="$store.lang === 'zh' ? (skill.description_zh || skill.description) : skill.description"></p>
             <div class="flex flex-wrap gap-1 mt-1">
               <template x-for="tag in (skill.tags || []).slice(0,4)" :key="tag">
                 <span class="badge bg-gray-100 text-gray-500 text-xs" x-text="tag"></span>

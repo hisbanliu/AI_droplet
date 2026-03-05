@@ -94,7 +94,7 @@
 
       <!-- Right: lang toggle + generated date -->
       <div class="flex items-center gap-3">
-        <span class="hidden sm:block text-xs text-[#6B4A3A] font-mono">2026-03-05 08:50 UTC</span>
+        <span class="hidden sm:block text-xs text-[#6B4A3A] font-mono">2026-03-05 08:55 UTC</span>
         <div class="flex items-center border border-[#3D0015] overflow-hidden text-xs font-mono">
           <button
             @click="setLang('en')"
@@ -272,7 +272,7 @@
                           class="badge" x-text="model.type === 'open' ? t('models.filter.open') : t('models.filter.closed')"></span>
                   </td>
                   <td class="px-4 py-3 text-gray-400 text-xs hidden lg:table-cell" x-text="model.released_at || '—'"></td>
-                  <td class="px-4 py-3 text-gray-600 text-xs max-w-xs" x-text="model.summary"></td>
+                  <td class="px-4 py-3 text-gray-600 text-xs max-w-xs" x-text="$store.lang === 'zh' ? (model.summary_zh || model.summary) : model.summary"></td>
                 </tr>
               </template>
               <tr x-show="filteredModels.length === 0">
@@ -344,7 +344,7 @@
               <h3 class="font-semibold text-gray-900 text-sm leading-snug" x-text="item.name"></h3>
               <span class="badge bg-[#FDF6F0] text-[#7A0029] shrink-0 text-xs" x-text="item.category"></span>
             </div>
-            <p class="text-gray-500 text-xs leading-relaxed flex-1" x-text="item.description || '—'"></p>
+            <p class="text-gray-500 text-xs leading-relaxed flex-1" x-text="$store.lang === 'zh' ? (item.description_zh || item.description || '—') : (item.description || '—')"></p>
             <a :href="item.url || '#'" target="_blank" rel="noopener"
                class="text-xs text-[#990033] hover:underline font-medium mt-auto truncate"
                x-text="item.url"></a>
@@ -393,7 +393,7 @@
               <h3 class="font-mono font-semibold text-[#990033] text-sm" x-text="skill.name"></h3>
               <span class="badge bg-[#FDF6F0] text-[#7A0029] text-xs" x-text="skill.author"></span>
             </div>
-            <p class="text-gray-600 text-sm leading-relaxed flex-1" x-text="skill.description"></p>
+            <p class="text-gray-600 text-sm leading-relaxed flex-1" x-text="$store.lang === 'zh' ? (skill.description_zh || skill.description) : skill.description"></p>
             <div class="flex flex-wrap gap-1 mt-1">
               <template x-for="tag in (skill.tags || []).slice(0,4)" :key="tag">
                 <span class="badge bg-gray-100 text-gray-500 text-xs" x-text="tag"></span>
@@ -428,11 +428,11 @@
                 <span x-show="ide.open_source" class="badge bg-green-100 text-green-700">Open Source</span>
               </div>
             </div>
-            <p class="text-gray-500 text-sm italic">"<span x-text="ide.tagline"></span>"</p>
+            <p class="text-gray-500 text-sm italic">"<span x-text="$store.lang === 'zh' ? (ide.tagline_zh || ide.tagline) : ide.tagline"></span>"</p>
             <div>
               <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-1.5"
                  x-text="t('ides.ai_features')"></p>
-              <p class="text-sm text-gray-700 leading-relaxed" x-text="ide.ai_features"></p>
+              <p class="text-sm text-gray-700 leading-relaxed" x-text="$store.lang === 'zh' ? (ide.ai_features_zh || ide.ai_features) : ide.ai_features"></p>
             </div>
             <div class="flex items-center justify-between mt-auto pt-2 border-t border-gray-100">
               <span class="text-sm font-medium text-emerald-600" x-text="ide.pricing"></span>
@@ -479,7 +479,7 @@
                   <h3 class="font-bold text-gray-900" x-text="tool.name"></h3>
                   <span class="badge bg-gray-100 text-gray-500 text-xs shrink-0" x-text="tool.company"></span>
                 </div>
-                <p class="text-sm text-gray-600 leading-relaxed flex-1" x-text="tool.description"></p>
+                <p class="text-sm text-gray-600 leading-relaxed flex-1" x-text="$store.lang === 'zh' ? (tool.description_zh || tool.description) : tool.description"></p>
                 <div class="flex items-center justify-between mt-auto pt-2 border-t border-gray-100">
                   <span class="text-xs font-medium text-emerald-600" x-text="tool.pricing"></span>
                   <a :href="tool.url" target="_blank" rel="noopener"
@@ -497,7 +497,7 @@
   <!-- ══ FOOTER ══════════════════════════════════════════════════════════════ -->
   <footer class="border-t border-[#DDCDB7] mt-16 py-8 text-center text-sm text-gray-500">
     <p class="font-mono text-xs text-[#990033] mb-2 select-none">// eof</p>
-    <p>AI Droplet · <span x-text="t('footer.generated')"></span> 2026-03-05 08:50 UTC</p>
+    <p>AI Droplet · <span x-text="t('footer.generated')"></span> 2026-03-05 08:55 UTC</p>
     <p class="mt-1">
       <a href="https://github.com/hisbanliu/AI_droplet" target="_blank" rel="noopener"
          class="hover:text-[#990033] transition-colors">GitHub</a>
@@ -718,7 +718,7 @@
             (m.summary || '').toLowerCase().includes(q)
           const matchFilter = this.filter === 'all' || m.type === this.filter
           return matchSearch && matchFilter
-        })
+        }).sort((a, b) => (b.released_at || '').localeCompare(a.released_at || ''))
       },
       get totalPages() {
         return Math.max(1, Math.ceil(this.filteredModels.length / this.perPage))

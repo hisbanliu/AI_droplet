@@ -31,7 +31,7 @@
                   <h3 class="font-bold text-gray-900" x-text="tool.name"></h3>
                   <span class="badge bg-gray-100 text-gray-500 text-xs shrink-0" x-text="tool.company"></span>
                 </div>
-                <p class="text-sm text-gray-600 leading-relaxed flex-1" x-text="tool.description"></p>
+                <p class="text-sm text-gray-600 leading-relaxed flex-1" x-text="$store.lang === 'zh' ? (tool.description_zh || tool.description) : tool.description"></p>
                 <div class="flex items-center justify-between mt-auto pt-2 border-t border-gray-100">
                   <span class="text-xs font-medium text-emerald-600" x-text="tool.pricing"></span>
                   <a :href="tool.url" target="_blank" rel="noopener"
