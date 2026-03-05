@@ -1,0 +1,46 @@
+    <!-- ══ SECTION: AI TOOLS ══════════════════════════════════════════════ -->
+    <section id="tools" x-data="toolsApp()" x-init="init()">
+      <div class="flex items-center justify-between mb-6">
+        <div>
+          <p class="font-mono text-xs text-[#990033] uppercase tracking-[0.2em] mb-1 select-none">// 06</p>
+          <h2 class="text-2xl font-bold text-gray-900" x-text="t('nav.tools')"></h2>
+        </div>
+        <span class="badge bg-[#F5EEE6] text-[#6B0024]"><span x-text="allTools.length"></span> tools</span>
+      </div>
+      <div x-show="loading" class="card p-10 text-center text-gray-400">
+        <p class="font-mono text-sm animate-pulse text-[#990033]">&gt; loading tools...</p>
+      </div>
+      <div x-show="!loading">
+        <!-- Category tabs -->
+        <div class="flex flex-wrap gap-2 mb-5">
+          <template x-for="cat in categories" :key="cat">
+            <button
+              @click="toolTab = cat"
+              :class="toolTab === cat ? 'bg-[#990033] text-white border-[#990033]' : 'bg-white text-gray-600 border-[#DDCDB7] hover:border-[#990033]'"
+              class="px-3 py-1.5 rounded-full border text-sm transition-colors"
+              x-text="t('tools.cat.' + cat)"
+            ></button>
+          </template>
+        </div>
+        <!-- Tool cards -->
+        <template x-for="cat in categories" :key="cat">
+          <div x-show="toolTab === cat" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <template x-for="tool in toolsByCategory[cat] || []" :key="tool.name">
+              <div class="card p-4 flex flex-col gap-2">
+                <div class="flex items-start justify-between gap-2">
+                  <h3 class="font-bold text-gray-900" x-text="tool.name"></h3>
+                  <span class="badge bg-gray-100 text-gray-500 text-xs shrink-0" x-text="tool.company"></span>
+                </div>
+                <p class="text-sm text-gray-600 leading-relaxed flex-1" x-text="tool.description"></p>
+                <div class="flex items-center justify-between mt-auto pt-2 border-t border-gray-100">
+                  <span class="text-xs font-medium text-emerald-600" x-text="tool.pricing"></span>
+                  <a :href="tool.url" target="_blank" rel="noopener"
+                     class="text-xs text-[#990033] hover:underline font-medium"
+                     x-text="t('tools.visit')"></a>
+                </div>
+              </div>
+            </template>
+          </div>
+        </template>
+      </div>
+    </section>

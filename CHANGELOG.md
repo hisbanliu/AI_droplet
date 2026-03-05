@@ -5,6 +5,22 @@ AI Droplet 的所有重要变更都会记录在此。
 
 ---
 
+## [0.3.0] — 2026-03-05
+
+### 变更
+
+- **模板拆分重构**：将单一 900 行 `templates/index.html.j2` 拆分为骨架 + 6 个独立 section 文件，解决 PLAN.md 中记录的 v1 可维护性问题 #1。
+  - 新增 `templates/sections/news.html.j2`、`models.html.j2`、`mcp.html.j2`、`skills.html.j2`、`ides.html.j2`、`tools.html.j2`
+  - `index.html.j2` 精简为骨架文件（847 → 498 行），通过 Jinja2 `{% include %}` 引入各 section
+  - 生成产物 `docs/index.html` 功能与外观完全不变（输出验证通过：6 个 section 全部存在）
+  - 修正 IDEs 模块 tagline 引号的 HTML 编码问题（`'\"'` → `"<span x-text>"` 内联结构）
+
+### 新增
+
+- `README.md`：项目首页文档，含功能表、快速启动步骤、架构说明、工具收录指南
+
+---
+
 ## [Unreleased]
 
 _未来版本计划_

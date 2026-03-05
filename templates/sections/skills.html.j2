@@ -1,0 +1,31 @@
+    <!-- ══ SECTION: AGENT SKILLS ══════════════════════════════════════════ -->
+    <section id="skills" x-data="skillsApp()" x-init="init()">
+      <div class="flex items-center justify-between mb-6">
+        <div>
+          <p class="font-mono text-xs text-[#990033] uppercase tracking-[0.2em] mb-1 select-none">// 04</p>
+          <h2 class="text-2xl font-bold text-gray-900">Agent Skills</h2>
+        </div>
+        <span class="badge bg-[#F5EEE6] text-[#6B0024]"><span x-text="items.length"></span> skills</span>
+      </div>
+      <div x-show="loading" class="card p-10 text-center text-gray-400">
+        <p class="font-mono text-sm animate-pulse text-[#990033]">&gt; loading skills...</p>
+      </div>
+      <div x-show="!loading" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <template x-for="skill in items" :key="skill.name">
+          <div class="card p-4 flex flex-col gap-2">
+            <div class="flex items-center justify-between gap-2">
+              <h3 class="font-mono font-semibold text-[#990033] text-sm" x-text="skill.name"></h3>
+              <span class="badge bg-[#FDF6F0] text-[#7A0029] text-xs" x-text="skill.author"></span>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed flex-1" x-text="skill.description"></p>
+            <div class="flex flex-wrap gap-1 mt-1">
+              <template x-for="tag in (skill.tags || []).slice(0,4)" :key="tag">
+                <span class="badge bg-gray-100 text-gray-500 text-xs" x-text="tag"></span>
+              </template>
+            </div>
+            <a x-show="skill.url" :href="skill.url" target="_blank" rel="noopener"
+               class="text-xs text-[#990033] hover:underline mt-auto" x-text="t('skills.docs')"></a>
+          </div>
+        </template>
+      </div>
+    </section>

@@ -1,0 +1,70 @@
+    <!-- ══ SECTION: MCP ═══════════════════════════════════════════════════ -->
+    <section id="mcp" x-data="mcpApp()" x-init="init()">
+      <div class="flex items-center justify-between mb-6">
+        <div>
+          <p class="font-mono text-xs text-[#990033] uppercase tracking-[0.2em] mb-1 select-none">// 03</p>
+          <h2 class="text-2xl font-bold text-gray-900">MCP Servers</h2>
+        </div>
+        <span class="badge bg-[#F5EEE6] text-[#6B0024]"><span x-text="allMcp.length"></span> servers</span>
+      </div>
+      <div x-show="loading" class="card p-10 text-center text-gray-400">
+        <p class="font-mono text-sm animate-pulse text-[#990033]">&gt; scanning servers...</p>
+      </div>
+      <div x-show="!loading">
+
+      <!-- Category filter + search -->
+      <div class="flex flex-col sm:flex-row gap-3 mb-4">
+        <div class="relative flex-1">
+          <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+          <input type="text" x-model="search" @input="page = 1" :placeholder="t('mcp.search_ph')"
+                 class="w-full pl-10 pr-4 py-2 border border-[#DDCDB7] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#990033] bg-white" />
+        </div>
+        <select x-model="category" @change="page = 1"
+                class="border border-[#DDCDB7] rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#990033] bg-white">
+          <option value="" x-text="t('mcp.all_categories')"></option>
+          <template x-for="cat in categories" :key="cat">
+            <option :value="cat" x-text="cat"></option>
+          </template>
+        </select>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <template x-for="item in paginatedMcp" :key="item.name + item.url">
+          <div class="card p-4 flex flex-col gap-2">
+            <div class="flex items-start justify-between gap-2">
+              <h3 class="font-semibold text-gray-900 text-sm leading-snug" x-text="item.name"></h3>
+              <span class="badge bg-[#FDF6F0] text-[#7A0029] shrink-0 text-xs" x-text="item.category"></span>
+            </div>
+            <p class="text-gray-500 text-xs leading-relaxed flex-1" x-text="item.description || '—'"></p>
+            <a :href="item.url || '#'" target="_blank" rel="noopener"
+               class="text-xs text-[#990033] hover:underline font-medium mt-auto truncate"
+               x-text="item.url"></a>
+          </div>
+        </template>
+      </div>
+      <p x-show="filteredMcp.length === 0" class="text-center text-gray-400 py-10" x-text="t('mcp.no_results')"></p>
+
+      <!-- MCP Pagination -->
+      <div class="flex items-center justify-between mt-4 px-1" x-show="totalPages > 1">
+        <span class="text-sm text-gray-500">
+          <span x-text="(page-1)*perPage + 1"></span>–<span x-text="Math.min(page*perPage, filteredMcp.length)"></span>
+          / <span x-text="filteredMcp.length"></span>
+        </span>
+        <div class="flex gap-1">
+          <button @click="page--; $nextTick(() => $el.closest('section').scrollIntoView({behavior:'smooth'}))"
+                  :disabled="page === 1"
+                  class="px-3 py-1 rounded border text-sm disabled:opacity-40 hover:bg-gray-50"
+                  x-text="t('pagination.prev')"></button>
+          <span class="px-3 py-1 text-sm text-gray-600">
+            <span x-text="page"></span> / <span x-text="totalPages"></span>
+          </span>
+          <button @click="page++; $nextTick(() => $el.closest('section').scrollIntoView({behavior:'smooth'}))"
+                  :disabled="page === totalPages"
+                  class="px-3 py-1 rounded border text-sm disabled:opacity-40 hover:bg-gray-50"
+                  x-text="t('pagination.next')"></button>
+        </div>
+      </div>
+      </div>
+    </section>

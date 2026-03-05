@@ -1,6 +1,6 @@
 # AI Droplet — 项目规划文档
 
-> 版本: v0.2 | 日期: 2026-03-05
+> 版本: v0.3 | 日期: 2026-03-05
 
 ## 项目目标
 
@@ -445,7 +445,7 @@ docs/
 **阶段 2（优先级：中）：**
 - [ ] 新建 `data/manifest.json`，`generate_site.py` 读取它来决定复制哪些文件
 - [ ] 提取 i18n 到 `data/i18n/en.json` + `data/i18n/zh.json`，模板用 fetch 加载
-- [ ] 把 `templates/index.html.j2` 的 section 代码拆成 Jinja2 macros
+- [x] 把 `templates/index.html.j2` 的 section 代码拆成独立 Jinja2 include 文件（`templates/sections/*.html.j2`）
 
 **阶段 3（优先级：低，数据量大时启动）：**
 - [ ] 按大分类拆分 `tools.json` → `tools/` 子目录
