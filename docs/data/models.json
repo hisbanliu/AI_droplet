@@ -127,10 +127,10 @@
       "text"
     ],
     "released_at": "2024-07-18",
-    "summary": "Popular open-source model on HuggingFace with 5,518 likes.",
+    "summary": "Popular open-source model on HuggingFace with 5,520 likes.",
     "url": "https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct",
     "huggingface_id": "meta-llama/Llama-3.1-8B-Instruct",
-    "likes": 5518,
+    "likes": 5520,
     "downloads": 7070766
   },
   {
@@ -169,10 +169,10 @@
       "text"
     ],
     "released_at": "2025-08-04",
-    "summary": "Popular open-source model on HuggingFace with 4,543 likes.",
+    "summary": "Popular open-source model on HuggingFace with 4,544 likes.",
     "url": "https://huggingface.co/openai/gpt-oss-120b",
     "huggingface_id": "openai/gpt-oss-120b",
-    "likes": 4543,
+    "likes": 4544,
     "downloads": 4194966
   },
   {
@@ -197,10 +197,10 @@
       "text"
     ],
     "released_at": "2025-08-04",
-    "summary": "Popular open-source model on HuggingFace with 4,421 likes.",
+    "summary": "Popular open-source model on HuggingFace with 4,423 likes.",
     "url": "https://huggingface.co/openai/gpt-oss-20b",
     "huggingface_id": "openai/gpt-oss-20b",
-    "likes": 4421,
+    "likes": 4423,
     "downloads": 7049150
   },
   {
@@ -211,10 +211,10 @@
       "text"
     ],
     "released_at": "2024-04-17",
-    "summary": "Popular open-source model on HuggingFace with 4,391 likes.",
+    "summary": "Popular open-source model on HuggingFace with 4,394 likes.",
     "url": "https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct",
     "huggingface_id": "meta-llama/Meta-Llama-3-8B-Instruct",
-    "likes": 4391,
+    "likes": 4394,
     "downloads": 1353966
   },
   {
@@ -253,10 +253,10 @@
       "text"
     ],
     "released_at": "2024-02-08",
-    "summary": "Popular open-source model on HuggingFace with 3,282 likes.",
+    "summary": "Popular open-source model on HuggingFace with 3,283 likes.",
     "url": "https://huggingface.co/google/gemma-7b",
     "huggingface_id": "google/gemma-7b",
-    "likes": 3282,
+    "likes": 3283,
     "downloads": 112711
   },
   {
@@ -267,10 +267,10 @@
       "text"
     ],
     "released_at": "2022-03-02",
-    "summary": "Popular open-source model on HuggingFace with 3,118 likes.",
+    "summary": "Popular open-source model on HuggingFace with 3,119 likes.",
     "url": "https://huggingface.co/openai-community/gpt2",
     "huggingface_id": "openai-community/gpt2",
-    "likes": 3118,
+    "likes": 3119,
     "downloads": 10135429
   },
   {
@@ -281,10 +281,10 @@
       "text"
     ],
     "released_at": "2023-12-11",
-    "summary": "Popular open-source model on HuggingFace with 3,088 likes.",
+    "summary": "Popular open-source model on HuggingFace with 3,089 likes.",
     "url": "https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2",
     "huggingface_id": "mistralai/Mistral-7B-Instruct-v0.2",
-    "likes": 3088,
+    "likes": 3089,
     "downloads": 2920309
   },
   {
@@ -379,10 +379,10 @@
       "text"
     ],
     "released_at": "2025-02-18",
-    "summary": "Popular open-source model on HuggingFace with 2,333 likes.",
+    "summary": "Popular open-source model on HuggingFace with 2,335 likes.",
     "url": "https://huggingface.co/perplexity-ai/r1-1776",
     "huggingface_id": "perplexity-ai/r1-1776",
-    "likes": 2333,
+    "likes": 2335,
     "downloads": 1069
   },
   {
@@ -477,10 +477,10 @@
       "text"
     ],
     "released_at": "2024-09-18",
-    "summary": "Popular open-source model on HuggingFace with 2,016 likes.",
+    "summary": "Popular open-source model on HuggingFace with 2,019 likes.",
     "url": "https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct",
     "huggingface_id": "meta-llama/Llama-3.2-3B-Instruct",
-    "likes": 2016,
+    "likes": 2019,
     "downloads": 3394040
   },
   {
@@ -505,10 +505,10 @@
       "text"
     ],
     "released_at": "2025-12-22",
-    "summary": "Popular open-source model on HuggingFace with 1,935 likes.",
+    "summary": "Popular open-source model on HuggingFace with 1,937 likes.",
     "url": "https://huggingface.co/zai-org/GLM-4.7",
     "huggingface_id": "zai-org/GLM-4.7",
-    "likes": 1935,
+    "likes": 1937,
     "downloads": 122971
   },
   {
@@ -589,10 +589,10 @@
       "text"
     ],
     "released_at": "2026-02-11",
-    "summary": "Popular open-source model on HuggingFace with 1,699 likes.",
+    "summary": "Popular open-source model on HuggingFace with 1,704 likes.",
     "url": "https://huggingface.co/zai-org/GLM-5",
     "huggingface_id": "zai-org/GLM-5",
-    "likes": 1699,
+    "likes": 1704,
     "downloads": 205187
   },
   {
@@ -631,10 +631,10 @@
       "text"
     ],
     "released_at": "2026-01-19",
-    "summary": "Popular open-source model on HuggingFace with 1,583 likes.",
+    "summary": "Popular open-source model on HuggingFace with 1,585 likes.",
     "url": "https://huggingface.co/zai-org/GLM-4.7-Flash",
     "huggingface_id": "zai-org/GLM-4.7-Flash",
-    "likes": 1583,
+    "likes": 1585,
     "downloads": 1666233
   },
   {
@@ -715,10 +715,10 @@
       "text"
     ],
     "released_at": "2025-01-20",
-    "summary": "Popular open-source model on HuggingFace with 1,453 likes.",
+    "summary": "Popular open-source model on HuggingFace with 1,454 likes.",
     "url": "https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
     "huggingface_id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
-    "likes": 1453,
+    "likes": 1454,
     "downloads": 1461485
   },
   {
@@ -743,10 +743,10 @@
       "text"
     ],
     "released_at": "2024-04-22",
-    "summary": "Popular open-source model on HuggingFace with 1,392 likes.",
+    "summary": "Popular open-source model on HuggingFace with 1,393 likes.",
     "url": "https://huggingface.co/microsoft/Phi-3-mini-4k-instruct",
     "huggingface_id": "microsoft/Phi-3-mini-4k-instruct",
-    "likes": 1392,
+    "likes": 1393,
     "downloads": 755940
   },
   {
