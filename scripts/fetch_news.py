@@ -119,7 +119,7 @@ def score_with_gemini(articles: list[dict]) -> list[dict]:
         f'{i}. [{a["source"]}] {a["title"]}\n   {a["snippet"][:200]}'
         for i, a in enumerate(articles)
     )
-    prompt = SCORING_PROMPT.format(articles=formatted)
+    prompt = SCORING_PROMPT.replace("{articles}", formatted)
 
     try:
         response = model.generate_content(

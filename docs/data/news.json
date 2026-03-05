@@ -1,1 +1,102 @@
-[]
+[
+  {
+    "source": "OpenAI Blog",
+    "title": "Extending single-minus amplitudes to gravitons",
+    "url": "https://openai.com/index/extending-single-minus-amplitudes-to-gravitons",
+    "published_at": "2026-03-04T10:00:00+00:00",
+    "importance_score": 6.0,
+    "summary_en": "Extending single-minus amplitudes to gravitons",
+    "summary_zh": "Extending single-minus amplitudes to gravitons",
+    "id": "2026-03-05-b33f2c0f47e2"
+  },
+  {
+    "source": "OpenAI Blog",
+    "title": "Understanding AI and learning outcomes",
+    "url": "https://openai.com/index/understanding-ai-and-learning-outcomes",
+    "published_at": "2026-03-04T00:00:00+00:00",
+    "importance_score": 6.0,
+    "summary_en": "Understanding AI and learning outcomes",
+    "summary_zh": "Understanding AI and learning outcomes",
+    "id": "2026-03-05-82f27fc69535"
+  },
+  {
+    "source": "OpenAI Blog",
+    "title": "How Axios uses AI to help deliver high-impact local journalism",
+    "url": "https://openai.com/index/axios-allison-murphy",
+    "published_at": "2026-03-04T00:00:00+00:00",
+    "importance_score": 6.0,
+    "summary_en": "How Axios uses AI to help deliver high-impact local journalism",
+    "summary_zh": "How Axios uses AI to help deliver high-impact local journalism",
+    "id": "2026-03-05-856f14c51813"
+  },
+  {
+    "source": "Google DeepMind",
+    "title": "Gemini 3.1 Flash-Lite: Built for intelligence at scale",
+    "url": "https://deepmind.google/blog/gemini-3-1-flash-lite-built-for-intelligence-at-scale/",
+    "published_at": "2026-03-03T16:35:55+00:00",
+    "importance_score": 6.0,
+    "summary_en": "Gemini 3.1 Flash-Lite: Built for intelligence at scale",
+    "summary_zh": "Gemini 3.1 Flash-Lite: Built for intelligence at scale",
+    "id": "2026-03-05-89a3cf89f6ae"
+  },
+  {
+    "source": "TechCrunch AI",
+    "title": "Jensen Huang says Nvidia is pulling back from OpenAI and Anthropic, but his explanation raises more questions than it answers",
+    "url": "https://techcrunch.com/2026/03/04/jensen-huang-says-nvidia-is-pulling-back-from-openai-and-anthropic-but-his-explanation-raises-more-questions-than-it-answers/",
+    "published_at": "2026-03-05T01:08:28+00:00",
+    "importance_score": 6.0,
+    "summary_en": "Jensen Huang says Nvidia is pulling back from OpenAI and Anthropic, but his explanation raises more questions than it answers",
+    "summary_zh": "Jensen Huang says Nvidia is pulling back from OpenAI and Anthropic, but his expl",
+    "id": "2026-03-05-9e1fb0ade3ed"
+  },
+  {
+    "source": "TechCrunch AI",
+    "title": "Anthropic CEO Dario Amodei calls OpenAI¡¯s messaging around military deal ¡®straight up lies,¡¯ report says",
+    "url": "https://techcrunch.com/2026/03/04/anthropic-ceo-dario-amodei-calls-openais-messaging-around-military-deal-straight-up-lies-report-says/",
+    "published_at": "2026-03-04T22:40:05+00:00",
+    "importance_score": 6.0,
+    "summary_en": "Anthropic CEO Dario Amodei calls OpenAI¡¯s messaging around military deal ¡®straight up lies,¡¯ report says",
+    "summary_zh": "Anthropic CEO Dario Amodei calls OpenAI¡¯s messaging around military deal ¡®straig",
+    "id": "2026-03-05-c19aaaef4436"
+  },
+  {
+    "source": "TechCrunch AI",
+    "title": "Apple Music to add Transparency Tags to distinguish AI music, says report",
+    "url": "https://techcrunch.com/2026/03/04/apple-music-to-add-transparency-tags-to-distinguish-ai-music-says-report/",
+    "published_at": "2026-03-04T21:43:58+00:00",
+    "importance_score": 6.0,
+    "summary_en": "Apple Music to add Transparency Tags to distinguish AI music, says report",
+    "summary_zh": "Apple Music to add Transparency Tags to distinguish AI music, says report",
+    "id": "2026-03-05-8dceb2403aab"
+  },
+  {
+    "source": "TechCrunch AI",
+    "title": "Google Search rolls out Gemini¡¯s Canvas in AI Mode to all US users",
+    "url": "https://techcrunch.com/2026/03/04/https-techcrunch-com-2026-03-04-google-search-rolls-out-geminis-canvas-in-ai-mode-to-all-us-users/",
+    "published_at": "2026-03-04T18:50:58+00:00",
+    "importance_score": 6.0,
+    "summary_en": "Google Search rolls out Gemini¡¯s Canvas in AI Mode to all US users",
+    "summary_zh": "Google Search rolls out Gemini¡¯s Canvas in AI Mode to all US users",
+    "id": "2026-03-05-dc8001747776"
+  },
+  {
+    "source": "TechCrunch AI",
+    "title": "Decagon completes first tender offer at $4.5B valuation",
+    "url": "https://techcrunch.com/2026/03/04/decagon-completes-first-tender-offer-at-4-5b-valuation/",
+    "published_at": "2026-03-04T18:32:53+00:00",
+    "importance_score": 6.0,
+    "summary_en": "Decagon completes first tender offer at $4.5B valuation",
+    "summary_zh": "Decagon completes first tender offer at $4.5B valuation",
+    "id": "2026-03-05-8896ba4c944c"
+  },
+  {
+    "source": "TechCrunch AI",
+    "title": "The US military is still using Claude ¡ª but defense-tech clients are fleeing",
+    "url": "https://techcrunch.com/2026/03/04/the-us-military-is-still-using-claude-but-defense-tech-clients-are-fleeing/",
+    "published_at": "2026-03-04T17:20:01+00:00",
+    "importance_score": 6.0,
+    "summary_en": "The US military is still using Claude ¡ª but defense-tech clients are fleeing",
+    "summary_zh": "The US military is still using Claude ¡ª but defense-tech clients are fleeing",
+    "id": "2026-03-05-63399e2e2460"
+  }
+]
