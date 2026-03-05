@@ -1,0 +1,90 @@
+[
+  {
+    "name": "VS Code + GitHub Copilot",
+    "company": "Microsoft",
+    "tagline": "The most popular editor with AI superpowers",
+    "ai_features": "Inline completions, Copilot Chat, multi-file edits (Edits mode), agent mode with MCP support, voice coding",
+    "url": "https://code.visualstudio.com/",
+    "ai_url": "https://github.com/features/copilot",
+    "pricing": "Free tier (2000 completions/mo) · Pro $10/mo",
+    "base": "Standalone (Electron)",
+    "open_source": true
+  },
+  {
+    "name": "Cursor",
+    "company": "Anysphere",
+    "tagline": "The AI-first code editor",
+    "ai_features": "Inline edit (Cmd+K), multi-file context (Composer), agent mode, codebase-aware chat, auto-debug, natural language terminal",
+    "url": "https://cursor.com",
+    "ai_url": "https://cursor.com",
+    "pricing": "Free tier (500 fast requests/mo) · Pro $20/mo",
+    "base": "VS Code fork",
+    "open_source": false
+  },
+  {
+    "name": "Windsurf",
+    "company": "Codeium",
+    "tagline": "The agentic IDE by Codeium",
+    "ai_features": "Cascade agent (multi-step autonomous tasks), inline AI, deep codebase understanding, real-time collaboration awareness",
+    "url": "https://windsurf.com",
+    "ai_url": "https://windsurf.com",
+    "pricing": "Free tier · Pro $15/mo",
+    "base": "VS Code fork",
+    "open_source": false
+  },
+  {
+    "name": "Zed",
+    "company": "Zed Industries",
+    "tagline": "High-performance multiplayer code editor with AI",
+    "ai_features": "Inline AI transformations, assistant panel (chat), supports Claude/OpenAI/local models, fast GPU-rendered UI",
+    "url": "https://zed.dev",
+    "ai_url": "https://zed.dev/ai",
+    "pricing": "Free (editor) · AI features may require credits",
+    "base": "Standalone (Rust, GPU-accelerated)",
+    "open_source": true
+  },
+  {
+    "name": "JetBrains AI",
+    "company": "JetBrains",
+    "tagline": "AI assistant built into all JetBrains IDEs",
+    "ai_features": "Inline code completion, AI chat, test generation, code explanation, refactoring suggestions, commit message generation",
+    "url": "https://www.jetbrains.com/ai/",
+    "ai_url": "https://www.jetbrains.com/ai/",
+    "pricing": "AI Pro $10/mo (bundled with IDE subscription)",
+    "base": "IntelliJ Platform (all JetBrains IDEs)",
+    "open_source": false
+  },
+  {
+    "name": "Replit",
+    "company": "Replit",
+    "tagline": "Build software with AI in the browser",
+    "ai_features": "AI agent builds full apps from prompts, Replit AI for completions and chat, instant deployment, no local setup needed",
+    "url": "https://replit.com",
+    "ai_url": "https://replit.com/ai",
+    "pricing": "Free tier · Core $25/mo",
+    "base": "Browser-based cloud IDE",
+    "open_source": false
+  },
+  {
+    "name": "Devin",
+    "company": "Cognition",
+    "tagline": "The first AI software engineer",
+    "ai_features": "Fully autonomous software engineering agent, can browse web, write and run code, file GitHub PRs, debug end-to-end",
+    "url": "https://devin.ai",
+    "ai_url": "https://devin.ai",
+    "pricing": "Teams $500/mo (includes ACUs)",
+    "base": "Standalone agent (browser + cloud VM)",
+    "open_source": false
+  },
+  {
+    "name": "Void",
+    "company": "Community (open source)",
+    "tagline": "Open-source Cursor alternative",
+    "ai_features": "Inline AI edits, multi-file agent, supports any LLM provider (OpenAI, Anthropic, local Ollama), privacy-first",
+    "url": "https://voideditor.com",
+    "ai_url": "https://voideditor.com",
+    "pricing": "Free (open source)",
+    "base": "VS Code fork",
+    "open_source": true
+  }
+]

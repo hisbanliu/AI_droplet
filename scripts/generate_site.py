@@ -1,21 +1,27 @@
 """
 generate_site.py
-Reads all JSON data files and renders them into docs/index.html
+Copies JSON data files to docs/data/ and renders docs/index.html
 using the Jinja2 template in templates/.
+The HTML loads data at runtime via fetch(), keeping index.html small and stable.
 """
 
 import json
+import shutil
 from datetime import datetime, timezone
 from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader
 
-# ── Config ───────────────────────────────────────────────────────────────────
+# ── Config ──────────────────────────────────────────────────────────────────
 
 ROOT = Path(__file__).parent.parent
 DATA_DIR     = ROOT / "data"
 TEMPLATE_DIR = ROOT / "templates"
-OUTPUT_FILE  = ROOT / "docs" / "index.html"
+DOCS_DIR     = ROOT / "docs"
+OUTPUT_FILE  = DOCS_DIR / "index.html"
+
+# JSON files to publish into docs/data/
+DATA_FILES = ["news.json", "models.json", "mcp.json", "skills.json", "ides.json", "tools.json"]
 
 
 def load_json(filename: str) -> list | dict:
@@ -29,34 +35,36 @@ def load_json(filename: str) -> list | dict:
         return []
 
 
+def copy_data_files():
+    """Copy data/*.json → docs/data/*.json for fetch() access."""
+    dest_dir = DOCS_DIR / "data"
+    dest_dir.mkdir(parents=True, exist_ok=True)
+    for filename in DATA_FILES:
+        src = DATA_DIR / filename
+        if src.exists():
+            shutil.copy2(src, dest_dir / filename)
+            print(f"  Copied {filename} → docs/data/")
+        else:
+            print(f"  [WARN] {filename} not found, skipping")
+
+
 def main():
     print("=== generate_site.py ===")
 
-    # ── Load all data ────────────────────────────────────────────────────────
-    news    = load_json("news.json")
-    models  = load_json("models.json")
-    mcp     = load_json("mcp.json")
-    skills  = load_json("skills.json")
-    ides    = load_json("ides.json")
-    tools   = load_json("tools.json")
+    # ── Copy JSON files to docs/data/ ────────────────────────────────────────
+    copy_data_files()
 
-    # ── Compute derived values for the template ──────────────────────────────
-    tool_categories = {}
-    for t in tools:
-        cat = t.get("category", "other")
-        tool_categories.setdefault(cat, []).append(t)
-
-    mcp_categories = {}
-    for m in mcp:
-        cat = m.get("category", "Other")
-        mcp_categories.setdefault(cat, []).append(m)
-
-    models_open   = [m for m in models if m.get("type") == "open"]
-    models_closed = [m for m in models if m.get("type") == "closed"]
+    # ── Load stats only (for template rendering) ─────────────────────────────
+    news   = load_json("news.json")
+    models = load_json("models.json")
+    mcp    = load_json("mcp.json")
+    skills = load_json("skills.json")
+    ides   = load_json("ides.json")
+    tools  = load_json("tools.json")
 
     generated_at = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
-    # ── Render template ──────────────────────────────────────────────────────
+    # ── Render template ───────────────────────────────────────────────────────
     env = Environment(
         loader=FileSystemLoader(str(TEMPLATE_DIR)),
         autoescape=True,
@@ -66,26 +74,20 @@ def main():
 
     template = env.get_template("index.html.j2")
     html = template.render(
-        news=news,
-        models=models,
-        models_open=models_open,
-        models_closed=models_closed,
-        mcp=mcp,
-        mcp_categories=mcp_categories,
-        skills=skills,
-        ides=ides,
-        tools=tools,
-        tool_categories=tool_categories,
         generated_at=generated_at,
+        count_news=len(news),
+        count_models=len(models),
+        count_mcp=len(mcp),
+        count_skills=len(skills),
+        count_ides=len(ides),
+        count_tools=len(tools),
     )
 
-    OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
+    DOCS_DIR.mkdir(parents=True, exist_ok=True)
     OUTPUT_FILE.write_text(html, encoding="utf-8")
     print(f"Generated {OUTPUT_FILE.relative_to(ROOT)}")
     print(f"  News: {len(news)} | Models: {len(models)} | MCP: {len(mcp)}")
     print(f"  Skills: {len(skills)} | IDEs: {len(ides)} | Tools: {len(tools)}")
-    print(f"  Generated at: {generated_at}")
-
 
 if __name__ == "__main__":
     main()

@@ -16,10 +16,11 @@
 Python 脚本（scripts/）
     ↓ 抓取 + LLM 总结
 JSON 数据文件（data/）
-    ↓ Jinja2 渲染
-静态 HTML（docs/index.html）
+    ↓ Jinja2 渲染 + 复制 JSON
+静态 HTML（docs/index.html）+ docs/data/*.json
     ↓ git push
 GitHub Pages（公网访问）
+    浏览器 fetch() 按需加载 docs/data/*.json
 ```
 
 **核心原则**: 无服务器、无数据库、静态托管、手动触发更新（短期），后期可接 GitHub Actions 实现全自动。
@@ -80,7 +81,14 @@ AI_droplet/
 │   └── i18n.js              ← 中英文切换逻辑
 │
 └── docs/                    ← GitHub Pages 输出目录（不手动编辑，由脚本生成）
-    └── index.html
+    ├── index.html           ← 仅含 UI 框架，~37KB
+    └── data/                ← 由 generate_site.py 复制，浏览器 fetch() 加载
+        ├── news.json
+        ├── models.json
+        ├── mcp.json
+        ├── skills.json
+        ├── ides.json
+        └── tools.json
 ```
 
 > **为什么用 `docs/` 而不是根目录？**

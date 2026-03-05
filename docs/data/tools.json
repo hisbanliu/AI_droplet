@@ -1,0 +1,236 @@
+[
+  {
+    "name": "Midjourney",
+    "category": "image-generation",
+    "company": "Midjourney",
+    "description": "Leading AI image generator known for artistic quality. Operates via Discord and web interface.",
+    "url": "https://midjourney.com",
+    "pricing": "Basic $10/mo · Standard $30/mo · Pro $60/mo",
+    "tags": [
+      "image",
+      "art",
+      "generative"
+    ]
+  },
+  {
+    "name": "DALL-E 3",
+    "category": "image-generation",
+    "company": "OpenAI",
+    "description": "OpenAI's image generation model integrated into ChatGPT, known for prompt accuracy and coherent text in images.",
+    "url": "https://openai.com/dall-e-3",
+    "pricing": "Included with ChatGPT Plus ($20/mo)",
+    "tags": [
+      "image",
+      "openai",
+      "generative"
+    ]
+  },
+  {
+    "name": "Stable Diffusion",
+    "category": "image-generation",
+    "company": "Stability AI",
+    "description": "Open-source image generation model that can run locally. Huge community ecosystem with thousands of fine-tuned models.",
+    "url": "https://stability.ai",
+    "pricing": "Free (open source, self-host) · API available",
+    "tags": [
+      "image",
+      "open-source",
+      "local"
+    ]
+  },
+  {
+    "name": "Flux",
+    "category": "image-generation",
+    "company": "Black Forest Labs",
+    "description": "State-of-the-art open image generation model family (FLUX.1) from the original Stable Diffusion creators.",
+    "url": "https://blackforestlabs.ai",
+    "pricing": "Open weights (dev/schnell) · Pro via API",
+    "tags": [
+      "image",
+      "open-source",
+      "flux"
+    ]
+  },
+  {
+    "name": "Ideogram",
+    "category": "image-generation",
+    "company": "Ideogram AI",
+    "description": "AI image generator especially strong at rendering accurate, stylized text within images.",
+    "url": "https://ideogram.ai",
+    "pricing": "Free tier · Basic $8/mo",
+    "tags": [
+      "image",
+      "text-in-image",
+      "design"
+    ]
+  },
+  {
+    "name": "Sora",
+    "category": "video-generation",
+    "company": "OpenAI",
+    "description": "OpenAI's text-to-video model capable of generating realistic and imaginative scenes up to 1 minute long.",
+    "url": "https://sora.com",
+    "pricing": "Included with ChatGPT Plus · Pro $200/mo",
+    "tags": [
+      "video",
+      "openai",
+      "text-to-video"
+    ]
+  },
+  {
+    "name": "Runway Gen-3 Alpha",
+    "category": "video-generation",
+    "company": "Runway",
+    "description": "Professional-grade AI video generation with strong motion consistency. Popular in film and creative industries.",
+    "url": "https://runwayml.com",
+    "pricing": "Basic $15/mo · Standard $35/mo",
+    "tags": [
+      "video",
+      "professional",
+      "text-to-video"
+    ]
+  },
+  {
+    "name": "Kling AI",
+    "category": "video-generation",
+    "company": "Kuaishou",
+    "description": "High-quality video generation model from Kuaishou with realistic physics simulation and 5-second to 2-minute outputs.",
+    "url": "https://klingai.com",
+    "pricing": "Free tier · Pro plans available",
+    "tags": [
+      "video",
+      "chinese",
+      "text-to-video"
+    ]
+  },
+  {
+    "name": "Hailuo AI (MiniMax)",
+    "category": "video-generation",
+    "company": "MiniMax",
+    "description": "AI video generation from MiniMax known for cinematic quality and realistic human motion.",
+    "url": "https://hailuoai.video",
+    "pricing": "Free tier available",
+    "tags": [
+      "video",
+      "chinese",
+      "realistic"
+    ]
+  },
+  {
+    "name": "ElevenLabs",
+    "category": "audio",
+    "company": "ElevenLabs",
+    "description": "Best-in-class AI voice cloning and text-to-speech. Supports 32 languages with natural-sounding output.",
+    "url": "https://elevenlabs.io",
+    "pricing": "Free tier (10K chars/mo) · Starter $5/mo",
+    "tags": [
+      "tts",
+      "voice-clone",
+      "audio"
+    ]
+  },
+  {
+    "name": "Suno",
+    "category": "audio",
+    "company": "Suno AI",
+    "description": "AI music generation from text prompts. Creates full songs with vocals, instruments, and lyrics.",
+    "url": "https://suno.com",
+    "pricing": "Free tier (50 credits/day) · Pro $8/mo",
+    "tags": [
+      "music",
+      "generation",
+      "audio"
+    ]
+  },
+  {
+    "name": "Udio",
+    "category": "audio",
+    "company": "Udio",
+    "description": "AI music generation with high fidelity and fine-grained control over style, mood, and instrumentation.",
+    "url": "https://udio.com",
+    "pricing": "Free tier · Standard $10/mo",
+    "tags": [
+      "music",
+      "generation",
+      "audio"
+    ]
+  },
+  {
+    "name": "Perplexity AI",
+    "category": "ai-search",
+    "company": "Perplexity AI",
+    "description": "AI-powered search engine that synthesizes real-time web results into cited, conversational answers.",
+    "url": "https://perplexity.ai",
+    "pricing": "Free · Pro $20/mo",
+    "tags": [
+      "search",
+      "research",
+      "rag"
+    ]
+  },
+  {
+    "name": "GitHub Copilot",
+    "category": "coding",
+    "company": "GitHub (Microsoft)",
+    "description": "The original AI coding assistant. Inline completions, chat, PR summaries, and agent-mode code edits.",
+    "url": "https://github.com/features/copilot",
+    "pricing": "Free tier · Pro $10/mo · Business $19/user/mo",
+    "tags": [
+      "coding",
+      "ide",
+      "completion"
+    ]
+  },
+  {
+    "name": "Codeium",
+    "category": "coding",
+    "company": "Codeium",
+    "description": "Free AI coding assistant with completions and chat. Supports 70+ languages and all major IDEs.",
+    "url": "https://codeium.com",
+    "pricing": "Free forever (individual) · Teams $15/user/mo",
+    "tags": [
+      "coding",
+      "completion",
+      "free"
+    ]
+  },
+  {
+    "name": "ChatGPT",
+    "category": "productivity",
+    "company": "OpenAI",
+    "description": "The world's most popular AI assistant. Supports conversation, file analysis, image generation, web browsing, and code execution.",
+    "url": "https://chatgpt.com",
+    "pricing": "Free · Plus $20/mo · Pro $200/mo",
+    "tags": [
+      "assistant",
+      "productivity",
+      "multimodal"
+    ]
+  },
+  {
+    "name": "Claude.ai",
+    "category": "productivity",
+    "company": "Anthropic",
+    "description": "Anthropic's conversational AI known for nuanced reasoning, long context (200K tokens), and strong coding/writing ability.",
+    "url": "https://claude.ai",
+    "pricing": "Free · Pro $20/mo · Team $30/user/mo",
+    "tags": [
+      "assistant",
+      "productivity",
+      "reasoning"
+    ]
+  },
+  {
+    "name": "Notion AI",
+    "category": "productivity",
+    "company": "Notion",
+    "description": "AI writing and knowledge management built into Notion. Summarizes docs, drafts content, answers questions about your workspace.",
+    "url": "https://www.notion.com/product/ai",
+    "pricing": "Add-on $10/member/mo",
+    "tags": [
+      "productivity",
+      "writing",
+      "knowledge-base"
+    ]
+  }
+]

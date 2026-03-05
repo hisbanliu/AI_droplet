@@ -17,6 +17,25 @@ _未来版本计划_
 
 ---
 
+## [0.2.0] — 2026-03-05
+
+### 变更
+
+- **数据加载架构重构**：从"数据嵌入 HTML"改为"运行时 fetch() 加载"。
+  - `generate_site.py` 新增 `copy_data_files()`，将 `data/*.json` 复制到 `docs/data/`
+  - `templates/index.html.j2` 所有数据渲染改由 Alpine.js 异步 `fetch()` 驱动，Jinja2 仅传入统计数字
+  - `index.html` 体积从 **476 KB → 37 KB**（减少 92%）
+  - 浏览器首屏加载更快，各模块数据独立缓存，文件各自可版本化
+- 新增 `docs/data/` 目录：`news.json`、`models.json`、`mcp.json`、`skills.json`、`ides.json`、`tools.json` 随 git push 一同发布
+- 各页面模块新增 Loading 动画占位符
+
+### 技术决策记录
+
+- 静态站数据公开是必然代价（网站内容本就公开展示）；`.env` API Key 不进 `docs/` 且已被 `.gitignore` 排除。
+- `docs/data/` 不手动维护，每次 `generate_site.py` 运行时自动覆盖。
+
+---
+
 ## [0.1.0] — 2026-03-04
 
 ### 新增
