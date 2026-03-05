@@ -10,7 +10,8 @@
       "image",
       "art",
       "generative"
-    ]
+    ],
+    "description_zh": "以艺术品质著称的领先AI图像生成器，通过Discord和网页界面操作。"
   },
   {
     "name": "DALL-E 3",
@@ -23,7 +24,8 @@
       "image",
       "openai",
       "generative"
-    ]
+    ],
+    "description_zh": "OpenAI的图像生成模型，集成于ChatGPT，以提示准确性和图像内连贯文本著称。"
   },
   {
     "name": "Stable Diffusion",
@@ -36,7 +38,8 @@
       "image",
       "open-source",
       "local"
-    ]
+    ],
+    "description_zh": "可在本地运行的开源图像生成模型，拥有庞大的社区生态系统和数千个微调模型。"
   },
   {
     "name": "Flux",
@@ -49,7 +52,8 @@
       "image",
       "open-source",
       "flux"
-    ]
+    ],
+    "description_zh": "来自Stable Diffusion原班人马的最先进开源图像生成模型系列（FLUX.1）。"
   },
   {
     "name": "Ideogram",
@@ -62,7 +66,8 @@
       "image",
       "text-in-image",
       "design"
-    ]
+    ],
+    "description_zh": "AI图像生成器，特别擅长在图像中渲染准确、风格化的文本。"
   },
   {
     "name": "Sora",
@@ -75,7 +80,8 @@
       "video",
       "openai",
       "text-to-video"
-    ]
+    ],
+    "description_zh": "OpenAI的文本转视频模型，可生成长达1分钟的真实且富有想象力的场景。"
   },
   {
     "name": "Runway Gen-3 Alpha",
@@ -88,7 +94,8 @@
       "video",
       "professional",
       "text-to-video"
-    ]
+    ],
+    "description_zh": "专业级AI视频生成，运动一致性强，在电影和创意产业中广受欢迎。"
   },
   {
     "name": "Kling AI",
@@ -101,7 +108,8 @@
       "video",
       "chinese",
       "text-to-video"
-    ]
+    ],
+    "description_zh": "快手的高质量视频生成模型，具有逼真的物理模拟，输出时长5秒至2分钟。"
   },
   {
     "name": "Hailuo AI (MiniMax)",
@@ -114,7 +122,8 @@
       "video",
       "chinese",
       "realistic"
-    ]
+    ],
+    "description_zh": "MiniMax的AI视频生成，以电影级画质和逼真的人物动作著称。"
   },
   {
     "name": "ElevenLabs",
@@ -127,7 +136,8 @@
       "tts",
       "voice-clone",
       "audio"
-    ]
+    ],
+    "description_zh": "一流的AI语音克隆和文本转语音技术，支持32种语言，输出自然。"
   },
   {
     "name": "Suno",
@@ -140,7 +150,8 @@
       "music",
       "generation",
       "audio"
-    ]
+    ],
+    "description_zh": "基于文本提示的AI音乐生成，可创作包含人声、乐器和歌词的完整歌曲。"
   },
   {
     "name": "Udio",
@@ -153,7 +164,8 @@
       "music",
       "generation",
       "audio"
-    ]
+    ],
+    "description_zh": "高保真AI音乐生成，可精细控制风格、情绪和乐器编排。"
   },
   {
     "name": "Perplexity AI",
@@ -166,7 +178,8 @@
       "search",
       "research",
       "rag"
-    ]
+    ],
+    "description_zh": "AI驱动的搜索引擎，将实时网络结果综合成带引用的对话式答案。"
   },
   {
     "name": "GitHub Copilot",
@@ -179,7 +192,8 @@
       "coding",
       "ide",
       "completion"
-    ]
+    ],
+    "description_zh": "最初的AI编程助手，提供内联补全、聊天、PR摘要和代理模式代码编辑。"
   },
   {
     "name": "Codeium",
@@ -192,7 +206,8 @@
       "coding",
       "completion",
       "free"
-    ]
+    ],
+    "description_zh": "免费的AI编程助手，支持补全和聊天，兼容70多种语言及所有主流IDE。"
   },
   {
     "name": "ChatGPT",
@@ -205,7 +220,8 @@
       "assistant",
       "productivity",
       "multimodal"
-    ]
+    ],
+    "description_zh": "全球最受欢迎的AI助手，支持对话、文件分析、图像生成、网页浏览和代码执行。"
   },
   {
     "name": "Claude.ai",
@@ -218,7 +234,8 @@
       "assistant",
       "productivity",
       "reasoning"
-    ]
+    ],
+    "description_zh": "Anthropic的对话AI，以细致推理、长上下文（20万词元）和强大的编程/写作能力著称。"
   },
   {
     "name": "Notion AI",
@@ -231,7 +248,8 @@
       "productivity",
       "writing",
       "knowledge-base"
-    ]
+    ],
+    "description_zh": "集成于Notion的AI写作和知识管理工具，可总结文档、起草内容、回答工作区问题。"
   },
   {
     "name": "AutoGPT",
@@ -244,7 +262,8 @@
       "autonomous",
       "open-source",
       "multi-step"
-    ]
+    ],
+    "description_zh": "最初的自主AI代理，能设定目标并使用GPT模型执行多步骤任务，开创了代理式AI运动。"
   },
   {
     "name": "CrewAI",
@@ -257,7 +276,8 @@
       "orchestration",
       "multi-agent",
       "open-source"
-    ]
+    ],
+    "description_zh": "编排角色扮演自主AI代理的框架，可定义专业代理团队协作完成复杂任务。"
   },
   {
     "name": "LangChain",
@@ -270,7 +290,8 @@
       "framework",
       "open-source",
       "rag"
-    ]
+    ],
+    "description_zh": "构建LLM应用和代理的最广泛使用框架，连接LLM与工具、记忆和数据源。"
   },
   {
     "name": "n8n",
@@ -283,7 +304,8 @@
       "automation",
       "workflow",
       "open-source"
-    ]
+    ],
+    "description_zh": "开源工作流自动化工具，内置AI代理节点，可通过400多个集成可视化构建代理管道，可自托管。"
   },
   {
     "name": "OpenClaw",
@@ -296,7 +318,8 @@
       "self-hosted",
       "deployment",
       "open-source"
-    ]
+    ],
+    "description_zh": "自托管AI代理部署平台，可部署和管理自主AI机器人，完全控制API密钥和数据，是Claw生态系统（ClawShip、IronClaw等）的基础。"
   },
   {
     "name": "Dify",
@@ -309,7 +332,8 @@
       "platform",
       "open-source",
       "rag"
-    ]
+    ],
+    "description_zh": "开源LLM应用开发平台，通过可视化工作流编辑器构建聊天机器人、代理和RAG管道，GitHub星标超10万。"
   },
   {
     "name": "AgentOps",
@@ -322,7 +346,8 @@
       "observability",
       "monitoring",
       "devops"
-    ]
+    ],
+    "description_zh": "AI代理的可观测性和监控平台，跟踪每次LLM调用、工具使用和代理操作，提供会话回放和成本分析。"
   },
   {
     "name": "Jasper",
@@ -335,7 +360,8 @@
       "copywriting",
       "marketing",
       "brand-voice"
-    ]
+    ],
+    "description_zh": "面向营销团队的企业级AI写作平台，大规模生成符合品牌风格的文案、博客文章、广告和社交媒体内容。"
   },
   {
     "name": "Copy.ai",
@@ -348,7 +374,8 @@
       "copywriting",
       "gtm",
       "sales"
-    ]
+    ],
+    "description_zh": "面向销售和营销文案的AI驱动GTM平台，生成电子邮件、广告、产品描述和社交媒体帖子。"
   },
   {
     "name": "Grammarly",
@@ -361,7 +388,8 @@
       "grammar",
       "editing",
       "clarity"
-    ]
+    ],
+    "description_zh": "AI写作助手，优化语法、清晰度、语气和风格，集成于浏览器、Office、Google Docs和IDE。"
   },
   {
     "name": "Quillbot",
@@ -374,7 +402,8 @@
       "paraphrasing",
       "summarization",
       "academic"
-    ]
+    ],
+    "description_zh": "AI改写、总结和语法检查工具，提供9种写作模式，广泛用于学生和学术写作者。"
   },
   {
     "name": "Sudowrite",
@@ -387,7 +416,8 @@
       "fiction",
       "creative",
       "storytelling"
-    ]
+    ],
+    "description_zh": "专为小说和创意写作设计的AI写作工具，支持故事生成、头脑风暴、重写及扩展场景的'虫洞'模式。"
   },
   {
     "name": "Wordtune",
@@ -400,7 +430,8 @@
       "rewriting",
       "tone",
       "editing"
-    ]
+    ],
+    "description_zh": "AI写作伴侣，实时重写和改进句子，一键调整语气（随意/正式）、长度和风格。"
   },
   {
     "name": "Writesonic",
@@ -413,6 +444,7 @@
       "blog",
       "seo",
       "content"
-    ]
+    ],
+    "description_zh": "面向博客、SEO文章、广告和落地页的AI内容平台，包含Chatsonic（联网AI聊天）和Audiosonic。"
   }
 ]

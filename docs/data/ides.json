@@ -8,7 +8,9 @@
     "ai_url": "https://github.com/features/copilot",
     "pricing": "Free tier (2000 completions/mo) · Pro $10/mo",
     "base": "Standalone (Electron)",
-    "open_source": true
+    "open_source": true,
+    "tagline_zh": "具备AI超能力的流行编辑器",
+    "ai_features_zh": "内联补全、Copilot Chat、多文件编辑（编辑模式）、支持MCP的代理模式、语音编码"
   },
   {
     "name": "Cursor",
@@ -19,7 +21,9 @@
     "ai_url": "https://cursor.com",
     "pricing": "Free tier (500 fast requests/mo) · Pro $20/mo",
     "base": "VS Code fork",
-    "open_source": false
+    "open_source": false,
+    "tagline_zh": "AI优先的代码编辑器",
+    "ai_features_zh": "内联编辑（Cmd+K）、多文件上下文（Composer）、代理模式、代码库感知聊天、自动调试、自然语言终端"
   },
   {
     "name": "Windsurf",
@@ -30,7 +34,9 @@
     "ai_url": "https://windsurf.com",
     "pricing": "Free tier · Pro $15/mo",
     "base": "VS Code fork",
-    "open_source": false
+    "open_source": false,
+    "tagline_zh": "Codeium的智能IDE",
+    "ai_features_zh": "级联代理（多步自主任务）、内联AI、深度代码库理解、实时协作感知"
   },
   {
     "name": "Zed",
@@ -41,7 +47,9 @@
     "ai_url": "https://zed.dev/ai",
     "pricing": "Free (editor) · AI features may require credits",
     "base": "Standalone (Rust, GPU-accelerated)",
-    "open_source": true
+    "open_source": true,
+    "tagline_zh": "高性能多人AI代码编辑器",
+    "ai_features_zh": "内联AI转换、助手面板（聊天）、支持Claude/OpenAI/本地模型、GPU快速渲染UI"
   },
   {
     "name": "JetBrains AI",
@@ -52,7 +60,9 @@
     "ai_url": "https://www.jetbrains.com/ai/",
     "pricing": "AI Pro $10/mo (bundled with IDE subscription)",
     "base": "IntelliJ Platform (all JetBrains IDEs)",
-    "open_source": false
+    "open_source": false,
+    "tagline_zh": "JetBrains IDE内置AI助手",
+    "ai_features_zh": "内联代码补全、AI聊天、测试生成、代码解释、重构建议、提交消息生成"
   },
   {
     "name": "Replit",
@@ -63,7 +73,9 @@
     "ai_url": "https://replit.com/ai",
     "pricing": "Free tier · Core $25/mo",
     "base": "Browser-based cloud IDE",
-    "open_source": false
+    "open_source": false,
+    "tagline_zh": "浏览器中AI构建软件",
+    "ai_features_zh": "AI代理通过提示构建完整应用、Replit AI用于补全和聊天、即时部署、无需本地设置"
   },
   {
     "name": "Devin",
@@ -74,7 +86,9 @@
     "ai_url": "https://devin.ai",
     "pricing": "Teams $500/mo (includes ACUs)",
     "base": "Standalone agent (browser + cloud VM)",
-    "open_source": false
+    "open_source": false,
+    "tagline_zh": "首位AI软件工程师",
+    "ai_features_zh": "全自主软件工程代理，可浏览网页、编写运行代码、提交GitHub PR、端到端调试"
   },
   {
     "name": "Void",
@@ -85,6 +99,8 @@
     "ai_url": "https://voideditor.com",
     "pricing": "Free (open source)",
     "base": "VS Code fork",
-    "open_source": true
+    "open_source": true,
+    "tagline_zh": "开源Cursor替代品",
+    "ai_features_zh": "内联AI编辑、多文件代理、支持任意LLM提供商（OpenAI、Anthropic、本地Ollama）、隐私优先"
   }
 ]

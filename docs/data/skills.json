@@ -8,7 +8,8 @@
       "rss",
       "digest",
       "news"
-    ]
+    ],
+    "description_zh": "从顶级科技博客获取RSS订阅，使用AI评分筛选文章，生成包含中文标题、分类和趋势亮点的每日摘要。"
   },
   {
     "name": "algorithmic-art",
@@ -19,7 +20,8 @@
       "art",
       "p5js",
       "generative"
-    ]
+    ],
+    "description_zh": "使用p5.js创建生成式算法艺术，支持种子随机性和交互参数探索，包括流场和粒子系统。"
   },
   {
     "name": "brainstorming",
@@ -30,7 +32,8 @@
       "planning",
       "requirements",
       "ideation"
-    ]
+    ],
+    "description_zh": "在任何实现前探索用户意图、需求和设计。在创意工作前使用——功能、组件或新增功能。"
   },
   {
     "name": "canvas-design",
@@ -42,7 +45,8 @@
       "visual",
       "pdf",
       "png"
-    ]
+    ],
+    "description_zh": "使用设计哲学创建精美的.png和.pdf视觉艺术文档。适用于海报、艺术品、设计或其他静态视觉内容。"
   },
   {
     "name": "doc-coauthoring",
@@ -53,7 +57,8 @@
       "documentation",
       "writing",
       "specs"
-    ]
+    ],
+    "description_zh": "用于共同撰写文档、提案、技术规范和决策文档的结构化工作流。帮助高效传递上下文和优化内容。"
   },
   {
     "name": "docx",
@@ -64,7 +69,8 @@
       "word",
       "docx",
       "document"
-    ]
+    ],
+    "description_zh": "创建、读取、编辑和操作Word文档(.docx)。处理目录、标题、页码、图像、修订跟踪和格式转换。"
   },
   {
     "name": "frontend-design",
@@ -76,7 +82,8 @@
       "ui",
       "react",
       "css"
-    ]
+    ],
+    "description_zh": "创建独特、生产级的前端界面，设计质量高。构建Web组件、页面、仪表板和React/HTML/CSS布局。"
   },
   {
     "name": "mcp-builder",
@@ -87,7 +94,8 @@
       "mcp",
       "server",
       "api-integration"
-    ]
+    ],
+    "description_zh": "创建高质量MCP服务器指南，使LLM能通过精心设计的工具与外部服务交互。支持Python(FastMCP)和Node/TypeScript。"
   },
   {
     "name": "pdf",
@@ -98,7 +106,8 @@
       "pdf",
       "document",
       "ocr"
-    ]
+    ],
+    "description_zh": "PDF全能处理：提取文本/表格、合并/拆分文件、旋转页面、添加水印、创建新PDF、填写表单、加密/解密、提取图像和OCR扫描PDF。"
   },
   {
     "name": "pptx",
@@ -109,7 +118,8 @@
       "powerpoint",
       "pptx",
       "presentation"
-    ]
+    ],
+    "description_zh": "创建、读取、编辑和操作PowerPoint演示文稿(.pptx)。处理幻灯片、演示模板、布局、演讲者备注和格式转换。"
   },
   {
     "name": "systematic-debugging",
@@ -120,7 +130,8 @@
       "debugging",
       "testing",
       "methodology"
-    ]
+    ],
+    "description_zh": "针对任何错误、测试失败或意外行为的结构化调试方法。在提出修复前使用。"
   },
   {
     "name": "test-driven-development",
@@ -131,7 +142,8 @@
       "tdd",
       "testing",
       "methodology"
-    ]
+    ],
+    "description_zh": "TDD工作流：在实现任何功能或修复错误时，先编写测试再编写实现代码。"
   },
   {
     "name": "ui-ux-pro-max",
@@ -144,7 +156,8 @@
       "design",
       "tailwind",
       "shadcn"
-    ]
+    ],
+    "description_zh": "完整的UI/UX设计智能：67种样式、96种调色板、57种字体配对、25种图表类型、13种技术栈(React、Next.js、Vue、Svelte、SwiftUI、React Native、Flutter、Tailwind、shadcn/ui)。"
   },
   {
     "name": "xlsx",
@@ -156,7 +169,8 @@
       "xlsx",
       "spreadsheet",
       "data"
-    ]
+    ],
+    "description_zh": "处理电子表格文件(.xlsx、.xlsm、.csv、.tsv)：打开、读取、编辑、创建、添加列、计算公式、格式化、图表、数据清理和格式转换。"
   },
   {
     "name": "writing-plans",
@@ -167,6 +181,7 @@
       "planning",
       "architecture",
       "methodology"
-    ]
+    ],
+    "description_zh": "从规范或需求创建多步骤任务的结构化实施计划。在接触代码前使用。"
   }
 ]

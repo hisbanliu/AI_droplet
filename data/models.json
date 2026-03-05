@@ -11,7 +11,8 @@
     "released_at": "2024-05-13",
     "summary": "OpenAI's flagship multimodal model with real-time audio, vision, and text capabilities.",
     "url": "https://openai.com/index/hello-gpt-4o/",
-    "huggingface_id": null
+    "huggingface_id": null,
+    "summary_zh": "OpenAI旗舰多模态模型，具备实时音频、视觉和文本能力。"
   },
   {
     "name": "o3",
@@ -24,7 +25,8 @@
     "released_at": "2025-04-16",
     "summary": "OpenAI's most powerful reasoning model, optimized for complex multi-step problems.",
     "url": "https://openai.com/index/openai-o3-system-card/",
-    "huggingface_id": null
+    "huggingface_id": null,
+    "summary_zh": "OpenAI最强大的推理模型，专为复杂多步骤问题优化。"
   },
   {
     "name": "o4-mini",
@@ -37,7 +39,8 @@
     "released_at": "2025-04-16",
     "summary": "Compact, cost-efficient reasoning model from OpenAI with strong coding ability.",
     "url": "https://openai.com/index/openai-o3-system-card/",
-    "huggingface_id": null
+    "huggingface_id": null,
+    "summary_zh": "OpenAI紧凑型高性价比推理模型，具备强大编程能力。"
   },
   {
     "name": "Claude 3.7 Sonnet",
@@ -50,7 +53,8 @@
     "released_at": "2025-02-24",
     "summary": "Anthropic's most intelligent model to date, featuring extended thinking for complex reasoning.",
     "url": "https://www.anthropic.com/claude/sonnet",
-    "huggingface_id": null
+    "huggingface_id": null,
+    "summary_zh": "Anthropic迄今最智能模型，具备扩展思维用于复杂推理。"
   },
   {
     "name": "Claude 3.5 Haiku",
@@ -63,7 +67,8 @@
     "released_at": "2024-11-04",
     "summary": "Anthropic's fastest and most compact model, optimized for speed and cost-efficiency.",
     "url": "https://www.anthropic.com/claude/haiku",
-    "huggingface_id": null
+    "huggingface_id": null,
+    "summary_zh": "Anthropic最快最紧凑模型，专为速度和成本效益优化。"
   },
   {
     "name": "Gemini 2.0 Flash",
@@ -77,7 +82,8 @@
     "released_at": "2025-02-05",
     "summary": "Google's workhorse multimodal model balancing speed, capability, and cost.",
     "url": "https://deepmind.google/technologies/gemini/flash/",
-    "huggingface_id": null
+    "huggingface_id": null,
+    "summary_zh": "Google主力多模态模型，平衡速度、能力和成本。"
   },
   {
     "name": "Gemini 2.0 Flash Thinking",
@@ -90,7 +96,8 @@
     "released_at": "2025-01-21",
     "summary": "Google's reasoning-focused variant of Flash, capable of extended chain-of-thought.",
     "url": "https://deepmind.google/technologies/gemini/",
-    "huggingface_id": null
+    "huggingface_id": null,
+    "summary_zh": "Google推理专注版Flash，支持扩展思维链。"
   },
   {
     "name": "Grok 3",
@@ -103,7 +110,8 @@
     "released_at": "2025-02-17",
     "summary": "xAI's flagship model trained on Colossus supercluster, with strong reasoning capabilities.",
     "url": "https://x.ai/grok",
-    "huggingface_id": null
+    "huggingface_id": null,
+    "summary_zh": "xAI旗舰模型，在Colossus超算集群训练，推理能力强。"
   },
   {
     "name": "Meta-Llama-3-8B",
@@ -117,7 +125,8 @@
     "url": "https://huggingface.co/meta-llama/Meta-Llama-3-8B",
     "huggingface_id": "meta-llama/Meta-Llama-3-8B",
     "likes": 6473,
-    "downloads": 2463959
+    "downloads": 2463959,
+    "summary_zh": "HuggingFace热门开源模型，获6,473个点赞。"
   },
   {
     "name": "Llama-3.1-8B-Instruct",
@@ -131,7 +140,8 @@
     "url": "https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct",
     "huggingface_id": "meta-llama/Llama-3.1-8B-Instruct",
     "likes": 5520,
-    "downloads": 7070766
+    "downloads": 7070766,
+    "summary_zh": "HuggingFace热门开源模型，获5,520个点赞。"
   },
   {
     "name": "bloom",
@@ -145,7 +155,8 @@
     "url": "https://huggingface.co/bigscience/bloom",
     "huggingface_id": "bigscience/bloom",
     "likes": 4986,
-    "downloads": 4896
+    "downloads": 4896,
+    "summary_zh": "HuggingFace热门开源模型，获4,986个点赞。"
   },
   {
     "name": "Llama-2-7b-chat-hf",
@@ -159,7 +170,8 @@
     "url": "https://huggingface.co/meta-llama/Llama-2-7b-chat-hf",
     "huggingface_id": "meta-llama/Llama-2-7b-chat-hf",
     "likes": 4716,
-    "downloads": 332620
+    "downloads": 332620,
+    "summary_zh": "HuggingFace热门开源模型，获4,716个点赞。"
   },
   {
     "name": "gpt-oss-120b",
@@ -173,7 +185,8 @@
     "url": "https://huggingface.co/openai/gpt-oss-120b",
     "huggingface_id": "openai/gpt-oss-120b",
     "likes": 4544,
-    "downloads": 4194966
+    "downloads": 4194966,
+    "summary_zh": "HuggingFace热门开源模型，获4,544个点赞。"
   },
   {
     "name": "Llama-2-7b",
@@ -187,7 +200,8 @@
     "url": "https://huggingface.co/meta-llama/Llama-2-7b",
     "huggingface_id": "meta-llama/Llama-2-7b",
     "likes": 4452,
-    "downloads": 220
+    "downloads": 220,
+    "summary_zh": "HuggingFace热门开源模型，获4,452个点赞。"
   },
   {
     "name": "gpt-oss-20b",
@@ -201,7 +215,8 @@
     "url": "https://huggingface.co/openai/gpt-oss-20b",
     "huggingface_id": "openai/gpt-oss-20b",
     "likes": 4423,
-    "downloads": 7049150
+    "downloads": 7049150,
+    "summary_zh": "HuggingFace热门开源模型，获4,423个点赞。"
   },
   {
     "name": "Meta-Llama-3-8B-Instruct",
@@ -215,7 +230,8 @@
     "url": "https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct",
     "huggingface_id": "meta-llama/Meta-Llama-3-8B-Instruct",
     "likes": 4394,
-    "downloads": 1353966
+    "downloads": 1353966,
+    "summary_zh": "HuggingFace热门开源模型，获4,394个点赞。"
   },
   {
     "name": "Mistral-7B-v0.1",
@@ -229,7 +245,8 @@
     "url": "https://huggingface.co/mistralai/Mistral-7B-v0.1",
     "huggingface_id": "mistralai/Mistral-7B-v0.1",
     "likes": 4047,
-    "downloads": 476804
+    "downloads": 476804,
+    "summary_zh": "HuggingFace热门开源模型，获4,047个点赞。"
   },
   {
     "name": "phi-2",
@@ -243,7 +260,8 @@
     "url": "https://huggingface.co/microsoft/phi-2",
     "huggingface_id": "microsoft/phi-2",
     "likes": 3429,
-    "downloads": 1651432
+    "downloads": 1651432,
+    "summary_zh": "HuggingFace热门开源模型，获3,429个点赞。"
   },
   {
     "name": "gemma-7b",
@@ -257,7 +275,8 @@
     "url": "https://huggingface.co/google/gemma-7b",
     "huggingface_id": "google/gemma-7b",
     "likes": 3283,
-    "downloads": 112711
+    "downloads": 112711,
+    "summary_zh": "HuggingFace热门开源模型，获3,283个点赞。"
   },
   {
     "name": "gpt2",
@@ -271,7 +290,8 @@
     "url": "https://huggingface.co/openai-community/gpt2",
     "huggingface_id": "openai-community/gpt2",
     "likes": 3119,
-    "downloads": 10135429
+    "downloads": 10135429,
+    "summary_zh": "HuggingFace热门开源模型，获3,119个点赞。"
   },
   {
     "name": "Mistral-7B-Instruct-v0.2",
@@ -285,7 +305,8 @@
     "url": "https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2",
     "huggingface_id": "mistralai/Mistral-7B-Instruct-v0.2",
     "likes": 3089,
-    "downloads": 2920309
+    "downloads": 2920309,
+    "summary_zh": "HuggingFace热门开源模型，获3,089个点赞。"
   },
   {
     "name": "DeepSeek-V3-0324",
@@ -299,7 +320,8 @@
     "url": "https://huggingface.co/deepseek-ai/DeepSeek-V3-0324",
     "huggingface_id": "deepseek-ai/DeepSeek-V3-0324",
     "likes": 3088,
-    "downloads": 270362
+    "downloads": 270362,
+    "summary_zh": "HuggingFace热门开源模型，获3,088个点赞。"
   },
   {
     "name": "starcoder",
@@ -313,7 +335,8 @@
     "url": "https://huggingface.co/bigcode/starcoder",
     "huggingface_id": "bigcode/starcoder",
     "likes": 2923,
-    "downloads": 6345
+    "downloads": 6345,
+    "summary_zh": "HuggingFace热门开源模型，获2,923个点赞。"
   },
   {
     "name": "QwQ-32B",
@@ -327,7 +350,8 @@
     "url": "https://huggingface.co/Qwen/QwQ-32B",
     "huggingface_id": "Qwen/QwQ-32B",
     "likes": 2889,
-    "downloads": 61310
+    "downloads": 61310,
+    "summary_zh": "HuggingFace热门开源模型，获2,889个点赞。"
   },
   {
     "name": "falcon-40b",
@@ -341,7 +365,8 @@
     "url": "https://huggingface.co/tiiuae/falcon-40b",
     "huggingface_id": "tiiuae/falcon-40b",
     "likes": 2433,
-    "downloads": 17117
+    "downloads": 17117,
+    "summary_zh": "HuggingFace热门开源模型，获2,433个点赞。"
   },
   {
     "name": "DeepSeek-R1-0528",
@@ -355,7 +380,8 @@
     "url": "https://huggingface.co/deepseek-ai/DeepSeek-R1-0528",
     "huggingface_id": "deepseek-ai/DeepSeek-R1-0528",
     "likes": 2401,
-    "downloads": 1050237
+    "downloads": 1050237,
+    "summary_zh": "HuggingFace热门开源模型，获2,401个点赞。"
   },
   {
     "name": "grok-1",
@@ -369,7 +395,8 @@
     "url": "https://huggingface.co/xai-org/grok-1",
     "huggingface_id": "xai-org/grok-1",
     "likes": 2395,
-    "downloads": 154
+    "downloads": 154,
+    "summary_zh": "HuggingFace热门开源模型，获2,395个点赞。"
   },
   {
     "name": "r1-1776",
@@ -383,7 +410,8 @@
     "url": "https://huggingface.co/perplexity-ai/r1-1776",
     "huggingface_id": "perplexity-ai/r1-1776",
     "likes": 2335,
-    "downloads": 1069
+    "downloads": 1069,
+    "summary_zh": "HuggingFace热门开源模型，获2,335个点赞。"
   },
   {
     "name": "Kimi-K2-Instruct",
@@ -397,7 +425,8 @@
     "url": "https://huggingface.co/moonshotai/Kimi-K2-Instruct",
     "huggingface_id": "moonshotai/Kimi-K2-Instruct",
     "likes": 2324,
-    "downloads": 151155
+    "downloads": 151155,
+    "summary_zh": "HuggingFace热门开源模型，获2,324个点赞。"
   },
   {
     "name": "Llama-3.2-1B",
@@ -411,7 +440,8 @@
     "url": "https://huggingface.co/meta-llama/Llama-3.2-1B",
     "huggingface_id": "meta-llama/Llama-3.2-1B",
     "likes": 2306,
-    "downloads": 1453836
+    "downloads": 1453836,
+    "summary_zh": "HuggingFace热门开源模型，获2,306个点赞。"
   },
   {
     "name": "Llama-2-7b-hf",
@@ -425,7 +455,8 @@
     "url": "https://huggingface.co/meta-llama/Llama-2-7b-hf",
     "huggingface_id": "meta-llama/Llama-2-7b-hf",
     "likes": 2272,
-    "downloads": 617643
+    "downloads": 617643,
+    "summary_zh": "HuggingFace热门开源模型，获2,272个点赞。"
   },
   {
     "name": "Llama-2-70b-chat-hf",
@@ -439,7 +470,8 @@
     "url": "https://huggingface.co/meta-llama/Llama-2-70b-chat-hf",
     "huggingface_id": "meta-llama/Llama-2-70b-chat-hf",
     "likes": 2204,
-    "downloads": 18588
+    "downloads": 18588,
+    "summary_zh": "HuggingFace热门开源模型，获2,204个点赞。"
   },
   {
     "name": "Llama-3.1-8B",
@@ -453,7 +485,8 @@
     "url": "https://huggingface.co/meta-llama/Llama-3.1-8B",
     "huggingface_id": "meta-llama/Llama-3.1-8B",
     "likes": 2084,
-    "downloads": 1362442
+    "downloads": 1362442,
+    "summary_zh": "HuggingFace热门开源模型，获2,084个点赞。"
   },
   {
     "name": "Llama-3.1-Nemotron-70B-Instruct-HF",
@@ -467,7 +500,8 @@
     "url": "https://huggingface.co/nvidia/Llama-3.1-Nemotron-70B-Instruct-HF",
     "huggingface_id": "nvidia/Llama-3.1-Nemotron-70B-Instruct-HF",
     "likes": 2061,
-    "downloads": 11902
+    "downloads": 11902,
+    "summary_zh": "HuggingFace热门开源模型，获2,061个点赞。"
   },
   {
     "name": "Llama-3.2-3B-Instruct",
@@ -481,7 +515,8 @@
     "url": "https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct",
     "huggingface_id": "meta-llama/Llama-3.2-3B-Instruct",
     "likes": 2019,
-    "downloads": 3394040
+    "downloads": 3394040,
+    "summary_zh": "HuggingFace热门开源模型，获2,019个点赞。"
   },
   {
     "name": "Qwen2.5-Coder-32B-Instruct",
@@ -495,7 +530,8 @@
     "url": "https://huggingface.co/Qwen/Qwen2.5-Coder-32B-Instruct",
     "huggingface_id": "Qwen/Qwen2.5-Coder-32B-Instruct",
     "likes": 2000,
-    "downloads": 858975
+    "downloads": 858975,
+    "summary_zh": "HuggingFace热门开源模型，获2,000个点赞。"
   },
   {
     "name": "GLM-4.7",
@@ -509,7 +545,8 @@
     "url": "https://huggingface.co/zai-org/GLM-4.7",
     "huggingface_id": "zai-org/GLM-4.7",
     "likes": 1937,
-    "downloads": 122971
+    "downloads": 122971,
+    "summary_zh": "HuggingFace热门开源模型，获1,937个点赞。"
   },
   {
     "name": "zephyr-7b-beta",
@@ -523,7 +560,8 @@
     "url": "https://huggingface.co/HuggingFaceH4/zephyr-7b-beta",
     "huggingface_id": "HuggingFaceH4/zephyr-7b-beta",
     "likes": 1834,
-    "downloads": 107437
+    "downloads": 107437,
+    "summary_zh": "HuggingFace热门开源模型，获1,834个点赞。"
   },
   {
     "name": "Mistral-7B-Instruct-v0.1",
@@ -537,7 +575,8 @@
     "url": "https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.1",
     "huggingface_id": "mistralai/Mistral-7B-Instruct-v0.1",
     "likes": 1826,
-    "downloads": 642117
+    "downloads": 642117,
+    "summary_zh": "HuggingFace热门开源模型，获1,826个点赞。"
   },
   {
     "name": "c4ai-command-r-plus",
@@ -551,7 +590,8 @@
     "url": "https://huggingface.co/CohereLabs/c4ai-command-r-plus",
     "huggingface_id": "CohereLabs/c4ai-command-r-plus",
     "likes": 1774,
-    "downloads": 2535
+    "downloads": 2535,
+    "summary_zh": "HuggingFace热门开源模型，获1,774个点赞。"
   },
   {
     "name": "QwQ-32B-Preview",
@@ -565,7 +605,8 @@
     "url": "https://huggingface.co/Qwen/QwQ-32B-Preview",
     "huggingface_id": "Qwen/QwQ-32B-Preview",
     "likes": 1742,
-    "downloads": 8146
+    "downloads": 8146,
+    "summary_zh": "HuggingFace热门开源模型，获1742个赞"
   },
   {
     "name": "Reflection-Llama-3.1-70B",
@@ -579,7 +620,8 @@
     "url": "https://huggingface.co/mattshumer/Reflection-Llama-3.1-70B",
     "huggingface_id": "mattshumer/Reflection-Llama-3.1-70B",
     "likes": 1713,
-    "downloads": 273
+    "downloads": 273,
+    "summary_zh": "HuggingFace热门开源模型，获1713个赞"
   },
   {
     "name": "GLM-5",
@@ -593,7 +635,8 @@
     "url": "https://huggingface.co/zai-org/GLM-5",
     "huggingface_id": "zai-org/GLM-5",
     "likes": 1704,
-    "downloads": 205187
+    "downloads": 205187,
+    "summary_zh": "HuggingFace热门开源模型，获1704个赞"
   },
   {
     "name": "Phi-3-mini-128k-instruct",
@@ -607,7 +650,8 @@
     "url": "https://huggingface.co/microsoft/Phi-3-mini-128k-instruct",
     "huggingface_id": "microsoft/Phi-3-mini-128k-instruct",
     "likes": 1696,
-    "downloads": 208954
+    "downloads": 208954,
+    "summary_zh": "HuggingFace热门开源模型，获1696个赞"
   },
   {
     "name": "Kimi-K2-Thinking",
@@ -621,7 +665,8 @@
     "url": "https://huggingface.co/moonshotai/Kimi-K2-Thinking",
     "huggingface_id": "moonshotai/Kimi-K2-Thinking",
     "likes": 1675,
-    "downloads": 101946
+    "downloads": 101946,
+    "summary_zh": "HuggingFace热门开源模型，获1675个赞"
   },
   {
     "name": "GLM-4.7-Flash",
@@ -635,7 +680,8 @@
     "url": "https://huggingface.co/zai-org/GLM-4.7-Flash",
     "huggingface_id": "zai-org/GLM-4.7-Flash",
     "likes": 1585,
-    "downloads": 1666233
+    "downloads": 1666233,
+    "summary_zh": "HuggingFace热门开源模型，获1585个赞"
   },
   {
     "name": "TinyLlama-1.1B-Chat-v1.0",
@@ -649,7 +695,8 @@
     "url": "https://huggingface.co/TinyLlama/TinyLlama-1.1B-Chat-v1.0",
     "huggingface_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
     "likes": 1538,
-    "downloads": 1870099
+    "downloads": 1870099,
+    "summary_zh": "HuggingFace热门开源模型，获1538个赞"
   },
   {
     "name": "DeepSeek-R1-Distill-Qwen-32B",
@@ -663,7 +710,8 @@
     "url": "https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
     "huggingface_id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
     "likes": 1525,
-    "downloads": 873156
+    "downloads": 873156,
+    "summary_zh": "HuggingFace热门开源模型，获1525个赞"
   },
   {
     "name": "gpt-j-6b",
@@ -677,7 +725,8 @@
     "url": "https://huggingface.co/EleutherAI/gpt-j-6b",
     "huggingface_id": "EleutherAI/gpt-j-6b",
     "likes": 1523,
-    "downloads": 97165
+    "downloads": 97165,
+    "summary_zh": "HuggingFace热门开源模型，获1523个赞"
   },
   {
     "name": "Meta-Llama-3-70B-Instruct",
@@ -691,7 +740,8 @@
     "url": "https://huggingface.co/meta-llama/Meta-Llama-3-70B-Instruct",
     "huggingface_id": "meta-llama/Meta-Llama-3-70B-Instruct",
     "likes": 1506,
-    "downloads": 61023
+    "downloads": 61023,
+    "summary_zh": "HuggingFace热门开源模型，获1506个赞"
   },
   {
     "name": "MiniMax-M2",
@@ -705,7 +755,8 @@
     "url": "https://huggingface.co/MiniMaxAI/MiniMax-M2",
     "huggingface_id": "MiniMaxAI/MiniMax-M2",
     "likes": 1485,
-    "downloads": 275243
+    "downloads": 275243,
+    "summary_zh": "HuggingFace热门开源模型，获1485个赞"
   },
   {
     "name": "DeepSeek-R1-Distill-Qwen-1.5B",
@@ -719,7 +770,8 @@
     "url": "https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
     "huggingface_id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
     "likes": 1454,
-    "downloads": 1461485
+    "downloads": 1461485,
+    "summary_zh": "HuggingFace热门开源模型，获1454个赞"
   },
   {
     "name": "GLM-4.5",
@@ -733,7 +785,8 @@
     "url": "https://huggingface.co/zai-org/GLM-4.5",
     "huggingface_id": "zai-org/GLM-4.5",
     "likes": 1396,
-    "downloads": 42566
+    "downloads": 42566,
+    "summary_zh": "HuggingFace热门开源模型，获1396个赞"
   },
   {
     "name": "Phi-3-mini-4k-instruct",
@@ -747,7 +800,8 @@
     "url": "https://huggingface.co/microsoft/Phi-3-mini-4k-instruct",
     "huggingface_id": "microsoft/Phi-3-mini-4k-instruct",
     "likes": 1393,
-    "downloads": 755940
+    "downloads": 755940,
+    "summary_zh": "HuggingFace热门开源模型，获1393个赞"
   },
   {
     "name": "Llama 3.3 70B",
@@ -759,7 +813,8 @@
     "released_at": "2024-12-06",
     "summary": "Meta's state-of-the-art open-source instruction-tuned model, competitive with much larger closed models.",
     "url": "https://ai.meta.com/blog/llama-3-3/",
-    "huggingface_id": "meta-llama/Llama-3.3-70B-Instruct"
+    "huggingface_id": "meta-llama/Llama-3.3-70B-Instruct",
+    "summary_zh": "Meta顶尖开源指令调优模型，媲美大型闭源模型"
   },
   {
     "name": "Llama 4 Scout",
@@ -772,7 +827,8 @@
     "released_at": "2025-04-05",
     "summary": "Meta's multimodal MoE model with 17B active parameters and 10M token context window.",
     "url": "https://ai.meta.com/blog/llama-4-multimodal-intelligence/",
-    "huggingface_id": "meta-llama/Llama-4-Scout-17B-16E-Instruct"
+    "huggingface_id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+    "summary_zh": "Meta多模态MoE模型，170亿活跃参数，1000万token上下文"
   },
   {
     "name": "Llama 4 Maverick",
@@ -785,7 +841,8 @@
     "released_at": "2025-04-05",
     "summary": "Meta's high-performance multimodal MoE model with 17B active parameters and 128 experts.",
     "url": "https://ai.meta.com/blog/llama-4-multimodal-intelligence/",
-    "huggingface_id": "meta-llama/Llama-4-Maverick-17B-128E-Instruct"
+    "huggingface_id": "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
+    "summary_zh": "Meta高性能多模态MoE模型，170亿活跃参数，128个专家"
   },
   {
     "name": "Mistral Large 2",
@@ -797,7 +854,8 @@
     "released_at": "2024-07-24",
     "summary": "Mistral's most powerful model with 128K context, strong code and reasoning performance.",
     "url": "https://mistral.ai/news/mistral-large-2407/",
-    "huggingface_id": "mistralai/Mistral-Large-Instruct-2407"
+    "huggingface_id": "mistralai/Mistral-Large-Instruct-2407",
+    "summary_zh": "Mistral最强模型，128K上下文，代码与推理能力出色"
   },
   {
     "name": "Qwen2.5 72B",
@@ -809,7 +867,8 @@
     "released_at": "2024-09-18",
     "summary": "Alibaba's flagship open-source model excelling at coding, math, and instruction following.",
     "url": "https://qwenlm.github.io/blog/qwen2.5/",
-    "huggingface_id": "Qwen/Qwen2.5-72B-Instruct"
+    "huggingface_id": "Qwen/Qwen2.5-72B-Instruct",
+    "summary_zh": "阿里巴巴旗舰开源模型，擅长编程、数学和指令遵循"
   },
   {
     "name": "DeepSeek-R1",
@@ -821,7 +880,8 @@
     "released_at": "2025-01-20",
     "summary": "DeepSeek's open-source reasoning model matching OpenAI o1 performance at a fraction of training cost.",
     "url": "https://github.com/deepseek-ai/DeepSeek-R1",
-    "huggingface_id": "deepseek-ai/DeepSeek-R1"
+    "huggingface_id": "deepseek-ai/DeepSeek-R1",
+    "summary_zh": "DeepSeek开源推理模型，性能媲美OpenAI o1，训练成本极低"
   },
   {
     "name": "DeepSeek-V3",
@@ -833,7 +893,8 @@
     "released_at": "2024-12-26",
     "summary": "DeepSeek's efficient 671B MoE model with exceptional coding and reasoning capabilities.",
     "url": "https://github.com/deepseek-ai/DeepSeek-V3",
-    "huggingface_id": "deepseek-ai/DeepSeek-V3"
+    "huggingface_id": "deepseek-ai/DeepSeek-V3",
+    "summary_zh": "DeepSeek高效6710亿MoE模型，卓越的编程与推理能力"
   },
   {
     "name": "Phi-4",
@@ -845,7 +906,8 @@
     "released_at": "2024-12-12",
     "summary": "Microsoft's compact 14B model with strong math and reasoning, punching above its weight class.",
     "url": "https://azure.microsoft.com/en-us/blog/phi-4-excelling-in-complex-reasoning-with-small-language-models/",
-    "huggingface_id": "microsoft/phi-4"
+    "huggingface_id": "microsoft/phi-4",
+    "summary_zh": "微软紧凑型140亿参数模型，数学与推理能力超群"
   },
   {
     "name": "Gemma 3 27B",
@@ -858,6 +920,7 @@
     "released_at": "2025-03-12",
     "summary": "Google's best open-weight model, handling text and images with 128K context.",
     "url": "https://ai.google.dev/gemma/docs/gemma3",
-    "huggingface_id": "google/gemma-3-27b-it"
+    "huggingface_id": "google/gemma-3-27b-it",
+    "summary_zh": "谷歌最佳开源权重模型，处理文本与图像，128K上下文"
   }
 ]
