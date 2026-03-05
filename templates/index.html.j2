@@ -542,8 +542,13 @@
     }
   }
 
+  // ── Alpine Store: shared language state ────────────────────────────────
+  document.addEventListener('alpine:init', () => {
+    Alpine.store('lang', localStorage.getItem('ai-droplet-lang') || 'en')
+  })
+
   function t(key) {
-    const lang = Alpine.store ? Alpine.store('lang') : 'en'
+    const lang = (typeof Alpine !== 'undefined' && Alpine.store) ? Alpine.store('lang') : 'en'
     return (TRANSLATIONS[lang] || TRANSLATIONS.en)[key] || key
   }
 
@@ -594,6 +599,7 @@
       ],
       setLang(l) {
         this.lang = l
+        Alpine.store('lang', l)
         localStorage.setItem('ai-droplet-lang', l)
       },
       t(key) {
@@ -611,7 +617,7 @@
         this.items = await fetchData('news.json')
         this.loading = false
       },
-      t(key) { return (TRANSLATIONS[document.querySelector('[x-data]')?.__x?.data?.lang] || TRANSLATIONS.en)[key] || key }
+      t(key) { return (TRANSLATIONS[Alpine.store('lang')] || TRANSLATIONS.en)[key] || key }
     }
   }
 
@@ -659,7 +665,7 @@
         if (current >= total - 3) return [1, '...', total-4, total-3, total-2, total-1, total]
         return [1, '...', current-1, current, current+1, '...', total]
       },
-      t(key) { return (TRANSLATIONS.en)[key] || key }
+      t(key) { return (TRANSLATIONS[Alpine.store('lang')] || TRANSLATIONS.en)[key] || key }
     }
   }
 
@@ -696,7 +702,7 @@
         const start = (this.page - 1) * this.perPage
         return this.filteredMcp.slice(start, start + this.perPage)
       },
-      t(key) { return (TRANSLATIONS.en)[key] || key }
+      t(key) { return (TRANSLATIONS[Alpine.store('lang')] || TRANSLATIONS.en)[key] || key }
     }
   }
 
@@ -709,7 +715,7 @@
         this.items = await fetchData('skills.json')
         this.loading = false
       },
-      t(key) { return (TRANSLATIONS.en)[key] || key }
+      t(key) { return (TRANSLATIONS[Alpine.store('lang')] || TRANSLATIONS.en)[key] || key }
     }
   }
 
@@ -722,7 +728,7 @@
         this.items = await fetchData('ides.json')
         this.loading = false
       },
-      t(key) { return (TRANSLATIONS.en)[key] || key }
+      t(key) { return (TRANSLATIONS[Alpine.store('lang')] || TRANSLATIONS.en)[key] || key }
     }
   }
 
@@ -750,7 +756,7 @@
         })
         return map
       },
-      t(key) { return (TRANSLATIONS.en)[key] || key }
+      t(key) { return (TRANSLATIONS[Alpine.store('lang')] || TRANSLATIONS.en)[key] || key }
     }
   }
   </script>
