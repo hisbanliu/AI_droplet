@@ -72,6 +72,8 @@ const TRANSLATIONS = {
     "tools.cat.ai-search": "AI Search",
     "tools.cat.coding": "Coding",
     "tools.cat.productivity": "Productivity",
+    "tools.cat.ai-agents": "AI Agents",
+    "tools.cat.writing": "AI Writing",
 
     // Pagination
     "pagination.prev": "Prev",
@@ -141,6 +143,8 @@ const TRANSLATIONS = {
     "tools.cat.ai-search": "AI 搜索",
     "tools.cat.coding": "代码助手",
     "tools.cat.productivity": "生产力",
+    "tools.cat.ai-agents": "AI 智能体",
+    "tools.cat.writing": "AI 写作",
 
     // Pagination
     "pagination.prev": "上一页",

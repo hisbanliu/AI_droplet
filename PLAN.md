@@ -1,6 +1,6 @@
 # AI Droplet — 项目规划文档
 
-> 版本: v0.1 | 日期: 2026-03-04
+> 版本: v0.2 | 日期: 2026-03-05
 
 ## 项目目标
 
@@ -355,3 +355,100 @@ GITHUB_TOKEN=your_github_pat_here    # 用于 GitHub API 避免限流（60次/h 
 4. 添加 `generate_site.py`（Jinja2 模板渲染），替换手写 HTML
 5. 逐步添加模块：models → mcp → skills → ides → tools
 6. 最后加 i18n、搜索/过滤、分页等交互功能
+
+---
+
+## v2 架构规划（迭代路线图）
+
+> 当前 v1 适合 ≤8 个大分类、≤100 条工具条目的规模。
+> 分类继续增长时，以下改进应列入优先队列。
+
+### 当前 v1 的可维护性问题
+
+| 问题 | 当前状态 | 规模增大后的风险 |
+|------|---------|----------------|
+| 单一 900+ 行模板 | 6 个分类 | 新增 5 个分类后 → 1500+ 行，难以审查和调试 |
+| `tools.json` 一文件多分类 | 18→32 工具 / 8 子类 | 50+ 条目后查找困难，git diff 噪音大 |
+| i18n 翻译硬编码在模板 JS | ~200 行字典 | 每加分类都须改模板而不是只改数据 |
+| `generate_site.py` 硬编码 DATA_FILES | 手动列表 | 每新增 JSON 文件需手工改代码 |
+| 导航 tabs 硬编码 | 6 项数组 | 每加大分类须改模板 JS |
+
+### v2 目标架构
+
+```
+data/
+  manifest.json          ← ★ 核心：所有 section/分类的注册表
+  sections/              ← 新增的大分类（独立文件）
+    agents.json
+    writing.json
+    research.json
+  tools/                 ← tools 细分（取代单一 tools.json）
+    image-gen.json
+    video-gen.json
+    audio.json
+    coding.json
+    productivity.json
+    ai-agents.json       ← 从 tools.json 拆出
+    writing.json         ← 从 tools.json 拆出
+  i18n/
+    en.json              ← 翻译文件独立，模板无翻译字典
+    zh.json
+
+templates/
+  base.html.j2           ← 只含 <head>、<nav>、<footer>、JS 基础设施
+  macros/                ← 每种 section 类型一个 macro 文件
+    section_news.html
+    section_models.html
+    section_mcp.html
+    section_tools.html   ← 通用工具 section（可复用）
+    section_generic.html ← 新分类的默认模板
+
+docs/
+  index.html             ← 由 generate_site.py 生成
+  data/
+    manifest.json        ← 浏览器读取，动态构建导航 + section
+    sections/
+    tools/
+    i18n/
+```
+
+### manifest.json 驱动机制
+
+```json
+{
+  "version": 2,
+  "sections": [
+    { "id": "news",    "type": "news",    "file": "news.json",          "nav_key": "nav.news",    "order": 1 },
+    { "id": "models",  "type": "models",  "file": "models.json",        "nav_key": "nav.models",  "order": 2 },
+    { "id": "mcp",     "type": "mcp",     "file": "mcp.json",           "nav_key": "nav.mcp",     "order": 3 },
+    { "id": "skills",  "type": "skills",  "file": "skills.json",        "nav_key": "nav.skills",  "order": 4 },
+    { "id": "ides",    "type": "ides",    "file": "ides.json",          "nav_key": "nav.ides",    "order": 5 },
+    { "id": "tools",   "type": "tools",   "file": "tools/",             "nav_key": "nav.tools",   "order": 6,
+      "subcategories": ["image-gen", "video-gen", "audio", "coding", "productivity", "ai-agents", "writing"] }
+  ]
+}
+```
+
+**优点：**
+- 新增分类 = 新建 JSON 文件 + manifest 加一行 → **零改模板代码**
+- `generate_site.py` 读 manifest 自动 copy 所有文件
+- 浏览器读 manifest 动态构建导航和 section 组件
+- i18n 文件独立，翻译可交给贡献者，无需改模板
+
+### 迁移策略（渐进式，不破坏 v1）
+
+**阶段 1（已完成 - v0.2）：**
+- [x] 扩展 `tools.json` 加入 `ai-agents`（7 个工具，含 OpenClaw）和 `writing`（7 个工具）
+- [x] 模板翻译字典加入新分类 key
+- toolsApp() 已是数据驱动，自动识别新分类 → 零代码改动
+
+**阶段 2（优先级：中）：**
+- [ ] 新建 `data/manifest.json`，`generate_site.py` 读取它来决定复制哪些文件
+- [ ] 提取 i18n 到 `data/i18n/en.json` + `data/i18n/zh.json`，模板用 fetch 加载
+- [ ] 把 `templates/index.html.j2` 的 section 代码拆成 Jinja2 macros
+
+**阶段 3（优先级：低，数据量大时启动）：**
+- [ ] 按大分类拆分 `tools.json` → `tools/` 子目录
+- [ ] 增加 GitHub Actions 自动化（每日定时调用 `run_daily.py --push`）
+- [ ] 考虑 Service Worker 离线缓存，提升重复访问性能
+

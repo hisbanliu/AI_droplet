@@ -232,5 +232,187 @@
       "writing",
       "knowledge-base"
     ]
+  },
+  {
+    "name": "AutoGPT",
+    "category": "ai-agents",
+    "company": "Significant Gravitas",
+    "description": "The original autonomous AI agent. Sets goals and executes multi-step tasks using GPT models. Pioneered the agentic AI movement.",
+    "url": "https://agpt.co",
+    "pricing": "Open source (self-host free) · Cloud plan available",
+    "tags": [
+      "autonomous",
+      "open-source",
+      "multi-step"
+    ]
+  },
+  {
+    "name": "CrewAI",
+    "category": "ai-agents",
+    "company": "CrewAI",
+    "description": "Framework for orchestrating role-playing autonomous AI agents. Define crews of specialized agents that collaborate to complete complex tasks.",
+    "url": "https://crewai.com",
+    "pricing": "Open source (self-host free) · Enterprise plans",
+    "tags": [
+      "orchestration",
+      "multi-agent",
+      "open-source"
+    ]
+  },
+  {
+    "name": "LangChain",
+    "category": "ai-agents",
+    "company": "LangChain AI",
+    "description": "The most widely used framework for building LLM-powered applications and agents. Connects LLMs to tools, memory, and data sources.",
+    "url": "https://langchain.com",
+    "pricing": "Open source · LangSmith Pro $39/mo",
+    "tags": [
+      "framework",
+      "open-source",
+      "rag"
+    ]
+  },
+  {
+    "name": "n8n",
+    "category": "ai-agents",
+    "company": "n8n GmbH",
+    "description": "Open-source workflow automation with native AI agent nodes. Build agentic pipelines visually with 400+ integrations. Self-hostable.",
+    "url": "https://n8n.io",
+    "pricing": "Open source (self-host) · Cloud from $20/mo",
+    "tags": [
+      "automation",
+      "workflow",
+      "open-source"
+    ]
+  },
+  {
+    "name": "OpenClaw",
+    "category": "ai-agents",
+    "company": "OpenClaw",
+    "description": "Self-hosted AI agent deployment platform. Deploy and manage autonomous AI bots with full control over API keys and data. Basis for the Claw ecosystem (ClawShip, IronClaw, etc.).",
+    "url": "https://theresanaiforthat.com/ai/ironclaw/",
+    "pricing": "Open source (self-host)",
+    "tags": [
+      "self-hosted",
+      "deployment",
+      "open-source"
+    ]
+  },
+  {
+    "name": "Dify",
+    "category": "ai-agents",
+    "company": "LangGenius",
+    "description": "Open-source LLM app development platform. Build chatbots, agents, and RAG pipelines with a visual workflow editor. 100K+ GitHub stars.",
+    "url": "https://dify.ai",
+    "pricing": "Open source (self-host) · Cloud free tier · Pro $59/mo",
+    "tags": [
+      "platform",
+      "open-source",
+      "rag"
+    ]
+  },
+  {
+    "name": "AgentOps",
+    "category": "ai-agents",
+    "company": "AgentOps",
+    "description": "Observability and monitoring platform for AI agents. Track every LLM call, tool use, and agent action with session replays and cost analytics.",
+    "url": "https://agentops.ai",
+    "pricing": "Free tier (10K events/mo) · Pro $49/mo",
+    "tags": [
+      "observability",
+      "monitoring",
+      "devops"
+    ]
+  },
+  {
+    "name": "Jasper",
+    "category": "writing",
+    "company": "Jasper AI",
+    "description": "Enterprise AI writing platform for marketing teams. Generates on-brand copy, blog posts, ads, and social content at scale.",
+    "url": "https://jasper.ai",
+    "pricing": "Creator $49/mo · Pro $69/mo · Business (custom)",
+    "tags": [
+      "copywriting",
+      "marketing",
+      "brand-voice"
+    ]
+  },
+  {
+    "name": "Copy.ai",
+    "category": "writing",
+    "company": "Copy.ai",
+    "description": "AI-powered GTM platform for sales and marketing copy. Generates emails, ads, product descriptions, and social posts.",
+    "url": "https://copy.ai",
+    "pricing": "Free tier · Pro $49/mo · Team $249/mo",
+    "tags": [
+      "copywriting",
+      "gtm",
+      "sales"
+    ]
+  },
+  {
+    "name": "Grammarly",
+    "category": "writing",
+    "company": "Grammarly",
+    "description": "AI writing assistant for grammar, clarity, tone, and style. Integrates into browsers, Office, Google Docs, and IDEs.",
+    "url": "https://grammarly.com",
+    "pricing": "Free · Premium $12/mo · Business $15/member/mo",
+    "tags": [
+      "grammar",
+      "editing",
+      "clarity"
+    ]
+  },
+  {
+    "name": "Quillbot",
+    "category": "writing",
+    "company": "QuillBot",
+    "description": "AI paraphrasing, summarization, and grammar checking tool with 9 writing modes. Widely used by students and academic writers.",
+    "url": "https://quillbot.com",
+    "pricing": "Free tier · Premium $9.95/mo",
+    "tags": [
+      "paraphrasing",
+      "summarization",
+      "academic"
+    ]
+  },
+  {
+    "name": "Sudowrite",
+    "category": "writing",
+    "company": "Sudowrite",
+    "description": "AI writing tool built specifically for fiction and creative writing. Story generation, brainstorming, rewriting, and 'wormhole' mode for expanding scenes.",
+    "url": "https://sudowrite.com",
+    "pricing": "Hobby $19/mo · Professional $29/mo",
+    "tags": [
+      "fiction",
+      "creative",
+      "storytelling"
+    ]
+  },
+  {
+    "name": "Wordtune",
+    "category": "writing",
+    "company": "AI21 Labs",
+    "description": "AI writing companion that rewrites and improves sentences in real time. Adjusts tone (casual/formal), length, and style with one click.",
+    "url": "https://wordtune.com",
+    "pricing": "Free tier · Plus $13.99/mo · Unlimited $19.99/mo",
+    "tags": [
+      "rewriting",
+      "tone",
+      "editing"
+    ]
+  },
+  {
+    "name": "Writesonic",
+    "category": "writing",
+    "company": "Writesonic",
+    "description": "AI content platform for blogs, SEO articles, ads, and landing pages. Includes Chatsonic (web-connected AI chat) and Audiosonic.",
+    "url": "https://writesonic.com",
+    "pricing": "Free tier · Individual $16/mo · Teams $45/mo",
+    "tags": [
+      "blog",
+      "seo",
+      "content"
+    ]
   }
 ]
