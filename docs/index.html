@@ -6,6 +6,11 @@
   <title>AI Droplet — Daily AI Intelligence</title>
   <meta name="description" content="Your daily snapshot of AI models, tools, news, MCP servers, and agent skills." />
 
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -13,7 +18,19 @@
       theme: {
         extend: {
           colors: {
-            brand: { 50: '#f0f9ff', 100: '#e0f2fe', 500: '#0ea5e9', 600: '#0284c7', 700: '#0369a1' }
+            brand: {
+              50:  '#FDF6F0',
+              100: '#F5EEE6',
+              200: '#DDCDB7',
+              300: '#C4B49E',
+              500: '#990033',
+              600: '#7A0029',
+              700: '#5C001F',
+            }
+          },
+          fontFamily: {
+            heading: ['Newsreader', 'Georgia', 'serif'],
+            body:    ['Inter', 'system-ui', 'sans-serif'],
           }
         }
       }
@@ -26,20 +43,20 @@
   <style>
     [x-cloak] { display: none !important; }
     html { scroll-behavior: smooth; }
-    .tab-active { @apply border-b-2 border-sky-500 text-sky-600 font-semibold; }
-    .card { @apply bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-200; }
+    .tab-active { @apply border-b-2 border-[#990033] text-[#990033] font-semibold; }
+    .card { @apply bg-white rounded-xl border border-[#DDCDB7] shadow-sm hover:shadow-md transition-shadow duration-200; }
     .badge { @apply inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium; }
   </style>
 </head>
 
-<body class="bg-gray-50 text-gray-900 min-h-screen" x-data="app()" x-cloak>
+<body class="bg-[#F5EEE6] text-gray-900 min-h-screen font-body" x-data="app()" x-cloak>
 
   <!-- ══ NAVBAR ══════════════════════════════════════════════════════════════ -->
-  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-200">
+  <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-[#DDCDB7]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-14">
 
       <!-- Logo -->
-      <a href="#" class="flex items-center gap-2 font-bold text-sky-600 text-lg">
+      <a href="#" class="flex items-center gap-2 font-bold text-[#990033] text-lg font-heading tracking-tight">
         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
           <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/>
         </svg>
@@ -51,7 +68,7 @@
         <template x-for="tab in tabs" :key="tab.id">
           <button
             @click="activeTab = tab.id; $nextTick(() => document.getElementById(tab.id)?.scrollIntoView({behavior:'smooth'}))"
-            :class="activeTab === tab.id ? 'text-sky-600 font-semibold' : 'text-gray-600 hover:text-gray-900'"
+            :class="activeTab === tab.id ? 'text-[#990033] font-semibold' : 'text-gray-600 hover:text-gray-900'"
             class="px-3 py-1.5 rounded-md transition-colors"
             x-text="t(tab.i18n_key)"
           ></button>
@@ -60,16 +77,16 @@
 
       <!-- Right: lang toggle + generated date -->
       <div class="flex items-center gap-3">
-        <span class="hidden sm:block text-xs text-gray-400">2026-03-05 03:43 UTC</span>
-        <div class="flex items-center rounded-full border border-gray-300 overflow-hidden text-sm">
+        <span class="hidden sm:block text-xs text-gray-400">2026-03-05 06:23 UTC</span>
+        <div class="flex items-center rounded-full border border-[#DDCDB7] overflow-hidden text-sm">
           <button
             @click="setLang('en')"
-            :class="lang === 'en' ? 'bg-sky-500 text-white' : 'text-gray-600 hover:bg-gray-100'"
+            :class="lang === 'en' ? 'bg-[#990033] text-white' : 'text-gray-600 hover:bg-[#F5EEE6]'"
             class="px-2.5 py-1 transition-colors"
           >EN</button>
           <button
             @click="setLang('zh')"
-            :class="lang === 'zh' ? 'bg-sky-500 text-white' : 'text-gray-600 hover:bg-gray-100'"
+            :class="lang === 'zh' ? 'bg-[#990033] text-white' : 'text-gray-600 hover:bg-[#F5EEE6]'"
             class="px-2.5 py-1 transition-colors"
           >中</button>
         </div>
@@ -78,10 +95,10 @@
   </nav>
 
   <!-- ══ HERO ════════════════════════════════════════════════════════════════ -->
-  <header class="bg-gradient-to-br from-sky-600 to-indigo-700 text-white py-12 px-4">
+  <header class="bg-gradient-to-br from-[#990033] to-[#3D0015] text-white py-14 px-4">
     <div class="max-w-7xl mx-auto text-center">
-      <h1 class="text-3xl sm:text-4xl font-bold mb-3" x-text="t('hero.title')"></h1>
-      <p class="text-sky-100 text-lg max-w-2xl mx-auto" x-text="t('hero.subtitle')"></p>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-3 font-heading tracking-tight" x-text="t('hero.title')"></h1>
+      <p class="text-[#DDCDB7] text-lg max-w-2xl mx-auto leading-relaxed" x-text="t('hero.subtitle')"></p>
       <div class="mt-6 flex flex-wrap justify-center gap-4 text-sm">
         <span class="bg-white/20 rounded-full px-4 py-1.5">📰 <span x-text="newsCount"></span> <span x-text="t('hero.stat.news')"></span></span>
         <span class="bg-white/20 rounded-full px-4 py-1.5">🤖 <span x-text="modelsCount"></span> <span x-text="t('hero.stat.models')"></span></span>
@@ -97,7 +114,7 @@
     <section id="news" x-data="newsApp()" x-init="init()">
       <div class="flex items-center justify-between mb-6">
         <h2 class="text-2xl font-bold text-gray-900" x-text="t('nav.news')"></h2>
-        <span class="badge bg-amber-100 text-amber-800">2026-03-05</span>
+        <span class="badge bg-[#F5EEE6] text-[#6B0024] border border-[#DDCDB7]">2026-03-05</span>
       </div>
 
       <!-- Loading -->
@@ -112,7 +129,7 @@
           <article class="card p-5 flex flex-col gap-3">
             <div class="flex items-start justify-between gap-3">
               <div class="flex items-center gap-2 flex-wrap">
-                <span class="badge bg-sky-100 text-sky-700" x-text="item.source"></span>
+                <span class="badge bg-[#F5EEE6] text-[#990033]" x-text="item.source"></span>
                 <template x-for="tag in (item.tags || []).slice(0,2)" :key="tag">
                   <span class="badge bg-gray-100 text-gray-600" x-text="tag"></span>
                 </template>
@@ -120,7 +137,7 @@
               <span class="text-xs text-gray-400 whitespace-nowrap" x-text="(item.published_at || '').slice(0,10)"></span>
             </div>
             <h3 class="font-semibold text-gray-900 leading-snug">
-              <a :href="item.url" target="_blank" rel="noopener" class="hover:text-sky-600 transition-colors" x-text="item.title"></a>
+              <a :href="item.url" target="_blank" rel="noopener" class="hover:text-[#990033] transition-colors" x-text="item.title"></a>
             </h3>
             <p class="text-sm text-gray-600 leading-relaxed">
               <span x-show="$store.lang === 'en' || $store.lang === undefined" x-text="item.summary_en || item.title"></span>
@@ -131,13 +148,13 @@
                 <div class="flex">
                   <template x-for="i in 10" :key="i">
                     <div class="w-1.5 h-3 rounded-sm mr-0.5"
-                         :class="i <= (item.importance_score || 7) ? 'bg-sky-500' : 'bg-gray-200'"></div>
+                         :class="i <= (item.importance_score || 7) ? 'bg-[#990033]' : 'bg-[#DDCDB7]'"></div>
                   </template>
                 </div>
                 <span class="text-xs text-gray-400 ml-1" x-text="(item.importance_score || 7).toFixed(1)"></span>
               </div>
               <a :href="item.url" target="_blank" rel="noopener"
-                 class="text-xs text-sky-600 hover:text-sky-800 font-medium"
+                 class="text-xs text-[#990033] hover:text-[#6B0024] font-medium"
                  x-text="t('news.read_more')"></a>
             </div>
           </article>
@@ -156,7 +173,7 @@
     <section id="models" x-data="modelsApp()" x-init="init()">
       <div class="flex items-center justify-between mb-6">
         <h2 class="text-2xl font-bold text-gray-900" x-text="t('nav.models')"></h2>
-        <span class="badge bg-purple-100 text-purple-700"><span x-text="allModels.length"></span> <span x-text="t('models.total')"></span></span>
+        <span class="badge bg-[#F5EEE6] text-[#6B0024]"><span x-text="allModels.length"></span> <span x-text="t('models.total')"></span></span>
       </div>
       <div x-show="loading" class="card p-10 text-center text-gray-400 animate-pulse">Loading...</div>
       <div x-show="!loading">
@@ -171,14 +188,14 @@
             type="text"
             x-model="search"
             :placeholder="t('models.search_ph')"
-            class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-sky-500"
+            class="w-full pl-10 pr-4 py-2 border border-[#DDCDB7] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#990033] bg-white"
           />
         </div>
         <div class="flex gap-2">
           <template x-for="f in filters" :key="f.value">
             <button
               @click="filter = f.value; page = 1"
-              :class="filter === f.value ? 'bg-sky-500 text-white border-sky-500' : 'bg-white text-gray-600 border-gray-300 hover:border-sky-400'"
+              :class="filter === f.value ? 'bg-[#990033] text-white border-[#990033]' : 'bg-white text-gray-600 border-[#DDCDB7] hover:border-[#990033]'"
               class="px-3 py-2 rounded-lg border text-sm transition-colors"
               x-text="t(f.i18n_key)"
             ></button>
@@ -191,7 +208,7 @@
         <div class="overflow-x-auto">
           <table class="w-full text-sm">
             <thead>
-              <tr class="bg-gray-50 border-b border-gray-200">
+              <tr class="bg-[#F5EEE6] border-b border-[#DDCDB7]">
                 <th class="text-left px-4 py-3 font-semibold text-gray-600" x-text="t('models.col.name')"></th>
                 <th class="text-left px-4 py-3 font-semibold text-gray-600 hidden sm:table-cell" x-text="t('models.col.provider')"></th>
                 <th class="text-left px-4 py-3 font-semibold text-gray-600 hidden md:table-cell" x-text="t('models.col.type')"></th>
@@ -204,11 +221,11 @@
                 <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors">
                   <td class="px-4 py-3">
                     <a :href="model.url || '#'" target="_blank" rel="noopener"
-                       class="font-medium text-gray-900 hover:text-sky-600 transition-colors"
+                       class="font-medium text-gray-900 hover:text-[#990033] transition-colors"
                        x-text="model.name"></a>
                     <div class="flex gap-1 mt-1 flex-wrap">
                       <template x-for="m in (model.modality || [])" :key="m">
-                        <span class="badge bg-indigo-50 text-indigo-600" x-text="m"></span>
+                        <span class="badge bg-[#FDF6F0] text-[#7A0029]" x-text="m"></span>
                       </template>
                     </div>
                   </td>
@@ -241,7 +258,7 @@
                     class="px-3 py-1 rounded border text-sm disabled:opacity-40 hover:bg-gray-50" x-text="t('pagination.prev')"></button>
             <template x-for="p in pageNumbers" :key="p">
               <button @click="page = p"
-                      :class="p === page ? 'bg-sky-500 text-white border-sky-500' : 'hover:bg-gray-50'"
+                      :class="p === page ? 'bg-[#990033] text-white border-[#990033]' : 'hover:bg-[#F5EEE6]'"
                       class="px-3 py-1 rounded border text-sm min-w-[2rem]"
                       x-text="p"></button>
             </template>
@@ -257,7 +274,7 @@
     <section id="mcp" x-data="mcpApp()" x-init="init()">
       <div class="flex items-center justify-between mb-6">
         <h2 class="text-2xl font-bold text-gray-900">MCP Servers</h2>
-        <span class="badge bg-emerald-100 text-emerald-700"><span x-text="allMcp.length"></span> servers</span>
+        <span class="badge bg-[#F5EEE6] text-[#6B0024]"><span x-text="allMcp.length"></span> servers</span>
       </div>
       <div x-show="loading" class="card p-10 text-center text-gray-400 animate-pulse">Loading...</div>
       <div x-show="!loading">
@@ -269,10 +286,10 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
           </svg>
           <input type="text" x-model="search" @input="page = 1" :placeholder="t('mcp.search_ph')"
-                 class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-sky-500" />
+                 class="w-full pl-10 pr-4 py-2 border border-[#DDCDB7] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#990033] bg-white" />
         </div>
         <select x-model="category" @change="page = 1"
-                class="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500">
+                class="border border-[#DDCDB7] rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#990033] bg-white">
           <option value="" x-text="t('mcp.all_categories')"></option>
           <template x-for="cat in categories" :key="cat">
             <option :value="cat" x-text="cat"></option>
@@ -285,11 +302,11 @@
           <div class="card p-4 flex flex-col gap-2">
             <div class="flex items-start justify-between gap-2">
               <h3 class="font-semibold text-gray-900 text-sm leading-snug" x-text="item.name"></h3>
-              <span class="badge bg-emerald-50 text-emerald-700 shrink-0 text-xs" x-text="item.category"></span>
+              <span class="badge bg-[#FDF6F0] text-[#7A0029] shrink-0 text-xs" x-text="item.category"></span>
             </div>
             <p class="text-gray-500 text-xs leading-relaxed flex-1" x-text="item.description || '—'"></p>
             <a :href="item.url || '#'" target="_blank" rel="noopener"
-               class="text-xs text-sky-600 hover:underline font-medium mt-auto truncate"
+               class="text-xs text-[#990033] hover:underline font-medium mt-auto truncate"
                x-text="item.url"></a>
           </div>
         </template>
@@ -323,15 +340,15 @@
     <section id="skills" x-data="skillsApp()" x-init="init()">
       <div class="flex items-center justify-between mb-6">
         <h2 class="text-2xl font-bold text-gray-900">Agent Skills</h2>
-        <span class="badge bg-violet-100 text-violet-700"><span x-text="items.length"></span> skills</span>
+        <span class="badge bg-[#F5EEE6] text-[#6B0024]"><span x-text="items.length"></span> skills</span>
       </div>
       <div x-show="loading" class="card p-10 text-center text-gray-400 animate-pulse">Loading...</div>
       <div x-show="!loading" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <template x-for="skill in items" :key="skill.name">
           <div class="card p-4 flex flex-col gap-2">
             <div class="flex items-center justify-between gap-2">
-              <h3 class="font-mono font-semibold text-violet-700 text-sm" x-text="skill.name"></h3>
-              <span class="badge bg-violet-50 text-violet-600 text-xs" x-text="skill.author"></span>
+              <h3 class="font-mono font-semibold text-[#990033] text-sm" x-text="skill.name"></h3>
+              <span class="badge bg-[#FDF6F0] text-[#7A0029] text-xs" x-text="skill.author"></span>
             </div>
             <p class="text-gray-600 text-sm leading-relaxed flex-1" x-text="skill.description"></p>
             <div class="flex flex-wrap gap-1 mt-1">
@@ -340,7 +357,7 @@
               </template>
             </div>
             <a x-show="skill.url" :href="skill.url" target="_blank" rel="noopener"
-               class="text-xs text-sky-600 hover:underline mt-auto" x-text="t('skills.docs')"></a>
+               class="text-xs text-[#990033] hover:underline mt-auto" x-text="t('skills.docs')"></a>
           </div>
         </template>
       </div>
@@ -350,7 +367,7 @@
     <section id="ides" x-data="idesApp()" x-init="init()">
       <div class="flex items-center justify-between mb-6">
         <h2 class="text-2xl font-bold text-gray-900" x-text="t('nav.ides')"></h2>
-        <span class="badge bg-blue-100 text-blue-700"><span x-text="items.length"></span> IDEs</span>
+        <span class="badge bg-[#F5EEE6] text-[#6B0024]"><span x-text="items.length"></span> IDEs</span>
       </div>
       <div x-show="loading" class="card p-10 text-center text-gray-400 animate-pulse">Loading...</div>
       <div x-show="!loading" class="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -374,7 +391,7 @@
             <div class="flex items-center justify-between mt-auto pt-2 border-t border-gray-100">
               <span class="text-sm font-medium text-emerald-600" x-text="ide.pricing"></span>
               <a :href="ide.url" target="_blank" rel="noopener"
-                 class="text-xs text-sky-600 hover:underline font-medium"
+                 class="text-xs text-[#990033] hover:underline font-medium"
                  x-text="t('ides.visit')"></a>
             </div>
             <p x-show="ide.base" class="text-xs text-gray-400">
@@ -389,7 +406,7 @@
     <section id="tools" x-data="toolsApp()" x-init="init()">
       <div class="flex items-center justify-between mb-6">
         <h2 class="text-2xl font-bold text-gray-900" x-text="t('nav.tools')"></h2>
-        <span class="badge bg-rose-100 text-rose-700"><span x-text="allTools.length"></span> tools</span>
+        <span class="badge bg-[#F5EEE6] text-[#6B0024]"><span x-text="allTools.length"></span> tools</span>
       </div>
       <div x-show="loading" class="card p-10 text-center text-gray-400 animate-pulse">Loading...</div>
       <div x-show="!loading">
@@ -398,7 +415,7 @@
           <template x-for="cat in categories" :key="cat">
             <button
               @click="toolTab = cat"
-              :class="toolTab === cat ? 'bg-sky-500 text-white border-sky-500' : 'bg-white text-gray-600 border-gray-200 hover:border-sky-300'"
+              :class="toolTab === cat ? 'bg-[#990033] text-white border-[#990033]' : 'bg-white text-gray-600 border-[#DDCDB7] hover:border-[#990033]'"
               class="px-3 py-1.5 rounded-full border text-sm transition-colors"
               x-text="t('tools.cat.' + cat)"
             ></button>
@@ -417,7 +434,7 @@
                 <div class="flex items-center justify-between mt-auto pt-2 border-t border-gray-100">
                   <span class="text-xs font-medium text-emerald-600" x-text="tool.pricing"></span>
                   <a :href="tool.url" target="_blank" rel="noopener"
-                     class="text-xs text-sky-600 hover:underline font-medium"
+                     class="text-xs text-[#990033] hover:underline font-medium"
                      x-text="t('tools.visit')"></a>
                 </div>
               </div>
@@ -430,11 +447,11 @@
   </main>
 
   <!-- ══ FOOTER ══════════════════════════════════════════════════════════════ -->
-  <footer class="border-t border-gray-200 mt-16 py-8 text-center text-sm text-gray-400">
-    <p>AI Droplet · <span x-text="t('footer.generated')"></span> 2026-03-05 03:43 UTC</p>
+  <footer class="border-t border-[#DDCDB7] mt-16 py-8 text-center text-sm text-gray-500">
+    <p>AI Droplet · <span x-text="t('footer.generated')"></span> 2026-03-05 06:23 UTC</p>
     <p class="mt-1">
       <a href="https://github.com/hisbanliu/AI_droplet" target="_blank" rel="noopener"
-         class="hover:text-sky-600 transition-colors">GitHub</a>
+         class="hover:text-[#990033] transition-colors">GitHub</a>
       &nbsp;·&nbsp;
       <span x-text="t('footer.data_sources')"></span>: OpenAI, Anthropic, Google, HuggingFace, GitHub, arXiv
     </p>
