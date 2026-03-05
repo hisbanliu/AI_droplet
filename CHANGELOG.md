@@ -54,6 +54,11 @@ _Planned for future versions_
 - `docs/` chosen as Pages source to keep source code and build output in same branch.
 - Translations embedded inline in generated HTML (not referenced as external JS) for
   single-file portability.
+- HuggingFace `sort=trending` is not available via REST API (website-only computed metric);
+  using `sort=likes` instead.
+- MCP dataset has 1294 entries; pagination (30/page) added to keep page interactive.
+- `awesome-mcp-servers` README uses `### 🛠️ <a name="anchor"></a>Category` heading format;
+  parser uses `</a>` anchor close tag as split point to extract clean category names.
 
 ---
 
