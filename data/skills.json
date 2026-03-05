@@ -4,104 +4,169 @@
     "description": "Fetches RSS feeds from top tech blogs, uses AI to score and filter articles, and generates a daily digest in Markdown with Chinese-translated titles, category grouping, and trend highlights.",
     "url": "https://github.com/hisbanliu/AI_droplet",
     "author": "Community",
-    "tags": ["rss", "digest", "news"]
+    "tags": [
+      "rss",
+      "digest",
+      "news"
+    ]
   },
   {
     "name": "algorithmic-art",
     "description": "Creates generative algorithmic art using p5.js with seeded randomness and interactive parameter exploration, including flow fields and particle systems.",
     "url": "https://docs.anthropic.com/",
     "author": "Anthropic",
-    "tags": ["art", "p5js", "generative"]
+    "tags": [
+      "art",
+      "p5js",
+      "generative"
+    ]
   },
   {
     "name": "brainstorming",
     "description": "Explores user intent, requirements, and design before any implementation. Use before any creative work—features, components, or functionality additions.",
     "url": "https://docs.anthropic.com/",
     "author": "Anthropic",
-    "tags": ["planning", "requirements", "ideation"]
+    "tags": [
+      "planning",
+      "requirements",
+      "ideation"
+    ]
   },
   {
     "name": "canvas-design",
     "description": "Creates beautiful visual art in .png and .pdf documents using design philosophy. For posters, art pieces, designs, or other static visual content.",
     "url": "https://docs.anthropic.com/",
     "author": "Anthropic",
-    "tags": ["design", "visual", "pdf", "png"]
+    "tags": [
+      "design",
+      "visual",
+      "pdf",
+      "png"
+    ]
   },
   {
     "name": "doc-coauthoring",
     "description": "Structured workflow for co-authoring documentation, proposals, technical specs, and decision docs. Helps efficiently transfer context and refine content.",
     "url": "https://docs.anthropic.com/",
     "author": "Anthropic",
-    "tags": ["documentation", "writing", "specs"]
+    "tags": [
+      "documentation",
+      "writing",
+      "specs"
+    ]
   },
   {
     "name": "docx",
     "description": "Creates, reads, edits, and manipulates Word documents (.docx). Handles tables of contents, headings, page numbers, images, tracked changes, and format conversions.",
     "url": "https://docs.anthropic.com/",
     "author": "Anthropic",
-    "tags": ["word", "docx", "document"]
+    "tags": [
+      "word",
+      "docx",
+      "document"
+    ]
   },
   {
     "name": "frontend-design",
     "description": "Creates distinctive, production-grade frontend interfaces with high design quality. Builds web components, pages, dashboards, and React/HTML/CSS layouts.",
     "url": "https://docs.anthropic.com/",
     "author": "Anthropic",
-    "tags": ["frontend", "ui", "react", "css"]
+    "tags": [
+      "frontend",
+      "ui",
+      "react",
+      "css"
+    ]
   },
   {
     "name": "mcp-builder",
     "description": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Supports Python (FastMCP) and Node/TypeScript.",
     "url": "https://docs.anthropic.com/",
     "author": "Anthropic",
-    "tags": ["mcp", "server", "api-integration"]
+    "tags": [
+      "mcp",
+      "server",
+      "api-integration"
+    ]
   },
   {
     "name": "pdf",
     "description": "Everything PDF: extract text/tables, combine or split files, rotate pages, add watermarks, create new PDFs, fill forms, encrypt/decrypt, extract images, and OCR on scanned PDFs.",
     "url": "https://docs.anthropic.com/",
     "author": "Anthropic",
-    "tags": ["pdf", "document", "ocr"]
+    "tags": [
+      "pdf",
+      "document",
+      "ocr"
+    ]
   },
   {
     "name": "pptx",
     "description": "Creates, reads, edits, and manipulates PowerPoint presentations (.pptx). Handles slide decks, pitch decks, templates, layouts, speaker notes, and format conversions.",
     "url": "https://docs.anthropic.com/",
     "author": "Anthropic",
-    "tags": ["powerpoint", "pptx", "presentation"]
+    "tags": [
+      "powerpoint",
+      "pptx",
+      "presentation"
+    ]
   },
   {
     "name": "systematic-debugging",
     "description": "Structured debugging methodology for any bug, test failure, or unexpected behavior. Use before proposing fixes.",
     "url": "https://docs.anthropic.com/",
     "author": "Anthropic",
-    "tags": ["debugging", "testing", "methodology"]
+    "tags": [
+      "debugging",
+      "testing",
+      "methodology"
+    ]
   },
   {
     "name": "test-driven-development",
     "description": "TDD workflow: write tests before implementation code when implementing any feature or bugfix.",
     "url": "https://docs.anthropic.com/",
     "author": "Anthropic",
-    "tags": ["tdd", "testing", "methodology"]
+    "tags": [
+      "tdd",
+      "testing",
+      "methodology"
+    ]
   },
   {
     "name": "ui-ux-pro-max",
     "description": "Full UI/UX design intelligence: 67 styles, 96 palettes, 57 font pairings, 25 chart types, 13 tech stacks (React, Next.js, Vue, Svelte, SwiftUI, React Native, Flutter, Tailwind, shadcn/ui).",
     "url": "https://docs.anthropic.com/",
     "author": "Anthropic",
-    "tags": ["ui", "ux", "design", "tailwind", "shadcn"]
+    "tags": [
+      "ui",
+      "ux",
+      "design",
+      "tailwind",
+      "shadcn"
+    ]
   },
   {
     "name": "xlsx",
     "description": "Works with spreadsheet files (.xlsx, .xlsm, .csv, .tsv): open, read, edit, create, add columns, compute formulas, format, chart, clean data, and convert between formats.",
     "url": "https://docs.anthropic.com/",
     "author": "Anthropic",
-    "tags": ["excel", "xlsx", "spreadsheet", "data"]
+    "tags": [
+      "excel",
+      "xlsx",
+      "spreadsheet",
+      "data"
+    ]
   },
   {
     "name": "writing-plans",
     "description": "Creates structured implementation plans from specs or requirements for multi-step tasks. Use before touching code.",
     "url": "https://docs.anthropic.com/",
     "author": "Anthropic",
-    "tags": ["planning", "architecture", "methodology"]
+    "tags": [
+      "planning",
+      "architecture",
+      "methodology"
+    ]
   }
 ]

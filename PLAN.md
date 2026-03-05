@@ -28,14 +28,14 @@ GitHub Pages（公网访问）
 
 ## 技术选型
 
-| 层 | 技术 | 理由 |
-|---|---|---|
-| 数据采集 | Python + `feedparser` + `httpx` | Python 基础友好，生态成熟 |
-| AI 总结 | Gemini API（`gemini-2.0-flash`） | 免费额度高，适合每日小批量调用 |
-| 前端 | 纯 HTML + Tailwind CSS + Alpine.js | 无需构建工具，vibe coding 友好 |
-| 国际化 | 自定义 `i18n.js`（vanilla JS） | 轻量，无框架依赖 |
-| 数据格式 | JSON 文件 | 静态托管即可，无需数据库 |
-| 部署 | GitHub Pages（`docs/` 目录） | 免费，push 即更新 |
+| 层       | 技术                               | 理由                           |
+| -------- | ---------------------------------- | ------------------------------ |
+| 数据采集 | Python + `feedparser` + `httpx`    | Python 基础友好，生态成熟      |
+| AI 总结  | Gemini API（`gemini-2.0-flash`）   | 免费额度高，适合每日小批量调用 |
+| 前端     | 纯 HTML + Tailwind CSS + Alpine.js | 无需构建工具，vibe coding 友好 |
+| 国际化   | 自定义 `i18n.js`（vanilla JS）     | 轻量，无框架依赖               |
+| 数据格式 | JSON 文件                          | 静态托管即可，无需数据库       |
+| 部署     | GitHub Pages（`docs/` 目录）       | 免费，push 即更新              |
 
 ---
 
@@ -92,6 +92,7 @@ AI_droplet/
 ## 页面模块规划
 
 ### 1. 动态区：昨日 AI 大事件
+
 - **更新频率**: 每日
 - **来源（RSS 订阅）**:
   - OpenAI Blog: `https://openai.com/blog/rss.xml`
@@ -105,6 +106,7 @@ AI_droplet/
 - **展示**: 卡片流，含标题 / 来源 / 摘要 / 原文链接
 
 ### 2. 大模型列表
+
 - **更新频率**: 每日（自动部分）+ 不定期（手工部分）
 - **来源**:
   - HuggingFace API（`/api/models?sort=likes&direction=-1&limit=50&pipeline_tag=text-generation`，
@@ -114,12 +116,14 @@ AI_droplet/
 - **展示**: 表格 + 搜索框 + 过滤（开源/闭源/多模态等）+ 分页（每页 20 条）
 
 ### 3. MCP 列表
+
 - **更新频率**: 每周
 - **来源**: GitHub `punkpeye/awesome-mcp-servers`（通过 GitHub API 抓取 README，解析 Markdown 表格）
 - **字段**: MCP 名（保留英文）/ 一句话摘要 / 分类 / GitHub 链接
 - **展示**: 卡片网格 + 分类过滤
 
 ### 4. Agent Skills 列表（Anthropic）
+
 - **更新频率**: 不定期（手工维护）
 - **来源**: 手工整理（Anthropic 目前无公开 API）
 - **字段**: Skill 名（保留英文原名）/ 一句话英文描述 / 文档链接
@@ -127,6 +131,7 @@ AI_droplet/
 - **注意**: Skill 名称**不翻译**，这是 Anthropic Agent 生态的专有术语
 
 ### 5. AI IDE 列表（新增）
+
 - **更新频率**: 不定期（手工维护，变化慢）
 - **包含**:
   - VS Code + GitHub Copilot
@@ -141,6 +146,7 @@ AI_droplet/
 - **展示**: 对比卡片
 
 ### 6. AI 工具列表（新增）
+
 - **更新频率**: 每周（手工维护）
 - **来源**: `data/tools_curated.json`
 - **分类**:
@@ -153,6 +159,7 @@ AI_droplet/
 - **展示**: 分类标签页 + 卡片
 
 ### 7. Benchmark 排行榜（后期 v2）
+
 - **来源**: LMSYS Chatbot Arena（有公开排行数据）
 - **展示**: 简版 Elo 排行榜
 
@@ -165,6 +172,7 @@ AI_droplet/
 **切换方式**: 页面右上角 `EN | 中` 按钮，偏好存入 `localStorage`
 
 **核心原则**:
+
 - UI 框架文字（导航、标签、按钮、提示文字）支持中英切换
 - 专有名词（模型名、Skill 名、MCP 名、工具名、IDE 名、新闻标题）**永远保留英文原文，不参与翻译**
 - LLM 生成摘要时，英文摘要为必填，中文摘要为可选（`summary_zh` 字段）
@@ -175,32 +183,32 @@ AI_droplet/
 // static/i18n.js
 const translations = {
   en: {
-    "nav.news":              "Daily News",
-    "nav.models":            "Models",
-    "nav.mcp":               "MCP",
-    "nav.skills":            "Agent Skills",
-    "nav.ides":              "AI IDEs",
-    "nav.tools":             "AI Tools",
-    "news.section_title":    "Yesterday's Top AI Events",
-    "models.search_ph":      "Search models...",
-    "models.filter.all":     "All",
-    "models.filter.open":    "Open Source",
-    "models.filter.closed":  "Closed Source",
+    "nav.news": "Daily News",
+    "nav.models": "Models",
+    "nav.mcp": "MCP",
+    "nav.skills": "Agent Skills",
+    "nav.ides": "AI IDEs",
+    "nav.tools": "AI Tools",
+    "news.section_title": "Yesterday's Top AI Events",
+    "models.search_ph": "Search models...",
+    "models.filter.all": "All",
+    "models.filter.open": "Open Source",
+    "models.filter.closed": "Closed Source",
   },
   zh: {
-    "nav.news":              "每日新闻",
-    "nav.models":            "大模型",
-    "nav.mcp":               "MCP",           // 不翻译
-    "nav.skills":            "Agent Skills",  // 不翻译
-    "nav.ides":              "AI IDE",
-    "nav.tools":             "AI 工具",
-    "news.section_title":    "昨日 AI 大事件",
-    "models.search_ph":      "搜索模型...",
-    "models.filter.all":     "全部",
-    "models.filter.open":    "开源",
-    "models.filter.closed":  "闭源",
-  }
-}
+    "nav.news": "每日新闻",
+    "nav.models": "大模型",
+    "nav.mcp": "MCP", // 不翻译
+    "nav.skills": "Agent Skills", // 不翻译
+    "nav.ides": "AI IDE",
+    "nav.tools": "AI 工具",
+    "news.section_title": "昨日 AI 大事件",
+    "models.search_ph": "搜索模型...",
+    "models.filter.all": "全部",
+    "models.filter.open": "开源",
+    "models.filter.closed": "闭源",
+  },
+};
 ```
 
 HTML 中使用 `data-i18n="key"` 属性标记需翻译的元素，切换时由 `i18n.js` 统一替换文本。
@@ -210,6 +218,7 @@ HTML 中使用 `data-i18n="key"` 属性标记需翻译的元素，切换时由 `
 ## 数据 JSON 格式规范
 
 ### `news.json`
+
 ```json
 [
   {
@@ -227,6 +236,7 @@ HTML 中使用 `data-i18n="key"` 属性标记需翻译的元素，切换时由 `
 ```
 
 ### `models.json`
+
 ```json
 [
   {
@@ -253,6 +263,7 @@ HTML 中使用 `data-i18n="key"` 属性标记需翻译的元素，切换时由 `
 ```
 
 ### `ides.json`
+
 ```json
 [
   {
@@ -268,6 +279,7 @@ HTML 中使用 `data-i18n="key"` 属性标记需翻译的元素，切换时由 `
 ```
 
 ### `mcp.json`
+
 ```json
 [
   {
@@ -308,12 +320,12 @@ python run_daily.py
 
 ## 后期升级路径
 
-| 阶段 | 内容 | 触发条件 |
-|---|---|---|
-| **v1（当前）** | 手动运行脚本，GitHub Pages 静态托管 | 现在开始 |
-| **v2** | GitHub Actions `cron` 定时任务（每天 UTC 00:00 自动更新） | 网站稳定后 |
-| **v3** | 评论/收藏功能（Giscus 基于 GitHub Discussions） | 有持续用户时 |
-| **v4** | 迁移到 Next.js + Vercel，支持服务端渲染、用户系统、搜索 | 流量增长后 |
+| 阶段           | 内容                                                      | 触发条件     |
+| -------------- | --------------------------------------------------------- | ------------ |
+| **v1（当前）** | 手动运行脚本，GitHub Pages 静态托管                       | 现在开始     |
+| **v2**         | GitHub Actions `cron` 定时任务（每天 UTC 00:00 自动更新） | 网站稳定后   |
+| **v3**         | 评论/收藏功能（Giscus 基于 GitHub Discussions）           | 有持续用户时 |
+| **v4**         | 迁移到 Next.js + Vercel，支持服务端渲染、用户系统、搜索   | 流量增长后   |
 
 ---
 
