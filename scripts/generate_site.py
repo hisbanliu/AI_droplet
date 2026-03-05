@@ -75,12 +75,6 @@ def main():
     template = env.get_template("index.html.j2")
     html = template.render(
         generated_at=generated_at,
-        count_news=len(news),
-        count_models=len(models),
-        count_mcp=len(mcp),
-        count_skills=len(skills),
-        count_ides=len(ides),
-        count_tools=len(tools),
     )
 
     DOCS_DIR.mkdir(parents=True, exist_ok=True)

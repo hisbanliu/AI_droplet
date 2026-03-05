@@ -60,7 +60,7 @@
 
       <!-- Right: lang toggle + generated date -->
       <div class="flex items-center gap-3">
-        <span class="hidden sm:block text-xs text-gray-400">2026-03-05 03:20 UTC</span>
+        <span class="hidden sm:block text-xs text-gray-400">2026-03-05 03:33 UTC</span>
         <div class="flex items-center rounded-full border border-gray-300 overflow-hidden text-sm">
           <button
             @click="setLang('en')"
@@ -431,7 +431,7 @@
 
   <!-- ══ FOOTER ══════════════════════════════════════════════════════════════ -->
   <footer class="border-t border-gray-200 mt-16 py-8 text-center text-sm text-gray-400">
-    <p>AI Droplet · <span x-text="t('footer.generated')"></span> 2026-03-05 03:20 UTC</p>
+    <p>AI Droplet · <span x-text="t('footer.generated')"></span> 2026-03-05 03:33 UTC</p>
     <p class="mt-1">
       <a href="https://github.com/hisbanliu/AI_droplet" target="_blank" rel="noopener"
          class="hover:text-sky-600 transition-colors">GitHub</a>
@@ -569,9 +569,21 @@
       lang: localStorage.getItem('ai-droplet-lang') || 'en',
       activeTab: 'news',
       newsCount: 0,
-      modelsCount: 63,
-      mcpCount: 1294,
-      skillsCount: 15,
+      modelsCount: 0,
+      mcpCount: 0,
+      skillsCount: 0,
+      async init() {
+        const [news, models, mcp, skills] = await Promise.all([
+          fetchData('news.json'),
+          fetchData('models.json'),
+          fetchData('mcp.json'),
+          fetchData('skills.json'),
+        ])
+        this.newsCount = news.length
+        this.modelsCount = models.length
+        this.mcpCount = mcp.length
+        this.skillsCount = skills.length
+      },
       tabs: [
         { id: 'news',   i18n_key: 'nav.news' },
         { id: 'models', i18n_key: 'nav.models' },

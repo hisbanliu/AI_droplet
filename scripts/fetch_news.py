@@ -14,7 +14,6 @@ from pathlib import Path
 import feedparser
 import httpx
 from dotenv import load_dotenv
-import google.generativeai as genai
 
 # ── Config ───────────────────────────────────────────────────────────────────
 
@@ -101,19 +100,47 @@ def fetch_rss(feed_cfg: dict, cutoff: datetime) -> list[dict]:
     return articles
 
 
-def score_with_gemini(articles: list[dict]) -> list[dict]:
-    """Send articles to Gemini for importance scoring and summarization."""
-    api_key = os.getenv("GEMINI_API_KEY")
-    if not api_key:
-        print("[WARN] GEMINI_API_KEY not set – skipping AI scoring, using all articles.", file=sys.stderr)
-        for i, a in enumerate(articles[:TOP_N]):
-            a["importance_score"] = 7.0
-            a["summary_en"] = a["title"]
-            a["summary_zh"] = a["title"]
-        return articles[:TOP_N]
+def _fallback_scores(articles):
+    return [{"index": i, "score": 6.0, "summary_en": a["title"], "summary_zh": a["title"]}
+            for i, a in enumerate(articles)]
 
+
+def _call_gemini(prompt: str, api_key: str) -> list:
+    import google.generativeai as genai
     genai.configure(api_key=api_key)
     model = genai.GenerativeModel("gemini-2.0-flash")
+    response = model.generate_content(
+        prompt,
+        generation_config={"response_mime_type": "application/json"}
+    )
+    return json.loads(response.text)
+
+
+def _call_openai_compat(prompt: str, api_key: str, base_url: str, model: str) -> list:
+    from openai import OpenAI
+    client = OpenAI(api_key=api_key, base_url=base_url)
+    response = client.chat.completions.create(
+        model=model,
+        messages=[{"role": "user", "content": prompt}],
+        response_format={"type": "json_object"},
+    )
+    # The prompt asks for a JSON array; wrap in object if needed
+    text = response.choices[0].message.content
+    parsed = json.loads(text)
+    # Handle both {"results": [...]} and [...] responses
+    return parsed if isinstance(parsed, list) else next(
+        (v for v in parsed.values() if isinstance(v, list)), [])
+
+
+def score_with_ai(articles: list[dict]) -> list[dict]:
+    """Send articles to the configured AI provider for importance scoring.
+
+    Supports two providers via .env:
+      AI_PROVIDER=gemini   (default) → uses GEMINI_API_KEY
+      AI_PROVIDER=openai            → uses AI_API_KEY + AI_BASE_URL + AI_MODEL
+                                       (works for OpenAI, DeepSeek, Kimi, Qwen, etc.)
+    """
+    provider = os.getenv("AI_PROVIDER", "gemini").lower()
 
     formatted = "\n".join(
         f'{i}. [{a["source"]}] {a["title"]}\n   {a["snippet"][:200]}'
@@ -122,15 +149,21 @@ def score_with_gemini(articles: list[dict]) -> list[dict]:
     prompt = SCORING_PROMPT.replace("{articles}", formatted)
 
     try:
-        response = model.generate_content(
-            prompt,
-            generation_config={"response_mime_type": "application/json"}
-        )
-        scores = json.loads(response.text)
+        if provider == "gemini":
+            api_key = os.getenv("GEMINI_API_KEY")
+            if not api_key:
+                raise ValueError("GEMINI_API_KEY not set")
+            scores = _call_gemini(prompt, api_key)
+        else:  # openai-compatible: OpenAI, DeepSeek, Kimi, Qwen, etc.
+            api_key = os.getenv("AI_API_KEY")
+            base_url = os.getenv("AI_BASE_URL", "https://api.openai.com/v1")
+            model = os.getenv("AI_MODEL", "gpt-4o-mini")
+            if not api_key:
+                raise ValueError("AI_API_KEY not set")
+            scores = _call_openai_compat(prompt, api_key, base_url, model)
     except Exception as e:
-        print(f"[ERROR] Gemini scoring failed: {e}", file=sys.stderr)
-        scores = [{"index": i, "score": 6.0, "summary_en": a["title"], "summary_zh": a["title"]}
-                  for i, a in enumerate(articles)]
+        print(f"[WARN] AI scoring failed ({provider}): {e} – using fallback.", file=sys.stderr)
+        scores = _fallback_scores(articles)
 
     # Merge scores back
     scored = []
@@ -174,8 +207,9 @@ def main():
         print("[WARN] No articles found. Keeping existing news.json.")
         return
 
-    print(f"Scoring top articles with Gemini...")
-    top = score_with_gemini(unique)
+    provider = os.getenv("AI_PROVIDER", "gemini")
+    print(f"Scoring top articles with AI ({provider})...")
+    top = score_with_ai(unique)
 
     # Add unique IDs and clean up
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
@@ -183,7 +217,7 @@ def main():
         a["id"] = f"{today}-{make_id(a['url'], a['published_at'])}"
         a.pop("snippet", None)
 
-    OUTPUT_FILE.write_text(json.dumps(top, ensure_ascii=False, indent=2))
+    OUTPUT_FILE.write_text(json.dumps(top, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"Wrote {len(top)} articles to {OUTPUT_FILE.relative_to(ROOT)}")
 
 

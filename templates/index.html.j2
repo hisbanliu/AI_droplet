@@ -568,10 +568,22 @@
     return {
       lang: localStorage.getItem('ai-droplet-lang') || 'en',
       activeTab: 'news',
-      newsCount: {{ count_news }},
-      modelsCount: {{ count_models }},
-      mcpCount: {{ count_mcp }},
-      skillsCount: {{ count_skills }},
+      newsCount: 0,
+      modelsCount: 0,
+      mcpCount: 0,
+      skillsCount: 0,
+      async init() {
+        const [news, models, mcp, skills] = await Promise.all([
+          fetchData('news.json'),
+          fetchData('models.json'),
+          fetchData('mcp.json'),
+          fetchData('skills.json'),
+        ])
+        this.newsCount = news.length
+        this.modelsCount = models.length
+        this.mcpCount = mcp.length
+        this.skillsCount = skills.length
+      },
       tabs: [
         { id: 'news',   i18n_key: 'nav.news' },
         { id: 'models', i18n_key: 'nav.models' },
